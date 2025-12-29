@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react-swc'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base:'/https://github.com/Shubhamzio/audionexz-cicd/',
+  base:'/Shubhamzio/audionexz-cicd/',
   server: {
     port: 3000,
 
