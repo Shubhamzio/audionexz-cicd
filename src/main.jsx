@@ -5,7 +5,7 @@ import App from './App.jsx';
 import { HashRouter } from 'react-router-dom';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename ="/https://shubhamzio.github.io/audionexz-cicd/">
+    <BrowserRouter>
     <App />
  </BrowserRouter>
   </StrictMode>,
