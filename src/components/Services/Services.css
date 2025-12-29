@@ -1,0 +1,1125 @@
+/* Import Poppins Font - Scoped for Service Page */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Service Page Container - All styles scoped within */
+.srv-wrapper {
+  font-family: 'Poppins', sans-serif;
+  background: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Reset only for service page elements */
+.srv-wrapper * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Service Page Container */
+.srv-wrapper .srv-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Service Page Animated Background */
+.srv-wrapper .srv-bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.srv-wrapper .srv-grid-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: srvGridMove 20s linear infinite;
+}
+
+@keyframes srvGridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+.srv-wrapper .srv-floating-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: srvFloat 15s infinite ease-in-out;
+}
+
+.srv-wrapper .srv-particle-1 {
+  top: 20%;
+  left: 10%;
+  animation-duration: 20s;
+  animation-delay: 0s;
+}
+
+.srv-wrapper .srv-particle-2 {
+  top: 60%;
+  right: 15%;
+  animation-duration: 25s;
+  animation-delay: 5s;
+}
+
+.srv-wrapper .srv-particle-3 {
+  bottom: 30%;
+  left: 30%;
+  animation-duration: 30s;
+  animation-delay: 10s;
+}
+
+.srv-wrapper .srv-particle-4 {
+  top: 40%;
+  right: 40%;
+  animation-duration: 22s;
+  animation-delay: 3s;
+}
+
+.srv-wrapper .srv-particle-5 {
+  bottom: 10%;
+  right: 20%;
+  animation-duration: 28s;
+  animation-delay: 8s;
+}
+
+@keyframes srvFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(100px, -100px) scale(1.5);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-100px, 100px) scale(0.8);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translate(50px, 50px) scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+.srv-wrapper .srv-gradient-sphere {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: -300px;
+  right: -300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.02), transparent);
+  animation: srvPulse 10s ease-in-out infinite;
+}
+
+@keyframes srvPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.1;
+  }
+}
+
+/* Service Hero Section */
+.srv-wrapper .srv-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+.srv-wrapper .srv-hero-content {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.srv-wrapper .srv-hero-title {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  letter-spacing: -2px;
+  color: #ffffff;
+}
+
+.srv-wrapper .srv-title-line {
+  display: block;
+  opacity: 0;
+  animation: srvSlideIn 1s forwards;
+}
+
+.srv-wrapper .srv-title-line:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+@keyframes srvSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.srv-wrapper .srv-gradient {
+  background: linear-gradient(135deg, #ffffff, #808080);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: srvGradientShift 5s ease infinite;
+}
+
+@keyframes srvGradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.srv-wrapper .srv-hero-subtitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.srv-wrapper .srv-hero-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-weight: 300;
+}
+
+.srv-wrapper .srv-hero-cta {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.srv-wrapper .srv-btn-primary,
+.srv-wrapper .srv-btn-secondary {
+  padding: 18px 40px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.srv-wrapper .srv-btn-primary {
+  background: #ffffff;
+  color: #000000;
+}
+
+.srv-wrapper .srv-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.srv-wrapper .srv-btn-primary:hover::before {
+  left: 100%;
+}
+
+.srv-wrapper .srv-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+}
+
+.srv-wrapper .srv-btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.srv-wrapper .srv-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-3px);
+}
+
+.srv-wrapper .srv-btn-icon {
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.srv-wrapper .srv-btn-primary:hover .srv-btn-icon,
+.srv-wrapper .srv-btn-secondary:hover .srv-btn-icon {
+  transform: translateX(5px);
+}
+
+/* Service Sound Wave Animation */
+.srv-wrapper .srv-hero-visual {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  opacity: 0.3;
+}
+
+.srv-wrapper .srv-sound-wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.05));
+  animation: srvWave 4s ease-in-out infinite;
+}
+
+@keyframes srvWave {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+}
+
+/* Service Filter Section */
+.srv-wrapper .srv-filter-section {
+  position: relative;
+  z-index: 10;
+  padding: 60px 0;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.srv-wrapper .srv-filter-wrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.srv-wrapper .srv-filter-btn {
+  padding: 12px 30px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: srvFadeUp 0.6s forwards;
+}
+
+@keyframes srvFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.srv-wrapper .srv-filter-btn:hover,
+.srv-wrapper .srv-filter-btn.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.srv-wrapper .srv-filter-icon {
+  font-size: 1.2rem;
+}
+
+/* Service Services Section */
+.srv-wrapper .srv-services-section {
+  position: relative;
+  z-index: 10;
+  padding: 100px 0;
+  background: transparent;
+}
+
+.srv-wrapper .srv-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.srv-wrapper .srv-service-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.srv-wrapper .srv-service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 30px 60px rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.srv-wrapper .srv-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.srv-wrapper .srv-card-icon {
+  font-size: 2.5rem;
+  animation: srvBounce 2s ease-in-out infinite;
+}
+
+@keyframes srvBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.srv-wrapper .srv-card-category {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.srv-wrapper .srv-card-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.srv-wrapper .srv-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  display: block;
+}
+
+.srv-wrapper .srv-service-card:hover .srv-card-image img {
+  transform: scale(1.1);
+}
+
+.srv-wrapper .srv-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
+  pointer-events: none;
+}
+
+.srv-wrapper .srv-card-content {
+  padding: 25px;
+}
+
+.srv-wrapper .srv-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.srv-wrapper .srv-card-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
+}
+
+.srv-wrapper .srv-card-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+}
+
+.srv-wrapper .srv-card-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.srv-wrapper .srv-feature-tag {
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.srv-wrapper .srv-feature-more {
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+.srv-wrapper .srv-card-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.srv-wrapper .srv-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.srv-wrapper .srv-info-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.srv-wrapper .srv-info-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.srv-wrapper .srv-card-btn {
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.srv-wrapper .srv-card-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.02);
+}
+
+.srv-wrapper .srv-btn-arrow {
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.srv-wrapper .srv-card-btn:hover .srv-btn-arrow {
+  transform: translateX(5px);
+}
+
+.srv-wrapper .srv-card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+  animation: srvGlow 2s ease-in-out;
+}
+
+@keyframes srvGlow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Service Process Section */
+.srv-wrapper .srv-process-section {
+  position: relative;
+  z-index: 10;
+  padding: 100px 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.srv-wrapper .srv-section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ffffff, #808080);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.srv-wrapper .srv-section-subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 60px;
+}
+
+.srv-wrapper .srv-process-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  position: relative;
+}
+
+.srv-wrapper .srv-process-step {
+  text-align: center;
+  position: relative;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.srv-wrapper .srv-process-step:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+}
+
+.srv-wrapper .srv-step-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.srv-wrapper .srv-step-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.srv-wrapper .srv-step-content p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+/* Service Stats Section */
+.srv-wrapper .srv-stats-section {
+  position: relative;
+  z-index: 10;
+  padding: 100px 0;
+  background: transparent;
+}
+
+.srv-wrapper .srv-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.srv-wrapper .srv-stat-card {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.srv-wrapper .srv-stat-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+}
+
+.srv-wrapper .srv-stat-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: srvRotate 4s linear infinite;
+}
+
+@keyframes srvRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.srv-wrapper .srv-stat-card:hover .srv-stat-icon {
+  animation-play-state: paused;
+}
+
+.srv-wrapper .srv-stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.srv-wrapper .srv-stat-label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Service CTA Section */
+.srv-wrapper .srv-cta-section {
+  position: relative;
+  z-index: 10;
+  padding: 120px 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), transparent);
+}
+
+.srv-wrapper .srv-cta-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.srv-wrapper .srv-cta-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.srv-wrapper .srv-cta-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+}
+
+.srv-wrapper .srv-cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Service Modal */
+.srv-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  animation: srvFadeIn 0.3s ease;
+}
+
+@keyframes srvFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.srv-modal {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: srvSlideUp 0.3s ease;
+}
+
+@keyframes srvSlideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.srv-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.srv-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+}
+
+.srv-modal-content {
+  padding: 40px;
+}
+
+.srv-modal-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.srv-modal-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.srv-modal-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.srv-modal-header p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.srv-modal-body img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.srv-modal-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+.srv-modal-body h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.srv-modal-features {
+  list-style: none;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.srv-modal-features li {
+  padding: 10px 0;
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  padding-left: 30px;
+}
+
+.srv-modal-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.srv-modal-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.srv-modal-cta {
+  width: 100%;
+  padding: 18px;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.srv-modal-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+}
+
+/* Service Animation Classes */
+.srv-wrapper .srv-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.srv-wrapper .srv-animate.srv-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Service Responsive Design */
+@media (max-width: 1200px) {
+  .srv-wrapper .srv-services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .srv-wrapper .srv-hero-title {
+    font-size: 3.5rem;
+  }
+
+  .srv-wrapper .srv-process-timeline {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .srv-wrapper .srv-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .srv-wrapper .srv-hero {
+    padding: 80px 20px;
+    min-height: 80vh;
+  }
+
+  .srv-wrapper .srv-hero-title {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+  }
+
+  .srv-wrapper .srv-hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .srv-wrapper .srv-hero-description {
+    font-size: 1rem;
+  }
+
+  .srv-wrapper .srv-hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .srv-wrapper .srv-btn-primary,
+  .srv-wrapper .srv-btn-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .srv-wrapper .srv-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .srv-wrapper .srv-filter-wrapper {
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .srv-wrapper .srv-process-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .srv-wrapper .srv-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .srv-wrapper .srv-section-title {
+    font-size: 2.5rem;
+  }
+
+  .srv-wrapper .srv-cta-title {
+    font-size: 2rem;
+  }
+
+  .srv-modal-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .srv-wrapper .srv-hero-title {
+    font-size: 2rem;
+  }
+
+  .srv-wrapper .srv-hero-subtitle {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  .srv-wrapper .srv-filter-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .srv-wrapper .srv-card-title {
+    font-size: 1.3rem;
+  }
+
+  .srv-wrapper .srv-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .srv-wrapper .srv-stat-card {
+    padding: 30px 20px;
+  }
+
+  .srv-wrapper .srv-section-title {
+    font-size: 2rem;
+  }
+
+  .srv-wrapper .srv-section-subtitle {
+    font-size: 1rem;
+  }
+
+  .srv-wrapper .srv-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .srv-wrapper .srv-btn-primary,
+  .srv-wrapper .srv-btn-secondary {
+    width: 100%;
+  }
+}
+
+/* Service Scrollbar Styling - Scoped */
+.srv-wrapper::-webkit-scrollbar {
+  width: 10px;
+}
+
+.srv-wrapper::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.srv-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.srv-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Ensure no styles leak outside */
+.srv-wrapper h1,
+.srv-wrapper h2,
+.srv-wrapper h3,
+.srv-wrapper h4,
+.srv-wrapper h5,
+.srv-wrapper h6,
+.srv-wrapper p,
+.srv-wrapper span,
+.srv-wrapper div,
+.srv-wrapper button,
+.srv-wrapper input,
+.srv-wrapper textarea,
+.srv-wrapper select,
+.srv-wrapper ul,
+.srv-wrapper ol,
+.srv-wrapper li,
+.srv-wrapper a {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Override any global styles that might affect this component */
+.srv-wrapper {
+  isolation: isolate;
+}
