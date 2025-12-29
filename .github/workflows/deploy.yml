@@ -1,6 +1,7 @@
 name: React + vite to github pages CI/CD
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
