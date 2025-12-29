@@ -1,17 +1,29 @@
+/* ============================================
+   AUDIONEXZ FOOTER STYLES - ISOLATED
+   Prefix: anx-footer
+   ============================================ */
+
 /* Import Poppins Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* Footer Main Styles */
-.footer {
+.anx-footer {
   background: linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #1e90ff 100%);
   font-family: 'Poppins', sans-serif;
   color: #ffffff;
   padding: 60px 0 0 0;
   width: 100%;
+  box-sizing: border-box;
+}
+
+.anx-footer *,
+.anx-footer *::before,
+.anx-footer *::after {
+  box-sizing: border-box;
 }
 
 /* Footer Container */
-.footer-container {
+.anx-footer__container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -22,23 +34,26 @@
 }
 
 /* Footer Columns */
-.footer-column {
+.anx-footer__column {
   flex: 1;
   min-width: 200px;
   margin-bottom: 30px;
 }
 
 /* Footer Headings */
-.footer-heading {
+.anx-footer__heading {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 25px;
   color: #ffffff;
   position: relative;
   padding-bottom: 10px;
+  margin-top: 0;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
-.footer-heading::after {
+.anx-footer__heading::after {
   content: '';
   position: absolute;
   left: 0;
@@ -50,42 +65,45 @@
 }
 
 /* Address Styles */
-.footer-address {
+.anx-footer__address {
   line-height: 1.8;
   font-size: 0.95rem;
   font-weight: 300;
 }
 
-.footer-address p {
+.anx-footer__address p {
   margin: 5px 0;
   color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
-.footer-contact-info {
+.anx-footer__contact-info {
   margin-top: 15px !important;
 }
 
-.footer-contact-info span {
+.anx-footer__contact-info span {
   color: #ffffff;
   transition: color 0.3s ease;
 }
 
-.footer-contact-info span:hover {
+.anx-footer__contact-info span:hover {
   color: #1e90ff;
 }
 
 /* Navigation Links Styles */
-.footer-links {
+.anx-footer__links {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-links li {
+.anx-footer__links li {
   margin-bottom: 12px;
+  list-style: none;
 }
 
-.footer-link {
+.anx-footer__link {
   color: #ffffff;
   text-decoration: none;
   font-size: 0.95rem;
@@ -94,9 +112,11 @@
   position: relative;
   padding-left: 0;
   display: inline-block;
+  background: none;
+  border: none;
 }
 
-.footer-link::before {
+.anx-footer__link::before {
   content: '→';
   position: absolute;
   left: -20px;
@@ -105,29 +125,30 @@
   color: #1e90ff;
 }
 
-.footer-link:hover {
+.anx-footer__link:hover {
   color: #1e90ff;
   padding-left: 20px;
+  text-decoration: none;
 }
 
-.footer-link:hover::before {
+.anx-footer__link:hover::before {
   opacity: 1;
   left: 0;
 }
 
 /* Active Link Style */
-.footer-link.active {
+.anx-footer__link.active {
   color: #1e90ff;
 }
 
 /* Social Icons Styles */
-.footer-social {
+.anx-footer__social {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.social-icon {
+.anx-footer__social-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,7 +163,7 @@
   transition: all 0.3s ease;
 }
 
-.social-icon:hover {
+.anx-footer__social-icon:hover {
   background-color: #1e90ff;
   border-color: #1e90ff;
   color: #ffffff;
@@ -150,13 +171,18 @@
   box-shadow: 0 10px 20px rgba(30, 144, 255, 0.3);
 }
 
+.anx-footer__social-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
 /* Footer Bottom - Copyright */
-.footer-bottom {
+.anx-footer__bottom {
   margin-top: 40px;
   text-align: center;
 }
 
-.footer-divider {
+.anx-footer__divider {
   width: 100%;
   height: 1px;
   background: linear-gradient(
@@ -168,7 +194,7 @@
   margin-bottom: 20px;
 }
 
-.footer-copyright {
+.anx-footer__copyright {
   font-size: 0.9rem;
   font-weight: 400;
   color: #ffffff;
@@ -178,84 +204,95 @@
   letter-spacing: 0.5px;
 }
 
-/* Responsive Design */
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
 @media screen and (max-width: 992px) {
-  .footer-container {
+  .anx-footer__container {
     justify-content: flex-start;
   }
 
-  .footer-column {
+  .anx-footer__column {
     flex: 1 1 45%;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .footer {
+  .anx-footer {
     padding: 40px 0 0 0;
   }
 
-  .footer-container {
+  .anx-footer__container {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .footer-column {
+  .anx-footer__column {
     flex: 1 1 100%;
     width: 100%;
     max-width: 300px;
   }
 
-  .footer-heading::after {
+  .anx-footer__heading::after {
     left: 50%;
     transform: translateX(-50%);
   }
 
-  .footer-address {
+  .anx-footer__address {
     text-align: center;
   }
 
-  .footer-links {
+  .anx-footer__links {
     text-align: center;
   }
 
-  .footer-link::before {
+  .anx-footer__link::before {
     display: none;
   }
 
-  .footer-link:hover {
+  .anx-footer__link:hover {
     padding-left: 0;
   }
 
-  .footer-social {
+  .anx-footer__social {
     justify-content: center;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .footer-heading {
+  .anx-footer__heading {
     font-size: 1.3rem;
   }
 
-  .footer-link,
-  .footer-address p {
+  .anx-footer__link,
+  .anx-footer__address p {
     font-size: 0.9rem;
   }
 
-  .social-icon {
+  .anx-footer__social-icon {
     width: 45px;
     height: 45px;
     font-size: 1.3rem;
   }
 
-  .footer-copyright {
+  .anx-footer__social-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .anx-footer__copyright {
     font-size: 0.8rem;
     padding: 15px 10px;
   }
 }
 
-/* Animation for footer on load */
-@keyframes fadeInUp {
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes anx-footer-fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -266,18 +303,45 @@
   }
 }
 
-.footer-column {
-  animation: fadeInUp 0.6s ease forwards;
+.anx-footer__column {
+  animation: anx-footer-fadeInUp 0.6s ease forwards;
 }
 
-.footer-column:nth-child(1) {
+.anx-footer__column:nth-child(1) {
   animation-delay: 0.1s;
 }
 
-.footer-column:nth-child(2) {
+.anx-footer__column:nth-child(2) {
   animation-delay: 0.2s;
 }
 
-.footer-column:nth-child(3) {
+.anx-footer__column:nth-child(3) {
   animation-delay: 0.3s;
+}
+
+/* ============================================
+   RESET OVERRIDES - Prevent external styles
+   ============================================ */
+
+.anx-footer a {
+  text-decoration: none;
+  background: none;
+}
+
+.anx-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.anx-footer li {
+  list-style: none;
+}
+
+.anx-footer h3 {
+  margin-top: 0;
+}
+
+.anx-footer p {
+  margin: 5px 0;
 }

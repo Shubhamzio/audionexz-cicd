@@ -43,35 +43,35 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer">
-      <div className="footer-container">
+    <footer className="anx-footer">
+      <div className="anx-footer__container">
 
         {/* Column 1 - Address */}
-        <div className="footer-column">
-          <h3 className="footer-heading">Address</h3>
-          <div className="footer-address">
+        <div className="anx-footer__column">
+          <h3 className="anx-footer__heading">Address</h3>
+          <div className="anx-footer__address">
             <p>123 Business Street</p>
             <p>Suite 456</p>
             <p>City, State 12345</p>
             <p>Country</p>
-            <p className="footer-contact-info">
+            <p className="anx-footer__contact-info">
               <span>Phone: +1 234 567 8900</span>
             </p>
-            <p className="footer-contact-info">
+            <p className="anx-footer__contact-info">
               <span>Email: info@audionexz.com</span>
             </p>
           </div>
         </div>
 
         {/* Column 2 - Navigation Links */}
-        <div className="footer-column">
-          <h3 className="footer-heading">Links</h3>
-          <ul className="footer-links">
+        <div className="anx-footer__column">
+          <h3 className="anx-footer__heading">Links</h3>
+          <ul className="anx-footer__links">
             {links.map((link, index) => (
               <li key={index}>
                 <Link
                   to={link.path}
-                  className="footer-link"
+                  className="anx-footer__link"
                   onClick={handleLinkClick}
                 >
                   {link.name}
@@ -82,14 +82,14 @@ const Footer = () => {
         </div>
 
         {/* Column 3 - Social Logos */}
-        <div className="footer-column">
-          <h3 className="footer-heading">Social</h3>
-          <div className="footer-social">
+        <div className="anx-footer__column">
+          <h3 className="anx-footer__heading">Social</h3>
+          <div className="anx-footer__social">
             {socialLinks.map((social, index) => (
               <a
                 key={index}
                 href={social.href}
-                className="social-icon"
+                className="anx-footer__social-icon"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.name}
@@ -103,9 +103,9 @@ const Footer = () => {
       </div>
 
       {/* Copyright Section */}
-      <div className="footer-bottom">
-        <div className="footer-divider"></div>
-        <p className="footer-copyright">
+      <div className="anx-footer__bottom">
+        <div className="anx-footer__divider"></div>
+        <p className="anx-footer__copyright">
           Audionexz &copy; {currentYear}. All Rights Reserved.
         </p>
       </div>
