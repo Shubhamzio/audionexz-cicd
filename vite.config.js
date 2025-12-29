@@ -7,6 +7,6 @@ export default defineConfig({
   base:'/https://github.com/Shubhamzio/audionexz-cicd/',
   server: {
     port: 3000,
-    open: true,
+
   },
 })
