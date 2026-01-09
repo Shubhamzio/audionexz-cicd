@@ -60,7 +60,7 @@ const Home = () => {
       image: "/assets/auditorium.jpg"
     }
   ];
-
+ // logos not showing
   // Partner Logos
   const partnerLogos = [
     { id: 1, name: "Partner 1", logo: "/assets/antelope.jpg" },
