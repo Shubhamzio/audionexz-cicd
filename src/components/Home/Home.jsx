@@ -9,111 +9,116 @@ const Home = () => {
   const [isVisible, setIsVisible] = useState({});
   const sectionRefs = useRef([]);
 
+  // Helper function to get correct image path
+  const getImagePath = (path) => {
+    const base = import.meta.env.BASE_URL || '/';
+    // Remove leading slash from path if base already ends with /
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+    return `${base}${cleanPath}`;
+  };
+
   // Hero Carousel Data
   const heroSlides = [
     {
       id: 1,
       heading: "Recording Studios",
       subheading: "Where Sound Meets Perfection",
-      image: "/assets/studio.jpg"
+      image: getImagePath("/assets/studio.jpg")
     },
     {
       id: 2,
       heading: "Home Theatres",
       subheading: "Cinematic Experience at Home",
-      image: "/assets/home-theatre.jpg"
+      image: getImagePath("/assets/home-theatre.jpg")
     },
     {
       id: 3,
       heading: "Cafe and Restaurant",
       subheading: "Ambiance That Speaks Volumes",
-      image: "/assets/retaurant.jpg"
+      image: getImagePath("/assets/retaurant.jpg")
     },
     {
       id: 4,
       heading: "Pubs and Lounges",
       subheading: "Immersive Nightlife Acoustics",
-      image: "/assets/pub.jpg"
+      image: getImagePath("/assets/pub.jpg")
     },
     {
       id: 5,
       heading: "Banquets",
       subheading: "Grand Events, Perfect Sound",
-      image: "/assets/banquets.jpg"
+      image: getImagePath("/assets/banquets.jpg")
     },
     {
       id: 6,
       heading: "Hotels",
       subheading: "Luxury Meets Acoustic Excellence",
-      image: "/assets/hotels.jpg"
+      image: getImagePath("/assets/hotels.jpg")
     },
     {
       id: 7,
       heading: "Educational Institute",
       subheading: "Learning Spaces That Inspire",
-      image: "/assets/educational_Institute.jpg"
+      image: getImagePath("/assets/educational_Institute.jpg")
     },
     {
       id: 8,
       heading: "Auditoriums",
       subheading: "Engineered for Every Performance",
-      image: "/assets/auditorium.jpg"
+      image: getImagePath("/assets/auditorium.jpg")
     }
   ];
- // logos not showing
+
   // Partner Logos
   const partnerLogos = [
-    { id: 1, name: "Partner 1", logo: "/assets/antelope.jpg" },
-    { id: 2, name: "Partner 2", logo: "/assets/audio-technica.png" },
-    { id: 3, name: "Partner 3", logo: "/assets/Audioease-Hero.png" },
-    { id: 4, name: "Partner 4", logo: "/assets/audix-logo.png" },
-    { id: 5, name: "Partner 5", logo: "/assets/avid-logo-png.png" },
-    { id: 6, name: "Partner 6", logo: "/assets/Behringer_Logo.png" },
-    { id: 7, name: "Partner 7", logo: "/assets/beta-three.png" },
-    { id: 8, name: "Partner 8", logo: "/assets/db-technologies.jpg" },
-    { id: 9, name: "Partner 9", logo: "/assets/Drawmer.png" },
-    { id: 10, name: "Partner 10", logo: "/assets/eve-audio.png" },
-    { id: 11, name: "Partner 11", logo: "/assets/Gelelec_logo.svg.png" },
-    { id: 12, name: "Partner 12", logo: "/assets/hercules.jpg" },
-    { id: 13, name: "Partner 13", logo: "/assets/heritage.png" },
-    { id: 14, name: "Partner 14", logo: "/assets/JBL-Logo.svg.png" },
-    { id: 15, name: "Partner 15", logo: "/assets/KM_KoenigMeyer_Logo_RGB.jpg" },
-    { id: 16, name: "Partner 16", logo: "/assets/krk-systems-logo.jpg" },
-    { id: 17, name: "Partner 17", logo: "/assets/lewitt.png" },
-    { id: 18, name: "Partner 18", logo: "/assets/lexicon-by-harman-logo-vector.png" },
-    { id: 19, name: "Partner 19", logo: "/assets/Logo-Universal-Audio-.jpg" },
-    { id: 20, name: "Partner 20", logo: "/assets/MAN-MSLAM-4.jpg" },
-    { id: 21, name: "Partner 21", logo: "/assets/Logo-Universal-Audio-.jpg" },
-    { id: 22, name: "Partner 22", logo: "/assets/MAN-MSLAM-4.jpg" },
-    { id: 23, name: "Partner 23", logo: "/assets/neumann-berlin-logo-vector.png" },
-    { id: 24, name: "Partner 24", logo: "/assets/prism-sound.png" },
-    { id: 25, name: "Partner 25", logo: "/assets/RME.png" },
-    { id: 26, name: "Partner 26", logo: "/assets/Rupert-Neve-Logo.jpg" },
-    { id: 27, name: "Partner 27", logo: "/assets/senn.png" },
-    { id: 28, name: "Partner 28", logo: "/assets/slate-digi.png" },
-    { id: 29, name: "Partner 29 ", logo: "/assets/solid-state-logic.png" },
-    { id: 30, name: "Partner 30 ", logo: "/assets/sound-reference.png" },
-    { id: 31, name: "Partner 31 ", logo: "/assets/tegeler.png" },
-    { id: 32, name: "Partner 32 ", logo: "/assets/telefunken.png" },
-    { id: 33, name: "Partner 33 ", logo: "/assets/ultimate support.png" },
-    { id: 33, name: "Partner 34 ", logo: "/assets/yamaha.png" },
-
+    { id: 1, name: "Antelope", logo: getImagePath("/assets/antelope.jpg") },
+    { id: 2, name: "Audio Technica", logo: getImagePath("/assets/audio-technica.png") },
+    { id: 3, name: "Audioease", logo: getImagePath("/assets/Audioease-Hero.png") },
+    { id: 4, name: "Audix", logo: getImagePath("/assets/audix-logo.png") },
+    { id: 5, name: "Avid", logo: getImagePath("/assets/avid-logo-png.png") },
+    { id: 6, name: "Behringer", logo: getImagePath("/assets/Behringer_Logo.png") },
+    { id: 7, name: "Beta Three", logo: getImagePath("/assets/beta-three.png") },
+    { id: 8, name: "DB Technologies", logo: getImagePath("/assets/db-technologies.jpg") },
+    { id: 9, name: "Drawmer", logo: getImagePath("/assets/Drawmer.png") },
+    { id: 10, name: "Eve Audio", logo: getImagePath("/assets/eve-audio.png") },
+    { id: 11, name: "Genelec", logo: getImagePath("/assets/Gelelec_logo.svg.png") },
+    { id: 12, name: "Hercules", logo: getImagePath("/assets/hercules.jpg") },
+    { id: 13, name: "Heritage", logo: getImagePath("/assets/heritage.png") },
+    { id: 14, name: "JBL", logo: getImagePath("/assets/JBL-Logo.svg.png") },
+    { id: 15, name: "K&M", logo: getImagePath("/assets/KM_KoenigMeyer_Logo_RGB.jpg") },
+    { id: 16, name: "KRK", logo: getImagePath("/assets/krk-systems-logo.jpg") },
+    { id: 17, name: "Lewitt", logo: getImagePath("/assets/lewitt.png") },
+    { id: 18, name: "Lexicon", logo: getImagePath("/assets/lexicon-by-harman-logo-vector.png") },
+    { id: 19, name: "Universal Audio", logo: getImagePath("/assets/Logo-Universal-Audio-.jpg") },
+    { id: 20, name: "Manley", logo: getImagePath("/assets/MAN-MSLAM-4.jpg") },
+    { id: 21, name: "Neumann", logo: getImagePath("/assets/neumann-berlin-logo-vector.png") },
+    { id: 22, name: "Prism Sound", logo: getImagePath("/assets/prism-sound.png") },
+    { id: 23, name: "RME", logo: getImagePath("/assets/RME.png") },
+    { id: 24, name: "Rupert Neve", logo: getImagePath("/assets/Rupert-Neve-Logo.jpg") },
+    { id: 25, name: "Sennheiser", logo: getImagePath("/assets/senn.png") },
+    { id: 26, name: "Slate Digital", logo: getImagePath("/assets/slate-digi.png") },
+    { id: 27, name: "SSL", logo: getImagePath("/assets/solid-state-logic.png") },
+    { id: 28, name: "Sound Reference", logo: getImagePath("/assets/sound-reference.png") },
+    { id: 29, name: "Tegeler", logo: getImagePath("/assets/tegeler.png") },
+    { id: 30, name: "Telefunken", logo: getImagePath("/assets/telefunken.png") },
+    { id: 31, name: "Ultimate Support", logo: getImagePath("/assets/ultimate support.png") },
+    { id: 32, name: "Yamaha", logo: getImagePath("/assets/yamaha.png") },
   ];
 
   // Projects Data
   const projects = [
-    { id: 1, name: "Room For Squares", place: "Kolkata, India", image: "/assets/projects/project1.jpg" },
-    { id: 2, name: "Echo Chamber", place: "Delhi, India", image: "/assets/projects/project2.jpg" },
-    { id: 3, name: "Rhythm House", place: "Bangalore, India", image: "/assets/projects/project3.jpg" },
-    { id: 4, name: "Sound Haven", place: "Chennai, India", image: "/assets/projects/project4.jpg" },
-    { id: 5, name: "Melody Manor", place: "Hyderabad, India", image: "/assets/projects/project5.jpg" },
-    { id: 6, name: "Acoustic Dreams", place: "Pune, India", image: "/assets/projects/project6.jpg" },
-    { id: 7, name: "Harmony Hub", place: "Kolkata, India", image: "/assets/projects/project7.jpg" },
-    { id: 8, name: "Beat Factory", place: "Ahmedabad, India", image: "/assets/projects/project8.jpg" },
-    { id: 9, name: "Sonic Palace", place: "Jaipur, India", image: "/assets/projects/project9.jpg" },
-    { id: 10, name: "Wave Studio", place: "Lucknow, India", image: "/assets/projects/project10.jpg" },
-    { id: 11, name: "Audio Oasis", place: "Goa, India", image: "/assets/projects/project11.jpg" },
-    { id: 12, name: "Frequency Lab", place: "Chandigarh, India", image: "/assets/projects/project12.jpg" },
+    { id: 1, name: "Room For Squares", place: "Kolkata, India", image: getImagePath("/assets/projects/project1.jpg") },
+    { id: 2, name: "Echo Chamber", place: "Delhi, India", image: getImagePath("/assets/projects/project2.jpg") },
+    { id: 3, name: "Rhythm House", place: "Bangalore, India", image: getImagePath("/assets/projects/project3.jpg") },
+    { id: 4, name: "Sound Haven", place: "Chennai, India", image: getImagePath("/assets/projects/project4.jpg") },
+    { id: 5, name: "Melody Manor", place: "Hyderabad, India", image: getImagePath("/assets/projects/project5.jpg") },
+    { id: 6, name: "Acoustic Dreams", place: "Pune, India", image: getImagePath("/assets/projects/project6.jpg") },
+    { id: 7, name: "Harmony Hub", place: "Kolkata, India", image: getImagePath("/assets/projects/project7.jpg") },
+    { id: 8, name: "Beat Factory", place: "Ahmedabad, India", image: getImagePath("/assets/projects/project8.jpg") },
+    { id: 9, name: "Sonic Palace", place: "Jaipur, India", image: getImagePath("/assets/projects/project9.jpg") },
+    { id: 10, name: "Wave Studio", place: "Lucknow, India", image: getImagePath("/assets/projects/project10.jpg") },
+    { id: 11, name: "Audio Oasis", place: "Goa, India", image: getImagePath("/assets/projects/project11.jpg") },
+    { id: 12, name: "Frequency Lab", place: "Chandigarh, India", image: getImagePath("/assets/projects/project12.jpg") },
   ];
 
   // Testimonials Data
@@ -122,42 +127,42 @@ const Home = () => {
       id: 1,
       name: "",
       role: "Music Producer",
-      avatar: "/assets/testimonials/avatar1.jpg",
+      avatar: getImagePath("/assets/testimonials/avatar1.jpg"),
       text: "Audionexz transformed our studio into a world-class recording facility. The acoustic treatment is phenomenal!"
     },
     {
       id: 2,
       name: "Priya Sharma",
       role: "Restaurant Owner",
-      avatar: "/assets/testimonials/avatar2.jpg",
+      avatar: getImagePath("/assets/testimonials/avatar2.jpg"),
       text: "The ambiance they created for our restaurant has been getting constant compliments from our guests."
     },
     {
       id: 3,
       name: "Amit Patel",
       role: "Hotel Manager",
-      avatar: "/assets/testimonials/avatar3.jpg",
+      avatar: getImagePath("/assets/testimonials/avatar3.jpg"),
       text: "Professional team with incredible attention to detail. Our conference rooms now have perfect acoustics."
     },
     {
       id: 4,
       name: "Sneha Reddy",
       role: "School Principal",
-      avatar: "/assets/testimonials/avatar4.jpg",
+      avatar: getImagePath("/assets/testimonials/avatar4.jpg"),
       text: "The auditorium soundproofing exceeded our expectations. Students can now enjoy clear audio during events."
     },
     {
       id: 5,
       name: "Vikram Singh",
       role: "Pub Owner",
-      avatar: "/assets/testimonials/avatar5.jpg",
+      avatar: getImagePath("/assets/testimonials/avatar5.jpg"),
       text: "Our lounge now has the perfect acoustic balance. The team at Audionexz truly understands sound."
     },
     {
       id: 6,
       name: "Meera Nair",
       role: "Home Theatre Enthusiast",
-      avatar: "/assets/testimonials/avatar6.jpg",
+      avatar: getImagePath("/assets/testimonials/avatar6.jpg"),
       text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
     },
   ];
@@ -170,7 +175,7 @@ const Home = () => {
       excerpt: "Discover how sound waves interact with materials and spaces to create the perfect listening environment.",
       date: "Dec 15, 2024",
       category: "Acoustics",
-      image: "/assets/articles/article1.jpg",
+      image: getImagePath("/assets/articles/article1.jpg"),
       readTime: "5 min read"
     },
     {
@@ -179,7 +184,7 @@ const Home = () => {
       excerpt: "Everything you need to know about setting up a cinema-quality home theatre in your living space.",
       date: "Dec 10, 2024",
       category: "Home Theatre",
-      image: "/assets/articles/article2.jpg",
+      image: getImagePath("/assets/articles/article2.jpg"),
       readTime: "8 min read"
     },
     {
@@ -188,7 +193,7 @@ const Home = () => {
       excerpt: "Understanding the crucial difference between keeping sound in and optimizing sound within a space.",
       date: "Dec 5, 2024",
       category: "Education",
-      image: "/assets/articles/article3.jpg",
+      image: getImagePath("/assets/articles/article3.jpg"),
       readTime: "6 min read"
     },
   ];
@@ -258,9 +263,7 @@ const Home = () => {
                   <span className="audionexz-home__hero-heading-line audionexz-home__hero-heading-line--right"></span>
                 </h1>
                 <h3 className="audionexz-home__hero-subheading">{slide.subheading}</h3>
-                <div className="audionexz-home__hero-cta">
-
-                </div>
+                <div className="audionexz-home__hero-cta"></div>
               </div>
             </div>
           ))}
@@ -345,7 +348,6 @@ const Home = () => {
           <div className="audionexz-home__story-visual">
             <div className="audionexz-home__story-quote">
               <svg className="audionexz-home__story-quote-icon" viewBox="0 0 24 24" fill="currentColor">
-                {/* <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/> */}
               </svg>
               <p className="audionexz-home__story-quote-text">
                 "Sound is the vocabulary of nature, and we are its eloquent translators."
@@ -354,7 +356,7 @@ const Home = () => {
             <div className="audionexz-home__story-image-wrapper">
               <div className="audionexz-home__story-image-glow"></div>
               <img
-                src="/assets/about/story-image.jpg"
+                src={getImagePath("/assets/about/story-image.jpg")}
                 alt="Audionexz Team"
                 className="audionexz-home__story-image"
               />
@@ -520,7 +522,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="audionexz-home__testimonials-card-rating">
-                    {[...Array(10)].map((_, i) => (
+                    {[...Array(5)].map((_, i) => (
                       <svg key={i} viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                       </svg>
