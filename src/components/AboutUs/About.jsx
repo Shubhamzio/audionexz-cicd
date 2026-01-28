@@ -37,7 +37,7 @@ const About = () => {
     {
       name: 'Tanmoy Das',
       role: 'Co-Founder & CEO',
-      image: '/assets/founders/tanmoy.jpg',
+      image: '/assets/Tanmoy_Das.jpg',
       description: 'Visionary leader with expertise in acoustic engineering and audio system design.',
       social: {
         linkedin: '#',
@@ -47,7 +47,7 @@ const About = () => {
     {
       name: 'Megha Mukherjee',
       role: 'Co-Founder & COO',
-      image: '/assets/founders/megha.jpg',
+      image: '/assets/megha_das.jpg',
       description: 'Strategic operations expert driving excellence in client solutions and partnerships.',
       social: {
         linkedin: '#',
