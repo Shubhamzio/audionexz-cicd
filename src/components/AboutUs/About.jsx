@@ -37,7 +37,7 @@ const About = () => {
     {
       name: 'Tanmoy Das',
       role: 'Co-Founder & CEO',
-      image: '/assets/Tanmoy_Das.jpg',
+      image: '/assets/Tanmoy_Das.jpeg',
       description: 'Visionary leader with expertise in acoustic engineering and audio system design.',
       social: {
         linkedin: '#',
@@ -47,7 +47,7 @@ const About = () => {
     {
       name: 'Megha Mukherjee',
       role: 'Co-Founder & COO',
-      image: '/assets/megha_das.jpg',
+      image: '/assets/Megha_das.jpeg',
       description: 'Strategic operations expert driving excellence in client solutions and partnerships.',
       social: {
         linkedin: '#',
@@ -135,7 +135,7 @@ const About = () => {
         <div className="anx-about__hero-content">
           <div className="anx-about__hero-badge anx-about__animate">
             <span className="anx-about__hero-badge-icon">🎵</span>
-            <span className="anx-about__hero-badge-text">Established 2020</span>
+            <span className="anx-about__hero-badge-text">Established 2023</span>
           </div>
 
           <h1 className="anx-about__hero-title anx-about__animate">
