@@ -67,7 +67,7 @@ const Projects = () => {
       year: "2023",
       description: "A comprehensive post-production suite for film and television. Equipped with 7.1.4 surround sound monitoring, ADR booth, and Foley stage. This facility serves as the creative hub for major South Indian film productions.",
       features: ["7.1.4 Surround", "ADR Suite", "Foley Stage", "Pro Tools HDX"],
-      image: getImagePath("assets/sunshine_studi_.jpeg"),
+      image: getImagePath("assets/sunshine_studio_.jpeg"),
       gradient: "linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)"
     },
     {
@@ -78,24 +78,24 @@ const Projects = () => {
       year: "2023",
       description: "A precision mastering environment built to the highest international standards. Features custom-built monitoring with Genelec 'The Ones' series and analog processing from Rupert Neve Designs. Every detail was crafted for critical listening.",
       features: ["Genelec Monitoring", "Rupert Neve", "Acoustic Treatment", "Reference Grade"],
-      image: getImagePath("assets/projects/project4.jpg"),
+      image: getImagePath("assets/Nilabjo_Niyogi_studio_Niyogi.jpeg"),
       gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)"
     },
     {
       id: 5,
-      name: "Rhythm House",
-      location: "Chennai, Tamil Nadu",
-      category: "Live Room",
+      name: "JMR Music Studio",
+      location: "Jyotirmoy Roy",
+      category: "Music Studio",
       year: "2023",
       description: "A versatile live recording space designed for orchestras and large ensembles. The room features adjustable acoustic curtains, a spacious 2000 sq ft tracking room, and sight lines optimized for conductor visibility.",
       features: ["2000 sq ft", "Orchestra Ready", "Variable Curtains", "SSL AWS"],
-      image: getImagePath("assets/projects/project5.jpg"),
+      image: getImagePath("assets/JMR_Music_Studio.jpeg"),
       gradient: "linear-gradient(135deg, #ec4899 0%, #be185d 100%)"
     },
     {
       id: 6,
-      name: "Beat Factory",
-      location: "Hyderabad, Telangana",
+      name: "Sound Of Silenece",
+      location: "Chanchal Roy",
       category: "Production Suite",
       year: "2024",
       description: "A modern production suite tailored for electronic music and hip-hop producers. Features an immersive monitoring environment, premium synthesizers, and seamless integration with major DAWs. The perfect space for chart-topping hits.",
