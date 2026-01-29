@@ -250,12 +250,7 @@ const Projects = () => {
                       <div className="anxProjects__cardNumber">
                         <span>{String(project.id).padStart(2, '0')}</span>
                       </div>
-                      <button className="anxProjects__cardButton">
 
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                      </button>
                     </div>
                   </div>
 
@@ -331,7 +326,7 @@ const Projects = () => {
             </blockquote>
             <div className="anxProjects__testimonialAuthor">
               <div className="anxProjects__testimonialAuthorInfo">
-                <h4 className="anxProjects__testimonialAuthorName">Rahul Sharma</h4>
+                <h4 className="anxProjects__testimonialAuthorName">Hrick Sengupta</h4>
                 <p className="anxProjects__testimonialAuthorRole">Founder, Room For Squares Studios</p>
               </div>
             </div>

@@ -167,36 +167,7 @@ const Home = () => {
     },
   ];
 
-  // Articles Data
-  const articles = [
-    {
-      id: 1,
-      title: "The Science Behind Perfect Acoustics",
-      excerpt: "Discover how sound waves interact with materials and spaces to create the perfect listening environment.",
-      date: "Dec 15, 2024",
-      category: "Acoustics",
-      image: getImagePath("/assets/articles/article1.jpg"),
-      readTime: "5 min read"
-    },
-    {
-      id: 2,
-      title: "Home Theatre Setup: A Complete Guide",
-      excerpt: "Everything you need to know about setting up a cinema-quality home theatre in your living space.",
-      date: "Dec 10, 2024",
-      category: "Home Theatre",
-      image: getImagePath("/assets/articles/article2.jpg"),
-      readTime: "8 min read"
-    },
-    {
-      id: 3,
-      title: "Soundproofing vs Sound Treatment",
-      excerpt: "Understanding the crucial difference between keeping sound in and optimizing sound within a space.",
-      date: "Dec 5, 2024",
-      category: "Education",
-      image: getImagePath("/assets/articles/article3.jpg"),
-      readTime: "6 min read"
-    },
-  ];
+
 
   // Auto-slide for hero carousel
   useEffect(() => {
@@ -535,82 +506,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== SECTION 6: ARTICLES ===== */}
-      <section
-        id="articles-section"
-        ref={(el) => (sectionRefs.current[4] = el)}
-        className={`audionexz-home__articles ${isVisible['articles-section'] ? 'audionexz-home__articles--visible' : ''}`}
-      >
-        <div className="audionexz-home__articles-container">
-          <div className="audionexz-home__articles-header">
-            <div className="audionexz-home__articles-header-left">
-              <h4 className="audionexz-home__articles-subtitle">BLOG</h4>
-              <h2 className="audionexz-home__articles-heading">
-                Our Recent <span className="audionexz-home__articles-heading--highlight">Articles</span>
-              </h2>
-              <p className="audionexz-home__articles-description">
-                Stay updated with the latest in acoustic technology and sound design
-              </p>
-            </div>
-            <button className="audionexz-home__articles-view-all">
-              <span>View All Articles</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
 
-          <div className="audionexz-home__articles-grid">
-            <article className="audionexz-home__articles-featured">
-              <div className="audionexz-home__articles-featured-image">
-                <img src={articles[0].image} alt={articles[0].title} />
-                <div className="audionexz-home__articles-featured-category">{articles[0].category}</div>
-              </div>
-              <div className="audionexz-home__articles-featured-content">
-                <div className="audionexz-home__articles-meta">
-                  <span className="audionexz-home__articles-date">{articles[0].date}</span>
-                  <span className="audionexz-home__articles-separator">•</span>
-                  <span className="audionexz-home__articles-read-time">{articles[0].readTime}</span>
-                </div>
-                <h3 className="audionexz-home__articles-featured-title">{articles[0].title}</h3>
-                <p className="audionexz-home__articles-featured-excerpt">{articles[0].excerpt}</p>
-                <button className="audionexz-home__articles-read-more">
-                  <span>Read More</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-            </article>
-
-            <div className="audionexz-home__articles-list">
-              {articles.slice(1).map((article) => (
-                <article key={article.id} className="audionexz-home__articles-card">
-                  <div className="audionexz-home__articles-card-image">
-                    <img src={article.image} alt={article.title} />
-                  </div>
-                  <div className="audionexz-home__articles-card-content">
-                    <div className="audionexz-home__articles-card-category">{article.category}</div>
-                    <h4 className="audionexz-home__articles-card-title">{article.title}</h4>
-                    <div className="audionexz-home__articles-card-meta">
-                      <span>{article.date}</span>
-                      <span>•</span>
-                      <span>{article.readTime}</span>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== FLOATING AUDIO VISUALIZER ===== */}
-      <div className="audionexz-home__audio-visualizer">
-        {[...Array(5)].map((_, i) => (
-          <span key={i} className="audionexz-home__audio-bar"></span>
-        ))}
-      </div>
       <Footer />
     </div>
   );
