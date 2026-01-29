@@ -9,9 +9,7 @@ const About = () => {
 
   // ✅ Helper function to get correct image path for GitHub Pages
   const getImagePath = (path) => {
-    // For Vite projects
     const base = import.meta.env.BASE_URL || '/';
-    // Remove leading slash from path if present
     const cleanPath = path.startsWith('/') ? path.slice(1) : path;
     return `${base}${cleanPath}`;
   };
@@ -37,18 +35,11 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Scroll to top on component mount
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
+  // ✅ REMOVED - ScrollToTop component now handles this globally
+  // useEffect(() => {
+  //   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // }, []);
 
-  // ✅ Debug: Log the base URL (remove this after testing)
-  useEffect(() => {
-    console.log('Base URL:', import.meta.env.BASE_URL);
-    console.log('Sample image path:', getImagePath('assets/Tanmoy_Das.jpeg'));
-  }, []);
-
-  // ✅ Fixed founders data with correct image paths
   const founders = [
     {
       name: 'Tanmoy Das',
@@ -72,7 +63,6 @@ const About = () => {
     }
   ];
 
-  // ✅ Fixed story images
   const storyImages = {
     studio: getImagePath('assets/about/studio-1.jpg'),
     equipment: getImagePath('assets/about/equipment.jpg'),
@@ -138,14 +128,13 @@ const About = () => {
     'Manley Labs', 'Lewitt', 'Arturia', 'Avid'
   ];
 
+  // ✅ Fixed: Navigate to contact page (ScrollToTop handles the scroll)
   const handleContactClick = () => {
     navigate('/contact');
   };
 
-  // ✅ Image error handler with better fallback
   const handleImageError = (e, name) => {
     console.error(`Failed to load image for: ${name}`);
-    console.error('Attempted URL:', e.target.src);
     e.target.src = `https://ui-avatars.com/api/?name=${name.replace(' ', '+')}&size=400&background=1e90ff&color=fff&bold=true`;
   };
 
@@ -185,7 +174,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Scroll Indicator */}
           <div className="anx-about__hero-scroll">
             <span>Scroll to Explore</span>
             <div className="anx-about__hero-scroll-line"></div>
@@ -230,8 +218,6 @@ const About = () => {
                     <h3 className="anx-about__founder-name">{founder.name}</h3>
                     <span className="anx-about__founder-role">{founder.role}</span>
                     <p className="anx-about__founder-description">{founder.description}</p>
-
-
                   </div>
                 </div>
               ))}
@@ -481,7 +467,6 @@ const About = () => {
         </div>
       </div>
 
-      {/* Footer OUTSIDE the anx-about wrapper */}
       <Footer />
     </>
   );
