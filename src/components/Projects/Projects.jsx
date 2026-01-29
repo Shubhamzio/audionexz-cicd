@@ -57,7 +57,7 @@ const Projects = () => {
       description: "An innovative music production facility designed for modern artists. Featuring floating floors, variable acoustics, and cutting-edge gear from Universal Audio and Neumann. The space seamlessly blends technical excellence with artistic inspiration.",
       features: ["Floating Floor", "Variable Acoustics", "Universal Audio", "Neumann Mics"],
       image: getImagePath("assets/KRG_Kreative_studio_Kashni_raj_gupta.jpeg"),
-      gradient: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)"
+
     },
     {
       id: 3,
@@ -67,8 +67,8 @@ const Projects = () => {
       year: "2023",
       description: "A comprehensive post-production suite for film and television. Equipped with 7.1.4 surround sound monitoring, ADR booth, and Foley stage. This facility serves as the creative hub for major South Indian film productions.",
       features: ["7.1.4 Surround", "ADR Suite", "Foley Stage", "Pro Tools HDX"],
-      image: getImagePath("assets/sunshine_studio_.jpeg"),
-      gradient: "linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)"
+      image: getImagePath("assets/Sunshine_studio_.jpeg"),
+
     },
     {
       id: 4,
@@ -79,7 +79,7 @@ const Projects = () => {
       description: "A precision mastering environment built to the highest international standards. Features custom-built monitoring with Genelec 'The Ones' series and analog processing from Rupert Neve Designs. Every detail was crafted for critical listening.",
       features: ["Genelec Monitoring", "Rupert Neve", "Acoustic Treatment", "Reference Grade"],
       image: getImagePath("assets/Nilabjo_Niyogi_studio_Niyogi.jpeg"),
-      gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)"
+
     },
     {
       id: 5,
@@ -90,7 +90,7 @@ const Projects = () => {
       description: "A versatile live recording space designed for orchestras and large ensembles. The room features adjustable acoustic curtains, a spacious 2000 sq ft tracking room, and sight lines optimized for conductor visibility.",
       features: ["2000 sq ft", "Orchestra Ready", "Variable Curtains", "SSL AWS"],
       image: getImagePath("assets/JMR_Music_Studio.jpeg"),
-      gradient: "linear-gradient(135deg, #ec4899 0%, #be185d 100%)"
+
     },
     {
       id: 6,
@@ -100,8 +100,8 @@ const Projects = () => {
       year: "2024",
       description: "A modern production suite tailored for electronic music and hip-hop producers. Features an immersive monitoring environment, premium synthesizers, and seamless integration with major DAWs. The perfect space for chart-topping hits.",
       features: ["Electronic Focus", "Synth Collection", "Immersive Audio", "Ableton Certified"],
-      image: getImagePath("assets/projects/project6.jpg"),
-      gradient: "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)"
+      image: getImagePath("assets/Chanchal_Roy_Studio_Sound_Of_Silence.jpeg"),
+
     }
   ];
 
