@@ -46,7 +46,7 @@ const Projects = () => {
       description: "A state-of-the-art recording studio featuring Dolby Atmos integration, custom acoustic panels, and world-class monitoring systems. This project showcases our expertise in creating professional-grade recording environments that inspire creativity while delivering pristine audio quality.",
       features: ["Dolby Atmos", "Custom Acoustics", "SSL Console", "Isolated Vocal Booth"],
       image: getImagePath("assets/Room_for_squares.png"),
-      gradient: "linear-gradient(135deg, #1e90ff 0%, #00d4ff 100%)"
+
     },
     {
       id: 2,
@@ -100,7 +100,7 @@ const Projects = () => {
       year: "2024",
       description: "A modern production suite tailored for electronic music and hip-hop producers. Features an immersive monitoring environment, premium synthesizers, and seamless integration with major DAWs. The perfect space for chart-topping hits.",
       features: ["Electronic Focus", "Synth Collection", "Immersive Audio", "Ableton Certified"],
-      image: getImagePath("assets/Chanchal_Roy_Studio_Sound_Of_Silence.jpeg"),
+      image: getImagePath("assets/Chanchal_Roy_Studio_Sound_Of_silence.jpeg"),
 
     }
   ];
