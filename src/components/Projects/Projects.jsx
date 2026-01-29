@@ -40,8 +40,8 @@ const Projects = () => {
     {
       id: 1,
       name: "Room For Squares Studios",
-      location: "Kolkata, West Bengal",
-      category: "Recording Studio",
+      location: "Hrick Sengupta",
+      category: "Jampad",
       year: "2024",
       description: "A state-of-the-art recording studio featuring Dolby Atmos integration, custom acoustic panels, and world-class monitoring systems. This project showcases our expertise in creating professional-grade recording environments that inspire creativity while delivering pristine audio quality.",
       features: ["Dolby Atmos", "Custom Acoustics", "SSL Console", "Isolated Vocal Booth"],
@@ -63,7 +63,7 @@ const Projects = () => {
       id: 3,
       name: "SunShine Studio",
       location: "Suraj Nag",
-      category: "Post-Production",
+      category: "Recording Studio",
       year: "2023",
       description: "A comprehensive post-production suite for film and television. Equipped with 7.1.4 surround sound monitoring, ADR booth, and Foley stage. This facility serves as the creative hub for major South Indian film productions.",
       features: ["7.1.4 Surround", "ADR Suite", "Foley Stage", "Pro Tools HDX"],
@@ -74,7 +74,7 @@ const Projects = () => {
       id: 4,
       name: "Niyogi Studio",
       location: "Nilabjo Niyogi",
-      category: "Mastering Studio",
+      category: "Recording Studio",
       year: "2023",
       description: "A precision mastering environment built to the highest international standards. Features custom-built monitoring with Genelec 'The Ones' series and analog processing from Rupert Neve Designs. Every detail was crafted for critical listening.",
       features: ["Genelec Monitoring", "Rupert Neve", "Acoustic Treatment", "Reference Grade"],
@@ -85,7 +85,7 @@ const Projects = () => {
       id: 5,
       name: "JMR Music Studio",
       location: "Jyotirmoy Roy",
-      category: "Music Studio",
+      category: "Recording Studio",
       year: "2023",
       description: "A versatile live recording space designed for orchestras and large ensembles. The room features adjustable acoustic curtains, a spacious 2000 sq ft tracking room, and sight lines optimized for conductor visibility.",
       features: ["2000 sq ft", "Orchestra Ready", "Variable Curtains", "SSL AWS"],
@@ -96,7 +96,7 @@ const Projects = () => {
       id: 6,
       name: "Sound Of Silenece",
       location: "Chanchal Roy",
-      category: "Production Suite",
+      category: "Recording Studio",
       year: "2024",
       description: "A modern production suite tailored for electronic music and hip-hop producers. Features an immersive monitoring environment, premium synthesizers, and seamless integration with major DAWs. The perfect space for chart-topping hits.",
       features: ["Electronic Focus", "Synth Collection", "Immersive Audio", "Ableton Certified"],
@@ -251,7 +251,7 @@ const Projects = () => {
                         <span>{String(project.id).padStart(2, '0')}</span>
                       </div>
                       <button className="anxProjects__cardButton">
-                        <span>View Details</span>
+
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
