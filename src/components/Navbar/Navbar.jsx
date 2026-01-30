@@ -38,7 +38,7 @@ const Navbar = () => {
     { name: 'CONTACT', path: '/contact' },
     { name: 'PROJECT', path: '/projects' },
     { name: 'SERVICES', path: '/services' },
-    { name: 'TESTIMONIALS', path: '/testimonials' }
+
   ];
 
   const socialLinks = [
