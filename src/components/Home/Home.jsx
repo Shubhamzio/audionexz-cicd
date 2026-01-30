@@ -114,55 +114,107 @@ const Home = () => {
     { id: 5, name: "KRG Kreative Studio", place: "Kashni Raj", image: getImagePath("/assets/KRG_Kreative_studio_Kashni_raj_gupta.jpeg") },
     { id: 6, name: "Sound Of Silence", place: "Chanchal Roy", image: getImagePath("/assets/Chanchal_Roy_Studio_Sound_Of_silence.jpeg") },
     { id: 7, name: "Bloopers House Atmos", place: "Salt Lake, Kolkata", image: getImagePath("/assets/Bloopers_House_Studios.png") },
-    { id: 8, name: "Beat Factory", place: "Ahmedabad, India", image: getImagePath("/assets/projects/project8.jpg") },
-    { id: 9, name: "Sonic Palace", place: "Jaipur, India", image: getImagePath("/assets/projects/project9.jpg") },
-    { id: 10, name: "Wave Studio", place: "Lucknow, India", image: getImagePath("/assets/projects/project10.jpg") },
-    { id: 11, name: "Audio Oasis", place: "Goa, India", image: getImagePath("/assets/projects/project11.jpg") },
-    { id: 12, name: "Frequency Lab", place: "Chandigarh, India", image: getImagePath("/assets/projects/project12.jpg") },
+
   ];
 
   // Testimonials Data
   const testimonials = [
     {
       id: 1,
-      name: "",
-      role: "Music Producer",
+      name: "Nepal Shaw",
+      role: "Musician",
       avatar: getImagePath("/assets/testimonials/avatar1.jpg"),
       text: "Audionexz transformed our studio into a world-class recording facility. The acoustic treatment is phenomenal!"
     },
     {
       id: 2,
-      name: "Priya Sharma",
-      role: "Restaurant Owner",
+      name: "Anupam Roy",
+      role: "Vocalist, Music Director",
       avatar: getImagePath("/assets/testimonials/avatar2.jpg"),
       text: "The ambiance they created for our restaurant has been getting constant compliments from our guests."
     },
     {
       id: 3,
-      name: "Amit Patel",
+      name: "Rathijit",
       role: "Hotel Manager",
       avatar: getImagePath("/assets/testimonials/avatar3.jpg"),
       text: "Professional team with incredible attention to detail. Our conference rooms now have perfect acoustics."
     },
     {
       id: 4,
-      name: "Sneha Reddy",
+      name: "Yuvaan De",
       role: "School Principal",
       avatar: getImagePath("/assets/testimonials/avatar4.jpg"),
       text: "The auditorium soundproofing exceeded our expectations. Students can now enjoy clear audio during events."
     },
     {
       id: 5,
-      name: "Vikram Singh",
-      role: "Pub Owner",
+      name: "Emon Chakraborty",
+      role: "Musician, Vocalist",
       avatar: getImagePath("/assets/testimonials/avatar5.jpg"),
       text: "Our lounge now has the perfect acoustic balance. The team at Audionexz truly understands sound."
     },
     {
       id: 6,
-      name: "Meera Nair",
-      role: "Home Theatre Enthusiast",
+      name: "Surojit Chatterjee",
+      role: "Musician, Vocalist",
       avatar: getImagePath("/assets/testimonials/avatar6.jpg"),
+      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+    },
+    {
+      id: 7,
+      name: "Surojit Chatterjee",
+      role: "Musician, Vocalist",
+      avatar: getImagePath("/assets/testimonials/avatar6.jpg"),
+      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+    },
+    {
+      id: 8,
+      name: "Sneha BhattaCharya",
+      role: "Musician, Vocalist",
+      avatar: getImagePath("/assets/testimonials/avatar6.jpg"),
+      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+    },
+    {
+      id: 9,
+      name: "Sreejit Chatterjee",
+      role: "Musician, Vocalist",
+      avatar: getImagePath("/assets/testimonials/avatar6.jpg"),
+      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+    },
+    {
+      id: 10,
+      name: "Shobhon Chatterjee",
+      role: "Musician, Vocalist",
+      avatar: getImagePath("/assets/testimonials/avatar6.jpg"),
+      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+    },
+    {
+      id: 11,
+      name: "Shamidh Mukherjee",
+      role: "Vocalist, Music Director",
+      avatar: getImagePath("/assets/testimonials/avatar6.jpg"),
+      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+    },
+    {
+      id: 12,
+      name: "Shamayan Sarkar",
+      role: "Musician, Vocalist",
+      avatar: getImagePath("/assets/Shamayan_Sarkar.jpeg"),
+      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+    },
+    {
+      id: 13,
+      name: "Raja Chowdhury",
+      role: "Musician, Guitarist",
+      avatar: getImagePath("/assets/Raja_chowdhury_3.jpeg"),
+      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+    },
+    {
+      id: 14,
+      name: "Mr. Indradip Sengupta",
+      role: "Music Composer",
+      avatar: getImagePath("/assets/Mr_Indradip_sengupta_1.jpeg"),
       text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
     },
   ];
