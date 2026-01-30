@@ -6,7 +6,7 @@ import Consultancy from './components/Consultancy/Consultancy';
 import Contact from './components/Contact/Contact';
 import Projects from './components/Projects/Projects';
 import Services from './components/Services/Services';
-import Testimonials from './components/Testimonials/Testimonials';
+
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import './App.css';
 
@@ -23,7 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/testimonials" element={<Testimonials />} />
+
         </Routes>
       </div>
 
