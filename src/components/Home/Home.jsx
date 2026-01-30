@@ -163,14 +163,14 @@ const Home = () => {
       id: 7,
       name: "Sneha BhattaCharya",
       role: "Musician, Vocalist",
-      avatar: getImagePath("/assets/Snehaa_bhattacharya.jpeg"),
+      avatar: getImagePath("/assets/Snehaa_Bhattacharya.jpeg"),
       text: "Exceptional service and outstanding results. Highly recommend Audionexz for any audio project!"
     },
     {
       id: 8,
       name: "Srijit Mukherjee",
       role: "Film Director",
-      avatar: getImagePath("/assets/Srijit_chatterjee.HEIC"),
+      avatar: getImagePath("/assets/Srijit_chatterjee_1.HEIC"),
       text: "The quality of work is unmatched. They truly understand the science of sound."
     },
     {
