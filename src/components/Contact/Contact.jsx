@@ -32,7 +32,7 @@ const Contact = () => {
     {
       icon: '📞',
       title: 'Call Us',
-      details: ['+1 (555) 123-4567', '+1 (555) 987-6543', 'Mon-Fri: 9AM-6PM'],
+      details: ['+91 8981409359', '+91 7003222555', 'Mon-Fri: 9AM-6PM'],
       animation: 'float-down'
     },
     {
@@ -45,9 +45,9 @@ const Contact = () => {
 
   // Social links
   const socialLinks = [
-    { name: 'Facebook', icon: '📘', url: '#' },
-    { name: 'Instagram', icon: '📷', url: '#' },
-    { name: 'YouTube', icon: '📺', url: '#' }
+    { name: 'Facebook', icon: '📘', url: 'https://www.facebook.com/dasmusickolkata' },
+    { name: 'Instagram', icon: '📷', url: 'https://www.instagram.com/dasmusickolkata?igsh=aDZocm9yYmIxZ2Z6&utm_source=qr' },
+    { name: 'WhatsApp', icon: '💬', url: 'https://wa.me/8981409359' }
   ];
 
   useEffect(() => {
