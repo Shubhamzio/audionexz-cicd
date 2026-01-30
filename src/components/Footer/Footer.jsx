@@ -60,10 +60,10 @@ const Footer = () => {
                 Address
               </h3>
               <address className="anxFooterMain__addressText">
-                <p className="anxFooterMain__addressLine">123 Business Street</p>
-                <p className="anxFooterMain__addressLine">Suite 456</p>
+                <p className="anxFooterMain__addressLine">Khardah, Kolkata</p>
+                <p className="anxFooterMain__addressLine">Near Khardah Railway Station</p>
                 <p className="anxFooterMain__addressLine">Khardah, West Bengal</p>
-                <p className="anxFooterMain__addressLine">India - 700116</p>
+                <p className="anxFooterMain__addressLine">Kol - 700118</p>
               </address>
             </div>
             <div className="anxFooterMain__contactBlock">
