@@ -373,7 +373,7 @@ const Home = () => {
             <div className="audionexz-home__story-image-wrapper">
               <div className="audionexz-home__story-image-glow"></div>
               <img
-                src={getImagePath("/assets/about/story-image.jpg")}
+                src={getImagePath("/assets/studio.jpg")}
                 alt="Audionexz Team"
                 className="audionexz-home__story-image"
               />
