@@ -316,20 +316,11 @@ const Service = () => {
             Transforming Spaces Through Sound Excellence
           </p>
           <p className="srv-hero-description srv-animate">
-            With over 15 years of expertise, Mix Master Square delivers world-class acoustic solutions
+            With over 5 years of expertise, Audionexz delivers world-class acoustic solutions
             for recording studios, commercial spaces, and residential projects. Our team of certified
             acoustic engineers and designers create environments where sound quality meets aesthetic perfection.
           </p>
-          <div className="srv-hero-cta srv-animate">
-            <button className="srv-btn-primary">
-              Explore Our Services
-              <span className="srv-btn-icon">→</span>
-            </button>
-            <button className="srv-btn-secondary">
-              Download Portfolio
-              <span className="srv-btn-icon">↓</span>
-            </button>
-          </div>
+
         </div>
         <div className="srv-hero-visual">
           <div className="srv-sound-wave"></div>
