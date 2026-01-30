@@ -930,9 +930,10 @@
 }
 
 /* ===== SECTION 5: TESTIMONIALS ===== */
+/* ===== SECTION 5: TESTIMONIALS - UPDATED ===== */
 .audionexz-home__testimonials {
-  padding: 120px 0;
-  background: linear-gradient(180deg, var(--audionexz-dark) 0%, var(--audionexz-dark-blue) 100%);
+  padding: 120px 0 140px;
+  background: linear-gradient(180deg, var(--audionexz-dark) 0%, #050818 50%, var(--audionexz-dark-blue) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -949,24 +950,34 @@
 .audionexz-home__testimonials-bg-circle {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.1;
+  filter: blur(120px);
+  opacity: 0.08;
 }
 
 .audionexz-home__testimonials-bg-circle--1 {
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
   background: var(--audionexz-primary);
-  top: -200px;
+  top: -300px;
   left: -200px;
 }
 
 .audionexz-home__testimonials-bg-circle--2 {
+  width: 500px;
+  height: 500px;
+  background: var(--audionexz-secondary);
+  bottom: -150px;
+  right: -150px;
+}
+
+.audionexz-home__testimonials-bg-circle--3 {
   width: 400px;
   height: 400px;
-  background: var(--audionexz-secondary);
-  bottom: -100px;
-  right: -100px;
+  background: linear-gradient(135deg, var(--audionexz-primary), var(--audionexz-accent));
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.05;
 }
 
 .audionexz-home__testimonials-container {
@@ -974,6 +985,7 @@
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
+  z-index: 1;
 }
 
 .audionexz-home__testimonials-subtitle {
@@ -994,7 +1006,7 @@
 }
 
 .audionexz-home__testimonials-heading {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 700;
   margin-bottom: 15px;
   opacity: 0;
@@ -1017,7 +1029,10 @@
 .audionexz-home__testimonials-description {
   font-size: 1.1rem;
   color: var(--audionexz-text-secondary);
-  margin-bottom: 60px;
+  margin-bottom: 70px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease 0.2s;
@@ -1028,15 +1043,18 @@
   transform: translateY(0);
 }
 
+/* Testimonials Slider */
 .audionexz-home__testimonials-slider {
   overflow: hidden;
-  padding: 20px 0;
+  padding: 30px 0;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
 .audionexz-home__testimonials-track {
   display: flex;
-  gap: 30px;
-  animation: audionexzTestimonialsSlide 60s linear infinite;
+  gap: 40px;
+  animation: audionexzTestimonialsSlide 80s linear infinite;
   width: fit-content;
 }
 
@@ -1044,90 +1062,353 @@
   animation-play-state: paused;
 }
 
+/* Testimonial Card - Updated with Bigger Images */
 .audionexz-home__testimonials-card {
   flex-shrink: 0;
-  width: 400px;
-  background: var(--audionexz-glass);
+  width: 380px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
   backdrop-filter: blur(20px);
-  border: 1px solid var(--audionexz-glass-border);
-  border-radius: 24px;
-  padding: 40px;
-  text-align: left;
-  transition: all var(--audionexz-transition-normal);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
 .audionexz-home__testimonials-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(0, 212, 255, 0.3);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transform: translateY(-15px) scale(1.02);
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(0, 212, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+/* Card Border Decoration */
+.audionexz-home__testimonials-card-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--audionexz-primary), var(--audionexz-secondary), var(--audionexz-primary));
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.audionexz-home__testimonials-card:hover .audionexz-home__testimonials-card-border {
+  opacity: 1;
+  animation: audionexzGradientFlow 2s linear infinite;
+}
+
+@keyframes audionexzGradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Image Section - BIGGER SIZE */
+.audionexz-home__testimonials-card-image-section {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.audionexz-home__testimonials-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.audionexz-home__testimonials-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.audionexz-home__testimonials-card:hover .audionexz-home__testimonials-card-image {
+  transform: scale(1.1);
+}
+
+.audionexz-home__testimonials-card-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(10, 10, 20, 0.4) 70%,
+    rgba(10, 10, 20, 0.95) 100%
+  );
+  pointer-events: none;
+}
+
+.audionexz-home__testimonials-card-image-glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 100px;
+  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.3) 0%, transparent 70%);
+  filter: blur(30px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.audionexz-home__testimonials-card:hover .audionexz-home__testimonials-card-image-glow {
+  opacity: 1;
+}
+
+/* Content Section */
+.audionexz-home__testimonials-card-content {
+  padding: 30px 28px 35px;
+  text-align: left;
+  position: relative;
+}
+
+/* Quote Icon */
 .audionexz-home__testimonials-card-quote {
   position: absolute;
-  top: 25px;
-  right: 30px;
+  top: -25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--audionexz-primary) 0%, var(--audionexz-secondary) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
 }
 
 .audionexz-home__testimonials-card-quote svg {
-  width: 40px;
-  height: 40px;
-  color: var(--audionexz-primary);
-  opacity: 0.2;
+  width: 22px;
+  height: 22px;
+  color: white;
 }
 
+/* Testimonial Text */
 .audionexz-home__testimonials-card-text {
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: var(--audionexz-text-secondary);
-  margin-bottom: 30px;
-  min-height: 100px;
+  margin-bottom: 25px;
+  min-height: 80px;
+  font-style: italic;
+  position: relative;
 }
 
+/* Author Info */
 .audionexz-home__testimonials-card-author {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.audionexz-home__testimonials-card-avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid var(--audionexz-primary);
-  padding: 2px;
-}
-
-.audionexz-home__testimonials-card-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+.audionexz-home__testimonials-card-author-info {
+  flex: 1;
 }
 
 .audionexz-home__testimonials-card-name {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--audionexz-text);
-  margin-bottom: 3px;
+  margin: 0 0 4px 0;
+  padding: 0;
 }
 
 .audionexz-home__testimonials-card-role {
   font-size: 0.85rem;
   color: var(--audionexz-primary);
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
 }
 
+/* Rating */
 .audionexz-home__testimonials-card-rating {
   display: flex;
   gap: 4px;
 }
 
 .audionexz-home__testimonials-card-rating svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   color: var(--audionexz-accent);
+  filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.5));
+}
+
+/* ===== TESTIMONIALS RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .audionexz-home__testimonials-card {
+    width: 350px;
+  }
+
+  .audionexz-home__testimonials-card-image-section {
+    height: 260px;
+  }
+}
+
+@media (max-width: 992px) {
+  .audionexz-home__testimonials {
+    padding: 100px 0 120px;
+  }
+
+  .audionexz-home__testimonials-description {
+    margin-bottom: 50px;
+  }
+
+  .audionexz-home__testimonials-card {
+    width: 340px;
+  }
+
+  .audionexz-home__testimonials-card-image-section {
+    height: 240px;
+  }
+
+  .audionexz-home__testimonials-card-content {
+    padding: 25px 22px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .audionexz-home__testimonials {
+    padding: 80px 0 100px;
+  }
+
+  .audionexz-home__testimonials-description {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+
+  .audionexz-home__testimonials-slider {
+    padding: 20px 0;
+  }
+
+  .audionexz-home__testimonials-track {
+    gap: 25px;
+  }
+
+  .audionexz-home__testimonials-card {
+    width: 300px;
+    border-radius: 22px;
+  }
+
+  .audionexz-home__testimonials-card-image-section {
+    height: 220px;
+  }
+
+  .audionexz-home__testimonials-card-content {
+    padding: 25px 20px 28px;
+  }
+
+  .audionexz-home__testimonials-card-quote {
+    width: 45px;
+    height: 45px;
+    top: -22px;
+    right: 20px;
+  }
+
+  .audionexz-home__testimonials-card-quote svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .audionexz-home__testimonials-card-text {
+    font-size: 0.95rem;
+    min-height: 70px;
+    margin-bottom: 20px;
+  }
+
+  .audionexz-home__testimonials-card-name {
+    font-size: 1.05rem;
+  }
+
+  .audionexz-home__testimonials-card-role {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .audionexz-home__testimonials {
+    padding: 60px 0 80px;
+  }
+
+  .audionexz-home__testimonials-heading {
+    font-size: 1.8rem;
+  }
+
+  .audionexz-home__testimonials-description {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+  .audionexz-home__testimonials-card {
+    width: 280px;
+    border-radius: 18px;
+  }
+
+  .audionexz-home__testimonials-card-image-section {
+    height: 200px;
+  }
+
+  .audionexz-home__testimonials-card-content {
+    padding: 22px 18px 25px;
+  }
+
+  .audionexz-home__testimonials-card-quote {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    right: 18px;
+  }
+
+  .audionexz-home__testimonials-card-quote svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .audionexz-home__testimonials-card-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    min-height: 60px;
+    margin-bottom: 18px;
+  }
+
+  .audionexz-home__testimonials-card-name {
+    font-size: 1rem;
+  }
+
+  .audionexz-home__testimonials-card-role {
+    font-size: 0.75rem;
+  }
+
+  .audionexz-home__testimonials-card-rating svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Update the animation keyframe */
+@keyframes audionexzTestimonialsSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ===== SECTION 6: ARTICLES ===== */

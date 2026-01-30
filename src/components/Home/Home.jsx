@@ -506,57 +506,87 @@ const Home = () => {
       </section>
 
       {/* ===== SECTION 5: TESTIMONIALS ===== */}
-      <section
-        id="testimonials-section"
-        ref={(el) => (sectionRefs.current[3] = el)}
-        className={`audionexz-home__testimonials ${isVisible['testimonials-section'] ? 'audionexz-home__testimonials--visible' : ''}`}
-      >
-        <div className="audionexz-home__testimonials-bg">
-          <div className="audionexz-home__testimonials-bg-circle audionexz-home__testimonials-bg-circle--1"></div>
-          <div className="audionexz-home__testimonials-bg-circle audionexz-home__testimonials-bg-circle--2"></div>
-        </div>
+      {/* ===== SECTION 5: TESTIMONIALS ===== */}
+<section
+  id="testimonials-section"
+  ref={(el) => (sectionRefs.current[3] = el)}
+  className={`audionexz-home__testimonials ${isVisible['testimonials-section'] ? 'audionexz-home__testimonials--visible' : ''}`}
+>
+  <div className="audionexz-home__testimonials-bg">
+    <div className="audionexz-home__testimonials-bg-circle audionexz-home__testimonials-bg-circle--1"></div>
+    <div className="audionexz-home__testimonials-bg-circle audionexz-home__testimonials-bg-circle--2"></div>
+    <div className="audionexz-home__testimonials-bg-circle audionexz-home__testimonials-bg-circle--3"></div>
+  </div>
 
-        <div className="audionexz-home__testimonials-container">
-          <h4 className="audionexz-home__testimonials-subtitle">TESTIMONIALS</h4>
-          <h2 className="audionexz-home__testimonials-heading">
-            Client <span className="audionexz-home__testimonials-heading--highlight">Testimonials</span>
-          </h2>
-          <p className="audionexz-home__testimonials-description">
-            Hear what our valued clients have to say about their experience with Audionexz
-          </p>
+  <div className="audionexz-home__testimonials-container">
+    <h4 className="audionexz-home__testimonials-subtitle">TESTIMONIALS</h4>
+    <h2 className="audionexz-home__testimonials-heading">
+      Client <span className="audionexz-home__testimonials-heading--highlight">Testimonials</span>
+    </h2>
+    <p className="audionexz-home__testimonials-description">
+      Hear what our valued clients have to say about their experience with Audionexz
+    </p>
 
-          <div className="audionexz-home__testimonials-slider">
-            <div className="audionexz-home__testimonials-track">
-              {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
-                <div key={index} className="audionexz-home__testimonials-card">
-                  <div className="audionexz-home__testimonials-card-quote">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                    </svg>
-                  </div>
-                  <p className="audionexz-home__testimonials-card-text">{testimonial.text}</p>
-                  <div className="audionexz-home__testimonials-card-author">
-                    <div className="audionexz-home__testimonials-card-avatar">
-                      <img src={testimonial.avatar} alt={testimonial.name} />
-                    </div>
-                    <div className="audionexz-home__testimonials-card-info">
-                      <h4 className="audionexz-home__testimonials-card-name">{testimonial.name}</h4>
-                      <p className="audionexz-home__testimonials-card-role">{testimonial.role}</p>
-                    </div>
-                  </div>
-                  <div className="audionexz-home__testimonials-card-rating">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-              ))}
+    <div className="audionexz-home__testimonials-slider">
+      <div className="audionexz-home__testimonials-track">
+        {[...testimonials, ...testimonials].map((testimonial, index) => (
+          <div key={index} className="audionexz-home__testimonials-card">
+            {/* Large Image Section */}
+            <div className="audionexz-home__testimonials-card-image-section">
+              <div className="audionexz-home__testimonials-card-image-wrapper">
+                <img
+                  src={testimonial.avatar}
+                  alt={testimonial.name}
+                  className="audionexz-home__testimonials-card-image"
+                  onError={(e) => {
+                    e.target.src = `https://ui-avatars.com/api/?name=${testimonial.name.replace(' ', '+')}&size=300&background=1e90ff&color=fff&bold=true`;
+                  }}
+                />
+                <div className="audionexz-home__testimonials-card-image-overlay"></div>
+              </div>
+              <div className="audionexz-home__testimonials-card-image-glow"></div>
             </div>
+
+            {/* Content Section */}
+            <div className="audionexz-home__testimonials-card-content">
+              {/* Quote Icon */}
+              <div className="audionexz-home__testimonials-card-quote">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+              </div>
+
+              {/* Testimonial Text */}
+              <p className="audionexz-home__testimonials-card-text">
+                {testimonial.text}
+              </p>
+
+              {/* Author Info */}
+              <div className="audionexz-home__testimonials-card-author">
+                <div className="audionexz-home__testimonials-card-author-info">
+                  <h4 className="audionexz-home__testimonials-card-name">{testimonial.name}</h4>
+                  <p className="audionexz-home__testimonials-card-role">{testimonial.role}</p>
+                </div>
+              </div>
+
+              {/* Rating */}
+              <div className="audionexz-home__testimonials-card-rating">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                ))}
+              </div>
+            </div>
+
+            {/* Decorative Border */}
+            <div className="audionexz-home__testimonials-card-border"></div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
 
       <Footer />
