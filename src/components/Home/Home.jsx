@@ -107,7 +107,7 @@ const Home = () => {
 
   // Projects Data
   const projects = [
-    { id: 1, name: "Room For Squares", place: "Hrick Sengupta", image: getImagePath("/assets/Room_forsquares.png") },
+    { id: 1, name: "Room For Squares", place: "Hrick Sengupta", image: getImagePath("/assets/Room_for_squares.png") },
     { id: 2, name: "Niyogi Studio", place: "Nilabjo Niyogi", image: getImagePath("/assets/Nilabjo_Niyogi_studio_Niyogi.jpeg") },
     { id: 3, name: "Sunshine Studio", place: "Suraj Nag", image: getImagePath("/assets/Sunshine_studio_.jpeg") },
     { id: 4, name: "JMR Studio", place: "Jyotirmoy Roy", image: getImagePath("/assets/JMR_Music_Studio.jpeg") },
