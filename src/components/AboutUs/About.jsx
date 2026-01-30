@@ -43,7 +43,7 @@ const About = () => {
   const founders = [
     {
       name: 'Tanmoy Das',
-      role: 'Co-Founder & CEO',
+      role: 'Founder & CEO',
       image: getImagePath('assets/Tanmoy_Das.jpeg'),
       description: 'Visionary leader with expertise in acoustic engineering and audio system design.',
       social: {
@@ -53,7 +53,7 @@ const About = () => {
     },
     {
       name: 'Megha Mukherjee',
-      role: 'Co-Founder & COO',
+      role: 'Founder',
       image: getImagePath('assets/Megha_das.jpeg'),
       description: 'Strategic operations expert driving excellence in client solutions and partnerships.',
       social: {
