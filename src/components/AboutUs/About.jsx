@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect,  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './About.css';
 import Footer from '../Footer/Footer.jsx';
 
 const About = () => {
   const navigate = useNavigate();
-  const sectionRefs = useRef([]);
+
 
   // ✅ Helper function to get correct image path for GitHub Pages
   const getImagePath = (path) => {
