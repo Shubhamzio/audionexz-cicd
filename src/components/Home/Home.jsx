@@ -121,70 +121,70 @@ const Home = () => {
       id: 1,
       name: "Nepal Shaw",
       role: "Musician",
-      avatar: getImagePath("/assets/testimonials/avatar1.jpg"),
+      avatar: getImagePath("/assets/Nepal_Shaw.jpeg"),
       text: "Audionexz transformed our studio into a world-class recording facility. The acoustic treatment is phenomenal!"
     },
     {
       id: 2,
       name: "Anupam Roy",
       role: "Vocalist, Music Director",
-      avatar: getImagePath("/assets/testimonials/avatar2.jpg"),
+      avatar: getImagePath("/assets/Anupam_roy_studio_1.jpeg"),
       text: "The ambiance they created for our restaurant has been getting constant compliments from our guests."
     },
     {
       id: 3,
       name: "Rathijit",
-      role: "Hotel Manager",
-      avatar: getImagePath("/assets/testimonials/avatar3.jpg"),
+      role: "Vocalist",
+      avatar: getImagePath("/assets/Rathijit_BhattaCharya.jpeg"),
       text: "Professional team with incredible attention to detail. Our conference rooms now have perfect acoustics."
     },
     {
       id: 4,
       name: "Yuvaan De",
-      role: "School Principal",
-      avatar: getImagePath("/assets/testimonials/avatar4.jpg"),
+      role: "Vocalist",
+      avatar: getImagePath("/assets/Yuvaan_De.jpeg"),
       text: "The auditorium soundproofing exceeded our expectations. Students can now enjoy clear audio during events."
     },
     {
       id: 5,
       name: "Emon Chakraborty",
       role: "Musician, Vocalist",
-      avatar: getImagePath("/assets/testimonials/avatar5.jpg"),
+      avatar: getImagePath("/assets/Emon_chakraborty.jpeg"),
       text: "Our lounge now has the perfect acoustic balance. The team at Audionexz truly understands sound."
     },
     {
       id: 6,
       name: "Surojit Chatterjee",
       role: "Musician, Vocalist",
-      avatar: getImagePath("/assets/testimonials/avatar6.jpg"),
+      avatar: getImagePath("/assets/Surojit_Chatterjee_singing.jpeg"),
       text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
     },
     {
       id: 7,
       name: "Sneha BhattaCharya",
       role: "Musician, Vocalist",
-      avatar: getImagePath("/assets/testimonials/avatar7.jpg"),
+      avatar: getImagePath("/assets/Snehaa_bhattacharya.jpeg"),
       text: "Exceptional service and outstanding results. Highly recommend Audionexz for any audio project!"
     },
     {
       id: 8,
-      name: "Sreejit Chatterjee",
-      role: "Musician, Vocalist",
-      avatar: getImagePath("/assets/testimonials/avatar8.jpg"),
+      name: "Srijit Mukherjee",
+      role: "Film Director",
+      avatar: getImagePath("/assets/Srijit_chatterjee.HEIC"),
       text: "The quality of work is unmatched. They truly understand the science of sound."
     },
     {
       id: 9,
       name: "Shobhon Chatterjee",
       role: "Musician, Vocalist",
-      avatar: getImagePath("/assets/testimonials/avatar9.jpg"),
+      avatar: getImagePath("/assets/Shobhon_chatterjee.jpeg"),
       text: "From concept to completion, the team was professional and delivered exceptional results."
     },
     {
       id: 10,
       name: "Shamidh Mukherjee",
       role: "Vocalist, Music Director",
-      avatar: getImagePath("/assets/testimonials/avatar10.jpg"),
+      avatar: getImagePath("/assets/Shamidh_chatterjee_1.jpeg"),
       text: "Working with Audionexz was a game-changer for our production quality."
     },
     {
@@ -198,7 +198,7 @@ const Home = () => {
       id: 12,
       name: "Raja Chowdhury",
       role: "Musician, Guitarist",
-      avatar: getImagePath("/assets/Raja_chowdhury_3.jpeg"),
+      avatar: getImagePath("/assets/Raja_chowdhury_1.jpeg"),
       text: "The acoustic design transformed my practice room into a professional recording space."
     },
     {
