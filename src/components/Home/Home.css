@@ -1,52 +1,82 @@
-/* ========================================
-   AUDIONEXZ HOME PAGE STYLES
-   Author: Senior MAANG Developer
-   Version: 1.0.0
-   ======================================== */
+/* ================================================================
+   AUDIONEXZ HOME PAGE STYLES - FULLY ISOLATED
+   Prefix: audionexz-home__
+   Version: 2.0
+   ================================================================ */
 
-/* ===== IMPORTS & VARIABLES ===== */
+/* ===== IMPORTS ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-:root {
+/* ================================================================
+   CSS VARIABLES - SCOPED TO HOME
+   ================================================================ */
+.audionexz-home__wrapper {
   /* Colors */
-  --audionexz-primary: #00d4ff;
-  --audionexz-primary-dark: #0099cc;
-  --audionexz-secondary: #7c3aed;
-  --audionexz-accent: #f59e0b;
-  --audionexz-dark: #0a0a0a;
-  --audionexz-dark-blue: #0d1b2a;
-  --audionexz-dark-gradient: linear-gradient(135deg, #0a0a0a 0%, #0d1b2a 50%, #1b2838 100%);
-  --audionexz-glass: rgba(255, 255, 255, 0.05);
-  --audionexz-glass-border: rgba(255, 255, 255, 0.1);
-  --audionexz-text: #ffffff;
-  --audionexz-text-secondary: rgba(255, 255, 255, 0.7);
-  --audionexz-text-muted: rgba(255, 255, 255, 0.5);
+  --audionexz-home-primary: #00d4ff;
+  --audionexz-home-primary-dark: #0099cc;
+  --audionexz-home-secondary: #7c3aed;
+  --audionexz-home-accent: #f59e0b;
+  --audionexz-home-dark: #0a0a0a;
+  --audionexz-home-dark-blue: #0d1b2a;
+  --audionexz-home-dark-gradient: linear-gradient(135deg, #0a0a0a 0%, #0d1b2a 50%, #1b2838 100%);
+  --audionexz-home-glass: rgba(255, 255, 255, 0.05);
+  --audionexz-home-glass-border: rgba(255, 255, 255, 0.1);
+  --audionexz-home-text: #ffffff;
+  --audionexz-home-text-secondary: rgba(255, 255, 255, 0.7);
+  --audionexz-home-text-muted: rgba(255, 255, 255, 0.5);
 
   /* Typography */
-  --audionexz-font: 'Poppins', sans-serif;
+  --audionexz-home-font: 'Poppins', sans-serif;
 
   /* Spacing */
-  --audionexz-section-padding: 100px 0;
+  --audionexz-home-section-padding: 100px 0;
 
   /* Transitions */
-  --audionexz-transition-fast: 0.2s ease;
-  --audionexz-transition-normal: 0.3s ease;
-  --audionexz-transition-slow: 0.5s ease;
+  --audionexz-home-transition-fast: 0.2s ease;
+  --audionexz-home-transition-normal: 0.3s ease;
+  --audionexz-home-transition-slow: 0.5s ease;
 
   /* Shadows */
-  --audionexz-shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --audionexz-shadow-md: 0 10px 40px rgba(0, 0, 0, 0.4);
-  --audionexz-shadow-lg: 0 25px 80px rgba(0, 0, 0, 0.5);
-  --audionexz-glow: 0 0 40px rgba(0, 212, 255, 0.3);
+  --audionexz-home-shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --audionexz-home-shadow-md: 0 10px 40px rgba(0, 0, 0, 0.4);
+  --audionexz-home-shadow-lg: 0 25px 80px rgba(0, 0, 0, 0.5);
+  --audionexz-home-glow: 0 0 40px rgba(0, 212, 255, 0.3);
 }
 
-/* ===== BASE WRAPPER ===== */
+/* ================================================================
+   BASE WRAPPER & RESET
+   ================================================================ */
 .audionexz-home__wrapper {
-  font-family: var(--audionexz-font);
-  background: var(--audionexz-dark-gradient);
-  color: var(--audionexz-text);
+  font-family: var(--audionexz-home-font);
+  background: var(--audionexz-home-dark-gradient);
+  color: var(--audionexz-home-text);
   overflow-x: hidden;
   position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Reset only for home wrapper children */
+.audionexz-home__wrapper *,
+.audionexz-home__wrapper *::before,
+.audionexz-home__wrapper *::after {
+  box-sizing: border-box;
+}
+
+/* Reset headings, paragraphs within home wrapper only */
+.audionexz-home__wrapper h1,
+.audionexz-home__wrapper h2,
+.audionexz-home__wrapper h3,
+.audionexz-home__wrapper h4,
+.audionexz-home__wrapper h5,
+.audionexz-home__wrapper h6,
+.audionexz-home__wrapper p {
+  margin: 0;
+  padding: 0;
+}
+
+.audionexz-home__wrapper button {
+  font-family: var(--audionexz-home-font);
 }
 
 .audionexz-home__wrapper::before {
@@ -63,7 +93,9 @@
   z-index: 0;
 }
 
-/* ===== SECTION 1: HERO CAROUSEL ===== */
+/* ================================================================
+   SECTION 1: HERO CAROUSEL
+   ================================================================ */
 .audionexz-home__hero {
   position: relative;
   height: 100vh;
@@ -131,9 +163,9 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  animation: audionexzFadeInUp 1s ease forwards;
+  animation: audionexzHomeFadeInUp 1s ease forwards;
   text-shadow: 0 0 60px rgba(0, 212, 255, 0.5);
-  background: linear-gradient(135deg, #ffffff 0%, var(--audionexz-primary) 100%);
+  background: linear-gradient(135deg, #ffffff 0%, var(--audionexz-home-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -142,8 +174,8 @@
 .audionexz-home__hero-heading-line {
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, var(--audionexz-primary), transparent);
-  animation: audionexzLineExpand 1s ease 0.5s forwards;
+  background: linear-gradient(90deg, transparent, var(--audionexz-home-primary), transparent);
+  animation: audionexzHomeLineExpand 1s ease 0.5s forwards;
   transform: scaleX(0);
 }
 
@@ -154,10 +186,10 @@
 .audionexz-home__hero-subheading {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 300;
-  color: var(--audionexz-text-secondary);
+  color: var(--audionexz-home-text-secondary);
   letter-spacing: 3px;
   margin-bottom: 40px;
-  animation: audionexzFadeInUp 1s ease 0.3s forwards;
+  animation: audionexzHomeFadeInUp 1s ease 0.3s forwards;
   opacity: 0;
 }
 
@@ -165,13 +197,13 @@
   display: flex;
   gap: 20px;
   justify-content: center;
-  animation: audionexzFadeInUp 1s ease 0.5s forwards;
+  animation: audionexzHomeFadeInUp 1s ease 0.5s forwards;
   opacity: 0;
 }
 
 .audionexz-home__hero-btn {
   padding: 16px 40px;
-  font-family: var(--audionexz-font);
+  font-family: var(--audionexz-home-font);
   font-size: 0.95rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -179,13 +211,13 @@
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: all var(--audionexz-transition-normal);
+  transition: all var(--audionexz-home-transition-normal);
   position: relative;
   overflow: hidden;
 }
 
 .audionexz-home__hero-btn--primary {
-  background: linear-gradient(135deg, var(--audionexz-primary) 0%, var(--audionexz-secondary) 100%);
+  background: linear-gradient(135deg, var(--audionexz-home-primary) 0%, var(--audionexz-home-secondary) 100%);
   color: white;
   box-shadow: 0 10px 40px rgba(0, 212, 255, 0.4);
 }
@@ -218,7 +250,7 @@
 }
 
 .audionexz-home__hero-btn--secondary:hover {
-  border-color: var(--audionexz-primary);
+  border-color: var(--audionexz-home-primary);
   background: rgba(0, 212, 255, 0.1);
   transform: translateY(-3px);
 }
@@ -236,7 +268,7 @@
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
-  transition: all var(--audionexz-transition-normal);
+  transition: all var(--audionexz-home-transition-normal);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,10 +289,10 @@
 }
 
 .audionexz-home__hero-arrow:hover {
-  background: var(--audionexz-primary);
-  border-color: var(--audionexz-primary);
+  background: var(--audionexz-home-primary);
+  border-color: var(--audionexz-home-primary);
   transform: translateY(-50%) scale(1.1);
-  box-shadow: var(--audionexz-glow);
+  box-shadow: var(--audionexz-home-glow);
 }
 
 /* Hero Indicators */
@@ -281,7 +313,7 @@
   background: rgba(255, 255, 255, 0.3);
   border: none;
   cursor: pointer;
-  transition: all var(--audionexz-transition-normal);
+  transition: all var(--audionexz-home-transition-normal);
   position: relative;
 }
 
@@ -295,16 +327,16 @@
   height: 24px;
   border: 2px solid transparent;
   border-radius: 50%;
-  transition: all var(--audionexz-transition-normal);
+  transition: all var(--audionexz-home-transition-normal);
 }
 
 .audionexz-home__hero-indicator--active {
-  background: var(--audionexz-primary);
-  box-shadow: 0 0 20px var(--audionexz-primary);
+  background: var(--audionexz-home-primary);
+  box-shadow: 0 0 20px var(--audionexz-home-primary);
 }
 
 .audionexz-home__hero-indicator--active::before {
-  border-color: var(--audionexz-primary);
+  border-color: var(--audionexz-home-primary);
 }
 
 .audionexz-home__hero-indicator:hover {
@@ -322,14 +354,14 @@
   align-items: center;
   gap: 10px;
   z-index: 10;
-  animation: audionexzBounce 2s ease infinite;
+  animation: audionexzHomeBounce 2s ease infinite;
 }
 
 .audionexz-home__hero-scroll span {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: var(--audionexz-text-muted);
+  color: var(--audionexz-home-text-muted);
 }
 
 .audionexz-home__hero-scroll-mouse {
@@ -345,16 +377,18 @@
 .audionexz-home__hero-scroll-wheel {
   width: 4px;
   height: 8px;
-  background: var(--audionexz-primary);
+  background: var(--audionexz-home-primary);
   border-radius: 2px;
-  animation: audionexzScrollWheel 1.5s ease infinite;
+  animation: audionexzHomeScrollWheel 1.5s ease infinite;
 }
 
-/* ===== SECTION 2: OUR STORY ===== */
+/* ================================================================
+   SECTION 2: OUR STORY
+   ================================================================ */
 .audionexz-home__story {
   position: relative;
   padding: 120px 0 180px;
-  background: linear-gradient(180deg, var(--audionexz-dark) 0%, var(--audionexz-dark-blue) 100%);
+  background: linear-gradient(180deg, var(--audionexz-home-dark) 0%, var(--audionexz-home-dark-blue) 100%);
   overflow: hidden;
 }
 
@@ -384,12 +418,12 @@
   align-items: center;
   gap: 10px;
   padding: 8px 20px;
-  background: var(--audionexz-glass);
-  border: 1px solid var(--audionexz-glass-border);
+  background: var(--audionexz-home-glass);
+  border: 1px solid var(--audionexz-home-glass-border);
   border-radius: 50px;
   margin-bottom: 25px;
   font-size: 0.85rem;
-  color: var(--audionexz-primary);
+  color: var(--audionexz-home-primary);
   font-weight: 500;
 }
 
@@ -402,10 +436,11 @@
   font-weight: 700;
   margin-bottom: 20px;
   line-height: 1.2;
+  color: var(--audionexz-home-text);
 }
 
 .audionexz-home__story-heading--highlight {
-  background: linear-gradient(135deg, var(--audionexz-primary) 0%, var(--audionexz-secondary) 100%);
+  background: linear-gradient(135deg, var(--audionexz-home-primary) 0%, var(--audionexz-home-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -420,7 +455,7 @@
 .audionexz-home__story-divider span {
   width: 40px;
   height: 4px;
-  background: var(--audionexz-primary);
+  background: var(--audionexz-home-primary);
   border-radius: 2px;
 }
 
@@ -437,7 +472,7 @@
 .audionexz-home__story-text {
   font-size: 1.05rem;
   line-height: 1.9;
-  color: var(--audionexz-text-secondary);
+  color: var(--audionexz-home-text-secondary);
   margin-bottom: 25px;
 }
 
@@ -446,9 +481,9 @@
   align-items: center;
   gap: 12px;
   padding: 16px 36px;
-  background: linear-gradient(135deg, var(--audionexz-primary) 0%, var(--audionexz-primary-dark) 100%);
+  background: linear-gradient(135deg, var(--audionexz-home-primary) 0%, var(--audionexz-home-primary-dark) 100%);
   color: white;
-  font-family: var(--audionexz-font);
+  font-family: var(--audionexz-home-font);
   font-size: 0.95rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -456,7 +491,7 @@
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: all var(--audionexz-transition-normal);
+  transition: all var(--audionexz-home-transition-normal);
   box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
   margin-top: 15px;
 }
@@ -464,7 +499,7 @@
 .audionexz-home__story-btn svg {
   width: 20px;
   height: 20px;
-  transition: transform var(--audionexz-transition-normal);
+  transition: transform var(--audionexz-home-transition-normal);
 }
 
 .audionexz-home__story-btn:hover {
@@ -494,9 +529,9 @@
   top: -30px;
   left: -30px;
   right: 30px;
-  background: var(--audionexz-glass);
+  background: var(--audionexz-home-glass);
   backdrop-filter: blur(20px);
-  border: 1px solid var(--audionexz-glass-border);
+  border: 1px solid var(--audionexz-home-glass-border);
   border-radius: 20px;
   padding: 25px 30px;
   z-index: 3;
@@ -505,7 +540,7 @@
 .audionexz-home__story-quote-icon {
   width: 30px;
   height: 30px;
-  color: var(--audionexz-primary);
+  color: var(--audionexz-home-primary);
   opacity: 0.5;
   margin-bottom: 10px;
 }
@@ -514,7 +549,7 @@
   font-size: 1.1rem;
   font-style: italic;
   font-weight: 300;
-  color: var(--audionexz-text-secondary);
+  color: var(--audionexz-home-text-secondary);
   line-height: 1.6;
 }
 
@@ -530,7 +565,7 @@
   transform: translate(-50%, -50%);
   width: 80%;
   height: 80%;
-  background: radial-gradient(ellipse, var(--audionexz-primary) 0%, transparent 70%);
+  background: radial-gradient(ellipse, var(--audionexz-home-primary) 0%, transparent 70%);
   opacity: 0.2;
   filter: blur(60px);
   z-index: 0;
@@ -551,7 +586,7 @@
   left: 20px;
   right: -20px;
   bottom: -20px;
-  border: 2px solid var(--audionexz-primary);
+  border: 2px solid var(--audionexz-home-primary);
   border-radius: 20px;
   opacity: 0.3;
   z-index: 0;
@@ -567,11 +602,11 @@
 }
 
 .audionexz-home__story-stat {
-  background: linear-gradient(135deg, var(--audionexz-primary) 0%, var(--audionexz-secondary) 100%);
+  background: linear-gradient(135deg, var(--audionexz-home-primary) 0%, var(--audionexz-home-secondary) 100%);
   padding: 20px 30px;
   border-radius: 15px;
   text-align: center;
-  box-shadow: var(--audionexz-shadow-lg);
+  box-shadow: var(--audionexz-home-shadow-lg);
 }
 
 .audionexz-home__story-stat-number {
@@ -601,10 +636,12 @@
   height: auto;
 }
 
-/* ===== SECTION 3: PARTNERS ===== */
+/* ================================================================
+   SECTION 3: PARTNERS
+   ================================================================ */
 .audionexz-home__partners {
-  padding: var(--audionexz-section-padding);
-  background: linear-gradient(180deg, var(--audionexz-dark-blue) 0%, var(--audionexz-dark) 100%);
+  padding: var(--audionexz-home-section-padding);
+  background: linear-gradient(180deg, var(--audionexz-home-dark-blue) 0%, var(--audionexz-home-dark) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -618,7 +655,7 @@
 .audionexz-home__partners-subtitle {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--audionexz-primary);
+  color: var(--audionexz-home-primary);
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-bottom: 15px;
@@ -636,6 +673,7 @@
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   margin-bottom: 15px;
+  color: var(--audionexz-home-text);
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease 0.1s;
@@ -647,7 +685,7 @@
 }
 
 .audionexz-home__partners-heading--highlight {
-  background: linear-gradient(135deg, var(--audionexz-primary) 0%, var(--audionexz-secondary) 100%);
+  background: linear-gradient(135deg, var(--audionexz-home-primary) 0%, var(--audionexz-home-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -655,7 +693,7 @@
 
 .audionexz-home__partners-description {
   font-size: 1.1rem;
-  color: var(--audionexz-text-secondary);
+  color: var(--audionexz-home-text-secondary);
   margin-bottom: 60px;
   opacity: 0;
   transform: translateY(20px);
@@ -685,23 +723,23 @@
 
 .audionexz-home__partners-marquee::before {
   left: 0;
-  background: linear-gradient(90deg, var(--audionexz-dark-blue), transparent);
+  background: linear-gradient(90deg, var(--audionexz-home-dark-blue), transparent);
 }
 
 .audionexz-home__partners-marquee::after {
   right: 0;
-  background: linear-gradient(-90deg, var(--audionexz-dark-blue), transparent);
+  background: linear-gradient(-90deg, var(--audionexz-home-dark-blue), transparent);
 }
 
 .audionexz-home__partners-track {
   display: flex;
   gap: 60px;
-  animation: audionexzMarquee 30s linear infinite;
+  animation: audionexzHomeMarquee 30s linear infinite;
   width: fit-content;
 }
 
 .audionexz-home__partners-track--reverse {
-  animation: audionexzMarqueeReverse 30s linear infinite;
+  animation: audionexzHomeMarqueeReverse 30s linear infinite;
 }
 
 .audionexz-home__partners-logo-wrapper {
@@ -711,16 +749,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--audionexz-glass);
-  border: 1px solid var(--audionexz-glass-border);
+  background: var(--audionexz-home-glass);
+  border: 1px solid var(--audionexz-home-glass-border);
   border-radius: 15px;
   padding: 20px;
-  transition: all var(--audionexz-transition-normal);
+  transition: all var(--audionexz-home-transition-normal);
 }
 
 .audionexz-home__partners-logo-wrapper:hover {
   background: rgba(0, 212, 255, 0.1);
-  border-color: var(--audionexz-primary);
+  border-color: var(--audionexz-home-primary);
   transform: scale(1.05);
 }
 
@@ -729,7 +767,7 @@
   max-height: 100%;
   filter: grayscale(100%) brightness(1.5);
   opacity: 0.7;
-  transition: all var(--audionexz-transition-normal);
+  transition: all var(--audionexz-home-transition-normal);
 }
 
 .audionexz-home__partners-logo-wrapper:hover .audionexz-home__partners-logo {
@@ -737,10 +775,12 @@
   opacity: 1;
 }
 
-/* ===== SECTION 4: PROJECTS ===== */
+/* ================================================================
+   SECTION 4: PROJECTS
+   ================================================================ */
 .audionexz-home__projects {
-  padding: var(--audionexz-section-padding);
-  background: var(--audionexz-dark);
+  padding: var(--audionexz-home-section-padding);
+  background: var(--audionexz-home-dark);
   position: relative;
   overflow: hidden;
 }
@@ -755,10 +795,14 @@
   gap: 40px;
 }
 
+.audionexz-home__projects-header-content {
+  flex-shrink: 0;
+}
+
 .audionexz-home__projects-subtitle {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--audionexz-primary);
+  color: var(--audionexz-home-primary);
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-bottom: 10px;
@@ -775,6 +819,7 @@
 .audionexz-home__projects-heading {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
+  color: var(--audionexz-home-text);
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease 0.1s;
@@ -786,7 +831,7 @@
 }
 
 .audionexz-home__projects-heading--highlight {
-  background: linear-gradient(135deg, var(--audionexz-primary) 0%, var(--audionexz-secondary) 100%);
+  background: linear-gradient(135deg, var(--audionexz-home-primary) 0%, var(--audionexz-home-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -795,7 +840,7 @@
 .audionexz-home__projects-header-line {
   flex: 1;
   height: 2px;
-  background: linear-gradient(90deg, var(--audionexz-primary), transparent);
+  background: linear-gradient(90deg, var(--audionexz-home-primary), transparent);
   opacity: 0;
   transform: scaleX(0);
   transform-origin: left;
@@ -815,7 +860,7 @@
 .audionexz-home__projects-track {
   display: flex;
   gap: 30px;
-  animation: audionexzProjectsSlide 40s linear infinite;
+  animation: audionexzHomeProjectsSlide 40s linear infinite;
   width: fit-content;
 }
 
@@ -826,17 +871,17 @@
 .audionexz-home__projects-card {
   flex-shrink: 0;
   width: 320px;
-  background: var(--audionexz-glass);
-  border: 1px solid var(--audionexz-glass-border);
+  background: var(--audionexz-home-glass);
+  border: 1px solid var(--audionexz-home-glass-border);
   border-radius: 20px;
   overflow: hidden;
-  transition: all var(--audionexz-transition-normal);
+  transition: all var(--audionexz-home-transition-normal);
 }
 
 .audionexz-home__projects-card:hover {
   transform: translateY(-10px);
-  box-shadow: var(--audionexz-shadow-lg), var(--audionexz-glow);
-  border-color: var(--audionexz-primary);
+  box-shadow: var(--audionexz-home-shadow-lg), var(--audionexz-home-glow);
+  border-color: var(--audionexz-home-primary);
 }
 
 .audionexz-home__projects-card-image-wrapper {
@@ -867,7 +912,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity var(--audionexz-transition-normal);
+  transition: opacity var(--audionexz-home-transition-normal);
 }
 
 .audionexz-home__projects-card:hover .audionexz-home__projects-card-overlay {
@@ -885,7 +930,7 @@
   justify-content: center;
   cursor: pointer;
   transform: scale(0);
-  transition: all var(--audionexz-transition-normal);
+  transition: all var(--audionexz-home-transition-normal);
 }
 
 .audionexz-home__projects-card:hover .audionexz-home__projects-card-btn {
@@ -895,11 +940,11 @@
 .audionexz-home__projects-card-btn svg {
   width: 24px;
   height: 24px;
-  color: var(--audionexz-dark);
+  color: var(--audionexz-home-dark);
 }
 
 .audionexz-home__projects-card-btn:hover {
-  background: var(--audionexz-primary);
+  background: var(--audionexz-home-primary);
 }
 
 .audionexz-home__projects-card-btn:hover svg {
@@ -914,7 +959,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 8px;
-  color: var(--audionexz-text);
+  color: var(--audionexz-home-text);
 }
 
 .audionexz-home__projects-card-place {
@@ -922,18 +967,21 @@
   align-items: center;
   gap: 6px;
   font-size: 0.9rem;
-  color: var(--audionexz-text-muted);
+  color: var(--audionexz-home-text-muted);
 }
 
 .audionexz-home__projects-card-place svg {
-  color: var(--audionexz-primary);
+  width: 14px;
+  height: 14px;
+  color: var(--audionexz-home-primary);
 }
 
-/* ===== SECTION 5: TESTIMONIALS ===== */
-/* ===== SECTION 5: TESTIMONIALS - UPDATED ===== */
+/* ================================================================
+   SECTION 5: TESTIMONIALS - UPDATED WITH BIGGER IMAGES
+   ================================================================ */
 .audionexz-home__testimonials {
   padding: 120px 0 140px;
-  background: linear-gradient(180deg, var(--audionexz-dark) 0%, #050818 50%, var(--audionexz-dark-blue) 100%);
+  background: linear-gradient(180deg, var(--audionexz-home-dark) 0%, #050818 50%, var(--audionexz-home-dark-blue) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -957,7 +1005,7 @@
 .audionexz-home__testimonials-bg-circle--1 {
   width: 700px;
   height: 700px;
-  background: var(--audionexz-primary);
+  background: var(--audionexz-home-primary);
   top: -300px;
   left: -200px;
 }
@@ -965,7 +1013,7 @@
 .audionexz-home__testimonials-bg-circle--2 {
   width: 500px;
   height: 500px;
-  background: var(--audionexz-secondary);
+  background: var(--audionexz-home-secondary);
   bottom: -150px;
   right: -150px;
 }
@@ -973,7 +1021,7 @@
 .audionexz-home__testimonials-bg-circle--3 {
   width: 400px;
   height: 400px;
-  background: linear-gradient(135deg, var(--audionexz-primary), var(--audionexz-accent));
+  background: linear-gradient(135deg, var(--audionexz-home-primary), var(--audionexz-home-accent));
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -991,7 +1039,7 @@
 .audionexz-home__testimonials-subtitle {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--audionexz-primary);
+  color: var(--audionexz-home-primary);
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-bottom: 15px;
@@ -1009,6 +1057,7 @@
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 700;
   margin-bottom: 15px;
+  color: var(--audionexz-home-text);
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease 0.1s;
@@ -1020,7 +1069,7 @@
 }
 
 .audionexz-home__testimonials-heading--highlight {
-  background: linear-gradient(135deg, var(--audionexz-primary) 0%, var(--audionexz-secondary) 100%);
+  background: linear-gradient(135deg, var(--audionexz-home-primary) 0%, var(--audionexz-home-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1028,7 +1077,7 @@
 
 .audionexz-home__testimonials-description {
   font-size: 1.1rem;
-  color: var(--audionexz-text-secondary);
+  color: var(--audionexz-home-text-secondary);
   margin-bottom: 70px;
   max-width: 600px;
   margin-left: auto;
@@ -1054,7 +1103,7 @@
 .audionexz-home__testimonials-track {
   display: flex;
   gap: 40px;
-  animation: audionexzTestimonialsSlide 80s linear infinite;
+  animation: audionexzHomeTestimonialsSlide 80s linear infinite;
   width: fit-content;
 }
 
@@ -1091,7 +1140,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, var(--audionexz-primary), var(--audionexz-secondary), var(--audionexz-primary));
+  background: linear-gradient(90deg, var(--audionexz-home-primary), var(--audionexz-home-secondary), var(--audionexz-home-primary));
   background-size: 200% 100%;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -1099,10 +1148,10 @@
 
 .audionexz-home__testimonials-card:hover .audionexz-home__testimonials-card-border {
   opacity: 1;
-  animation: audionexzGradientFlow 2s linear infinite;
+  animation: audionexzHomeGradientFlow 2s linear infinite;
 }
 
-@keyframes audionexzGradientFlow {
+@keyframes audionexzHomeGradientFlow {
   0% { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
 }
@@ -1182,7 +1231,7 @@
   right: 25px;
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, var(--audionexz-primary) 0%, var(--audionexz-secondary) 100%);
+  background: linear-gradient(135deg, var(--audionexz-home-primary) 0%, var(--audionexz-home-secondary) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1200,7 +1249,7 @@
 .audionexz-home__testimonials-card-text {
   font-size: 1rem;
   line-height: 1.8;
-  color: var(--audionexz-text-secondary);
+  color: var(--audionexz-home-text-secondary);
   margin-bottom: 25px;
   min-height: 80px;
   font-style: italic;
@@ -1223,14 +1272,14 @@
 .audionexz-home__testimonials-card-name {
   font-size: 1.15rem;
   font-weight: 600;
-  color: var(--audionexz-text);
+  color: var(--audionexz-home-text);
   margin: 0 0 4px 0;
   padding: 0;
 }
 
 .audionexz-home__testimonials-card-role {
   font-size: 0.85rem;
-  color: var(--audionexz-primary);
+  color: var(--audionexz-home-primary);
   margin: 0;
   padding: 0;
   font-weight: 500;
@@ -1245,12 +1294,140 @@
 .audionexz-home__testimonials-card-rating svg {
   width: 16px;
   height: 16px;
-  color: var(--audionexz-accent);
+  color: var(--audionexz-home-accent);
   filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.5));
 }
 
-/* ===== TESTIMONIALS RESPONSIVE ===== */
+/* ================================================================
+   FLOATING AUDIO VISUALIZER
+   ================================================================ */
+.audionexz-home__audio-visualizer {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 40px;
+  z-index: 100;
+  padding: 10px 15px;
+  background: var(--audionexz-home-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--audionexz-home-glass-border);
+  border-radius: 30px;
+}
+
+.audionexz-home__audio-bar {
+  width: 4px;
+  background: linear-gradient(180deg, var(--audionexz-home-primary) 0%, var(--audionexz-home-secondary) 100%);
+  border-radius: 2px;
+  animation: audionexzHomeAudioBar 0.8s ease-in-out infinite;
+}
+
+.audionexz-home__audio-bar:nth-child(1) { height: 10px; animation-delay: 0s; }
+.audionexz-home__audio-bar:nth-child(2) { height: 20px; animation-delay: 0.1s; }
+.audionexz-home__audio-bar:nth-child(3) { height: 15px; animation-delay: 0.2s; }
+.audionexz-home__audio-bar:nth-child(4) { height: 25px; animation-delay: 0.3s; }
+.audionexz-home__audio-bar:nth-child(5) { height: 12px; animation-delay: 0.4s; }
+
+/* ================================================================
+   ANIMATIONS - All prefixed with audionexzHome
+   ================================================================ */
+@keyframes audionexzHomeFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes audionexzHomeLineExpand {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes audionexzHomeBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+@keyframes audionexzHomeScrollWheel {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes audionexzHomeMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes audionexzHomeMarqueeReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes audionexzHomeProjectsSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes audionexzHomeTestimonialsSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes audionexzHomeAudioBar {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(2.5);
+  }
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN
+   ================================================================ */
+
+/* 1200px */
 @media (max-width: 1200px) {
+  .audionexz-home__story-container {
+    gap: 50px;
+  }
+
   .audionexz-home__testimonials-card {
     width: 350px;
   }
@@ -1260,7 +1437,38 @@
   }
 }
 
+/* 992px */
 @media (max-width: 992px) {
+  .audionexz-home__story-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .audionexz-home__story-visual {
+    order: -1;
+  }
+
+  .audionexz-home__story-quote {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 20px;
+  }
+
+  .audionexz-home__story-image-wrapper {
+    margin-top: 0;
+  }
+
+  .audionexz-home__projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .audionexz-home__projects-header-line {
+    display: none;
+  }
+
   .audionexz-home__testimonials {
     padding: 100px 0 120px;
   }
@@ -1282,7 +1490,61 @@
   }
 }
 
+/* 768px */
 @media (max-width: 768px) {
+  .audionexz-home__hero-heading {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .audionexz-home__hero-heading-line {
+    width: 80px;
+    height: 2px;
+  }
+
+  .audionexz-home__hero-cta {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .audionexz-home__hero-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .audionexz-home__hero-arrow {
+    width: 50px;
+    height: 50px;
+  }
+
+  .audionexz-home__hero-arrow--left {
+    left: 15px;
+  }
+
+  .audionexz-home__hero-arrow--right {
+    right: 15px;
+  }
+
+  .audionexz-home__story-container {
+    padding: 0 25px;
+  }
+
+  .audionexz-home__story-stats {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-top: 30px;
+    justify-content: center;
+  }
+
+  .audionexz-home__story-image-frame {
+    display: none;
+  }
+
+  .audionexz-home__projects-header {
+    padding: 0 25px;
+  }
+
   .audionexz-home__testimonials {
     padding: 80px 0 100px;
   }
@@ -1339,9 +1601,40 @@
   .audionexz-home__testimonials-card-role {
     font-size: 0.8rem;
   }
+
+  .audionexz-home__audio-visualizer {
+    bottom: 20px;
+    right: 20px;
+  }
 }
 
+/* 480px */
 @media (max-width: 480px) {
+  .audionexz-home__hero-indicators {
+    bottom: 80px;
+  }
+
+  .audionexz-home__story {
+    padding: 80px 0 120px;
+  }
+
+  .audionexz-home__partners,
+  .audionexz-home__projects {
+    padding: 60px 0;
+  }
+
+  .audionexz-home__story-image {
+    height: 300px;
+  }
+
+  .audionexz-home__projects-card {
+    width: 280px;
+  }
+
+  .audionexz-home__projects-card-image-wrapper {
+    height: 180px;
+  }
+
   .audionexz-home__testimonials {
     padding: 60px 0 80px;
   }
@@ -1401,625 +1694,37 @@
   }
 }
 
-/* Update the animation keyframe */
-@keyframes audionexzTestimonialsSlide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* ===== SECTION 6: ARTICLES ===== */
-.audionexz-home__articles {
-  padding: var(--audionexz-section-padding);
-  background: linear-gradient(180deg, var(--audionexz-dark-blue) 0%, var(--audionexz-dark) 100%);
-  position: relative;
-}
-
-.audionexz-home__articles-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 50px;
-}
-
-.audionexz-home__articles-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 60px;
-}
-
-.audionexz-home__articles-subtitle {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--audionexz-primary);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-bottom: 10px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
-}
-
-.audionexz-home__articles--visible .audionexz-home__articles-subtitle {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.audionexz-home__articles-heading {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  margin-bottom: 10px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease 0.1s;
-}
-
-.audionexz-home__articles--visible .audionexz-home__articles-heading {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.audionexz-home__articles-heading--highlight {
-  background: linear-gradient(135deg, var(--audionexz-primary) 0%, var(--audionexz-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.audionexz-home__articles-description {
-  font-size: 1rem;
-  color: var(--audionexz-text-secondary);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease 0.2s;
-}
-
-.audionexz-home__articles--visible .audionexz-home__articles-description {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.audionexz-home__articles-view-all {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
-  background: transparent;
-  border: 2px solid var(--audionexz-primary);
-  color: var(--audionexz-primary);
-  font-family: var(--audionexz-font);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all var(--audionexz-transition-normal);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease 0.3s;
-}
-
-.audionexz-home__articles--visible .audionexz-home__articles-view-all {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.audionexz-home__articles-view-all svg {
-  width: 18px;
-  height: 18px;
-  transition: transform var(--audionexz-transition-normal);
-}
-
-.audionexz-home__articles-view-all:hover {
-  background: var(--audionexz-primary);
-  color: white;
-  box-shadow: var(--audionexz-glow);
-}
-
-.audionexz-home__articles-view-all:hover svg {
-  transform: translateX(5px);
-}
-
-.audionexz-home__articles-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-}
-
-/* Featured Article */
-.audionexz-home__articles-featured {
-  background: var(--audionexz-glass);
-  border: 1px solid var(--audionexz-glass-border);
-  border-radius: 24px;
-  overflow: hidden;
-  transition: all var(--audionexz-transition-normal);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease 0.2s;
-}
-
-.audionexz-home__articles--visible .audionexz-home__articles-featured {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.audionexz-home__articles-featured:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--audionexz-shadow-lg);
-  border-color: rgba(0, 212, 255, 0.3);
-}
-
-.audionexz-home__articles-featured-image {
-  position: relative;
-  height: 300px;
-  overflow: hidden;
-}
-
-.audionexz-home__articles-featured-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.audionexz-home__articles-featured:hover .audionexz-home__articles-featured-image img {
-  transform: scale(1.05);
-}
-
-.audionexz-home__articles-featured-category {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  padding: 8px 20px;
-  background: var(--audionexz-primary);
-  color: white;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 50px;
-}
-
-.audionexz-home__articles-featured-content {
-  padding: 35px;
-}
-
-.audionexz-home__articles-meta {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
-  font-size: 0.9rem;
-  color: var(--audionexz-text-muted);
-}
-
-.audionexz-home__articles-featured-title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  line-height: 1.3;
-  color: var(--audionexz-text);
-}
-
-.audionexz-home__articles-featured-excerpt {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--audionexz-text-secondary);
-  margin-bottom: 25px;
-}
-
-.audionexz-home__articles-read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: none;
-  border: none;
-  color: var(--audionexz-primary);
-  font-family: var(--audionexz-font);
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--audionexz-transition-normal);
-}
-
-.audionexz-home__articles-read-more svg {
-  width: 18px;
-  height: 18px;
-  transition: transform var(--audionexz-transition-normal);
-}
-
-.audionexz-home__articles-read-more:hover {
-  color: var(--audionexz-text);
-}
-
-.audionexz-home__articles-read-more:hover svg {
-  transform: translateX(5px);
-}
-
-/* Article List */
-.audionexz-home__articles-list {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.audionexz-home__articles-card {
-  display: flex;
-  gap: 20px;
-  background: var(--audionexz-glass);
-  border: 1px solid var(--audionexz-glass-border);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: all var(--audionexz-transition-normal);
-  opacity: 0;
-  transform: translateX(30px);
-}
-
-.audionexz-home__articles--visible .audionexz-home__articles-card:nth-child(1) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.3s;
-}
-
-.audionexz-home__articles--visible .audionexz-home__articles-card:nth-child(2) {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.5s;
-}
-
-.audionexz-home__articles-card:hover {
-  transform: translateX(10px);
-  border-color: rgba(0, 212, 255, 0.3);
-  box-shadow: var(--audionexz-shadow-md);
-}
-
-.audionexz-home__articles-card-image {
-  width: 180px;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.audionexz-home__articles-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.audionexz-home__articles-card:hover .audionexz-home__articles-card-image img {
-  transform: scale(1.1);
-}
-
-.audionexz-home__articles-card-content {
-  padding: 25px 25px 25px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.audionexz-home__articles-card-category {
-  display: inline-block;
-  padding: 4px 12px;
-  background: rgba(0, 212, 255, 0.1);
-  color: var(--audionexz-primary);
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 20px;
-  margin-bottom: 12px;
-  width: fit-content;
-}
-
-.audionexz-home__articles-card-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  line-height: 1.4;
-  color: var(--audionexz-text);
-  transition: color var(--audionexz-transition-normal);
-}
-
-.audionexz-home__articles-card:hover .audionexz-home__articles-card-title {
-  color: var(--audionexz-primary);
-}
-
-.audionexz-home__articles-card-meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.85rem;
-  color: var(--audionexz-text-muted);
-}
-
-/* ===== FLOATING AUDIO VISUALIZER ===== */
-.audionexz-home__audio-visualizer {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: flex;
-  align-items: flex-end;
-  gap: 4px;
-  height: 40px;
-  z-index: 100;
-  padding: 10px 15px;
-  background: var(--audionexz-glass);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--audionexz-glass-border);
-  border-radius: 30px;
-}
-
-.audionexz-home__audio-bar {
-  width: 4px;
-  background: linear-gradient(180deg, var(--audionexz-primary) 0%, var(--audionexz-secondary) 100%);
-  border-radius: 2px;
-  animation: audionexzAudioBar 0.8s ease-in-out infinite;
-}
-
-.audionexz-home__audio-bar:nth-child(1) { height: 10px; animation-delay: 0s; }
-.audionexz-home__audio-bar:nth-child(2) { height: 20px; animation-delay: 0.1s; }
-.audionexz-home__audio-bar:nth-child(3) { height: 15px; animation-delay: 0.2s; }
-.audionexz-home__audio-bar:nth-child(4) { height: 25px; animation-delay: 0.3s; }
-.audionexz-home__audio-bar:nth-child(5) { height: 12px; animation-delay: 0.4s; }
-
-/* ===== ANIMATIONS ===== */
-@keyframes audionexzFadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes audionexzLineExpand {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-
-@keyframes audionexzBounce {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-10px);
-  }
-}
-
-@keyframes audionexzScrollWheel {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-}
-
-@keyframes audionexzMarquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes audionexzMarqueeReverse {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes audionexzProjectsSlide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes audionexzTestimonialsSlide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-33.33%);
-  }
-}
-
-@keyframes audionexzAudioBar {
-  0%, 100% {
-    transform: scaleY(1);
-  }
-  50% {
-    transform: scaleY(2.5);
-  }
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1200px) {
-  .audionexz-home__story-container {
-    gap: 50px;
-  }
-
-  .audionexz-home__articles-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .audionexz-home__articles-list {
-    flex-direction: row;
-    overflow-x: auto;
-    padding-bottom: 20px;
-  }
-
-  .audionexz-home__articles-card {
-    flex-direction: column;
-    min-width: 300px;
-  }
-
-  .audionexz-home__articles-card-image {
-    width: 100%;
-    height: 150px;
-  }
-
-  .audionexz-home__articles-card-content {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 992px) {
-  .audionexz-home__story-container {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  .audionexz-home__story-visual {
-    order: -1;
-  }
-
-  .audionexz-home__story-quote {
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin-bottom: 20px;
-  }
-
-  .audionexz-home__story-image-wrapper {
-    margin-top: 0;
-  }
-
-  .audionexz-home__projects-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .audionexz-home__projects-header-line {
-    display: none;
-  }
-
-  .audionexz-home__articles-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .audionexz-home__hero-heading {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .audionexz-home__hero-heading-line {
-    width: 80px;
-    height: 2px;
-  }
-
-  .audionexz-home__hero-cta {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .audionexz-home__hero-btn {
-    width: 100%;
-    max-width: 280px;
-  }
-
-  .audionexz-home__hero-arrow {
-    width: 50px;
-    height: 50px;
-  }
-
-  .audionexz-home__hero-arrow--left {
-    left: 15px;
-  }
-
-  .audionexz-home__hero-arrow--right {
-    right: 15px;
-  }
-
-  .audionexz-home__story-container {
-    padding: 0 25px;
-  }
-
-  .audionexz-home__story-stats {
-    position: relative;
-    bottom: 0;
-    right: 0;
-    margin-top: 30px;
-    justify-content: center;
-  }
-
-  .audionexz-home__story-image-frame {
-    display: none;
-  }
-
-  .audionexz-home__projects-header {
-    padding: 0 25px;
-  }
-
-  .audionexz-home__articles-container {
-    padding: 0 25px;
-  }
-
+/* 380px */
+@media (max-width: 380px) {
   .audionexz-home__testimonials-card {
-    width: 320px;
-    padding: 30px;
+    width: 260px;
   }
 
-  .audionexz-home__audio-visualizer {
-    bottom: 20px;
-    right: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .audionexz-home__hero-indicators {
-    bottom: 80px;
+  .audionexz-home__testimonials-card-image-section {
+    height: 180px;
   }
 
-  .audionexz-home__story {
-    padding: 80px 0 120px;
+  .audionexz-home__testimonials-card-content {
+    padding: 20px 15px 22px;
   }
 
-  .audionexz-home__partners,
-  .audionexz-home__projects,
-  .audionexz-home__testimonials,
-  .audionexz-home__articles {
-    padding: 60px 0;
+  .audionexz-home__testimonials-card-text {
+    font-size: 0.85rem;
+    min-height: 55px;
   }
 
-  .audionexz-home__story-image {
-    height: 300px;
+  .audionexz-home__testimonials-card-name {
+    font-size: 0.95rem;
   }
 
   .audionexz-home__projects-card {
-    width: 280px;
-  }
-
-  .audionexz-home__projects-card-image-wrapper {
-    height: 180px;
+    width: 260px;
   }
 }
 
-/* ===== PREFERS REDUCED MOTION ===== */
+/* ================================================================
+   PREFERS REDUCED MOTION
+   ================================================================ */
 @media (prefers-reduced-motion: reduce) {
   .audionexz-home__hero-slide {
     transition: opacity 0.5s ease;
@@ -2037,5 +1742,42 @@
 
   .audionexz-home__hero-scroll {
     animation: none;
+  }
+
+  .audionexz-home__testimonials-card:hover {
+    transform: none;
+  }
+
+  .audionexz-home__testimonials-card:hover .audionexz-home__testimonials-card-image {
+    transform: none;
+  }
+
+  .audionexz-home__testimonials-card-border {
+    animation: none;
+  }
+}
+
+/* ================================================================
+   PRINT STYLES
+   ================================================================ */
+@media print {
+  .audionexz-home__wrapper {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .audionexz-home__audio-visualizer,
+  .audionexz-home__hero-arrow,
+  .audionexz-home__hero-indicators,
+  .audionexz-home__hero-scroll {
+    display: none;
+  }
+
+  .audionexz-home__testimonials-track,
+  .audionexz-home__partners-track,
+  .audionexz-home__projects-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

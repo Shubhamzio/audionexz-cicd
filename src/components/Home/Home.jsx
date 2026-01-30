@@ -12,7 +12,6 @@ const Home = () => {
   // Helper function to get correct image path
   const getImagePath = (path) => {
     const base = import.meta.env.BASE_URL || '/';
-    // Remove leading slash from path if base already ends with /
     const cleanPath = path.startsWith('/') ? path.slice(1) : path;
     return `${base}${cleanPath}`;
   };
@@ -114,7 +113,6 @@ const Home = () => {
     { id: 5, name: "KRG Kreative Studio", place: "Kashni Raj", image: getImagePath("/assets/KRG_Kreative_studio_Kashni_raj_gupta.jpeg") },
     { id: 6, name: "Sound Of Silence", place: "Chanchal Roy", image: getImagePath("/assets/Chanchal_Roy_Studio_Sound_Of_silence.jpeg") },
     { id: 7, name: "Bloopers House Atmos", place: "Salt Lake, Kolkata", image: getImagePath("/assets/Bloopers_House_Studios.png") },
-
   ];
 
   // Testimonials Data
@@ -163,63 +161,54 @@ const Home = () => {
     },
     {
       id: 7,
-      name: "Surojit Chatterjee",
+      name: "Sneha BhattaCharya",
       role: "Musician, Vocalist",
-      avatar: getImagePath("/assets/testimonials/avatar6.jpg"),
-      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+      avatar: getImagePath("/assets/testimonials/avatar7.jpg"),
+      text: "Exceptional service and outstanding results. Highly recommend Audionexz for any audio project!"
     },
     {
       id: 8,
-      name: "Sneha BhattaCharya",
+      name: "Sreejit Chatterjee",
       role: "Musician, Vocalist",
-      avatar: getImagePath("/assets/testimonials/avatar6.jpg"),
-      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+      avatar: getImagePath("/assets/testimonials/avatar8.jpg"),
+      text: "The quality of work is unmatched. They truly understand the science of sound."
     },
     {
       id: 9,
-      name: "Sreejit Chatterjee",
+      name: "Shobhon Chatterjee",
       role: "Musician, Vocalist",
-      avatar: getImagePath("/assets/testimonials/avatar6.jpg"),
-      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+      avatar: getImagePath("/assets/testimonials/avatar9.jpg"),
+      text: "From concept to completion, the team was professional and delivered exceptional results."
     },
     {
       id: 10,
-      name: "Shobhon Chatterjee",
-      role: "Musician, Vocalist",
-      avatar: getImagePath("/assets/testimonials/avatar6.jpg"),
-      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+      name: "Shamidh Mukherjee",
+      role: "Vocalist, Music Director",
+      avatar: getImagePath("/assets/testimonials/avatar10.jpg"),
+      text: "Working with Audionexz was a game-changer for our production quality."
     },
     {
       id: 11,
-      name: "Shamidh Mukherjee",
-      role: "Vocalist, Music Director",
-      avatar: getImagePath("/assets/testimonials/avatar6.jpg"),
-      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
-    },
-    {
-      id: 12,
       name: "Shamayan Sarkar",
       role: "Musician, Vocalist",
       avatar: getImagePath("/assets/Shamayan_Sarkar.jpeg"),
-      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+      text: "Incredible attention to detail and passion for perfect sound. Truly the best in the industry!"
     },
     {
-      id: 13,
+      id: 12,
       name: "Raja Chowdhury",
       role: "Musician, Guitarist",
       avatar: getImagePath("/assets/Raja_chowdhury_3.jpeg"),
-      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+      text: "The acoustic design transformed my practice room into a professional recording space."
     },
     {
-      id: 14,
+      id: 13,
       name: "Mr. Indradip Sengupta",
       role: "Music Composer",
       avatar: getImagePath("/assets/Mr_Indradip_sengupta_1.jpeg"),
-      text: "My home theatre is now the envy of all my friends. Audionexz delivered beyond my dreams!"
+      text: "Audionexz understands the needs of composers. My studio is now my creative sanctuary."
     },
   ];
-
-
 
   // Auto-slide for hero carousel
   useEffect(() => {
@@ -263,6 +252,11 @@ const Home = () => {
 
   const handleNavigateToAbout = () => {
     navigate('/about');
+  };
+
+  // Image error handler for testimonials
+  const handleTestimonialImageError = (e, name) => {
+    e.target.src = `https://ui-avatars.com/api/?name=${name.replace(' ', '+')}&size=300&background=1e90ff&color=fff&bold=true&font-size=0.4`;
   };
 
   return (
@@ -505,89 +499,85 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== SECTION 5: TESTIMONIALS ===== */}
-      {/* ===== SECTION 5: TESTIMONIALS ===== */}
-<section
-  id="testimonials-section"
-  ref={(el) => (sectionRefs.current[3] = el)}
-  className={`audionexz-home__testimonials ${isVisible['testimonials-section'] ? 'audionexz-home__testimonials--visible' : ''}`}
->
-  <div className="audionexz-home__testimonials-bg">
-    <div className="audionexz-home__testimonials-bg-circle audionexz-home__testimonials-bg-circle--1"></div>
-    <div className="audionexz-home__testimonials-bg-circle audionexz-home__testimonials-bg-circle--2"></div>
-    <div className="audionexz-home__testimonials-bg-circle audionexz-home__testimonials-bg-circle--3"></div>
-  </div>
+      {/* ===== SECTION 5: TESTIMONIALS - UPDATED WITH BIGGER IMAGES ===== */}
+      <section
+        id="testimonials-section"
+        ref={(el) => (sectionRefs.current[3] = el)}
+        className={`audionexz-home__testimonials ${isVisible['testimonials-section'] ? 'audionexz-home__testimonials--visible' : ''}`}
+      >
+        <div className="audionexz-home__testimonials-bg">
+          <div className="audionexz-home__testimonials-bg-circle audionexz-home__testimonials-bg-circle--1"></div>
+          <div className="audionexz-home__testimonials-bg-circle audionexz-home__testimonials-bg-circle--2"></div>
+          <div className="audionexz-home__testimonials-bg-circle audionexz-home__testimonials-bg-circle--3"></div>
+        </div>
 
-  <div className="audionexz-home__testimonials-container">
-    <h4 className="audionexz-home__testimonials-subtitle">TESTIMONIALS</h4>
-    <h2 className="audionexz-home__testimonials-heading">
-      Client <span className="audionexz-home__testimonials-heading--highlight">Testimonials</span>
-    </h2>
-    <p className="audionexz-home__testimonials-description">
-      Hear what our valued clients have to say about their experience with Audionexz
-    </p>
+        <div className="audionexz-home__testimonials-container">
+          <h4 className="audionexz-home__testimonials-subtitle">TESTIMONIALS</h4>
+          <h2 className="audionexz-home__testimonials-heading">
+            Client <span className="audionexz-home__testimonials-heading--highlight">Testimonials</span>
+          </h2>
+          <p className="audionexz-home__testimonials-description">
+            Hear what our valued clients have to say about their experience with Audionexz
+          </p>
 
-    <div className="audionexz-home__testimonials-slider">
-      <div className="audionexz-home__testimonials-track">
-        {[...testimonials, ...testimonials].map((testimonial, index) => (
-          <div key={index} className="audionexz-home__testimonials-card">
-            {/* Large Image Section */}
-            <div className="audionexz-home__testimonials-card-image-section">
-              <div className="audionexz-home__testimonials-card-image-wrapper">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  className="audionexz-home__testimonials-card-image"
-                  onError={(e) => {
-                    e.target.src = `https://ui-avatars.com/api/?name=${testimonial.name.replace(' ', '+')}&size=300&background=1e90ff&color=fff&bold=true`;
-                  }}
-                />
-                <div className="audionexz-home__testimonials-card-image-overlay"></div>
-              </div>
-              <div className="audionexz-home__testimonials-card-image-glow"></div>
-            </div>
+          <div className="audionexz-home__testimonials-slider">
+            <div className="audionexz-home__testimonials-track">
+              {[...testimonials, ...testimonials].map((testimonial, index) => (
+                <div key={index} className="audionexz-home__testimonials-card">
+                  {/* Large Image Section */}
+                  <div className="audionexz-home__testimonials-card-image-section">
+                    <div className="audionexz-home__testimonials-card-image-wrapper">
+                      <img
+                        src={testimonial.avatar}
+                        alt={testimonial.name}
+                        className="audionexz-home__testimonials-card-image"
+                        onError={(e) => handleTestimonialImageError(e, testimonial.name)}
+                      />
+                      <div className="audionexz-home__testimonials-card-image-overlay"></div>
+                    </div>
+                    <div className="audionexz-home__testimonials-card-image-glow"></div>
+                  </div>
 
-            {/* Content Section */}
-            <div className="audionexz-home__testimonials-card-content">
-              {/* Quote Icon */}
-              <div className="audionexz-home__testimonials-card-quote">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                </svg>
-              </div>
+                  {/* Content Section */}
+                  <div className="audionexz-home__testimonials-card-content">
+                    {/* Quote Icon */}
+                    <div className="audionexz-home__testimonials-card-quote">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                      </svg>
+                    </div>
 
-              {/* Testimonial Text */}
-              <p className="audionexz-home__testimonials-card-text">
-                {testimonial.text}
-              </p>
+                    {/* Testimonial Text */}
+                    <p className="audionexz-home__testimonials-card-text">
+                      {testimonial.text}
+                    </p>
 
-              {/* Author Info */}
-              <div className="audionexz-home__testimonials-card-author">
-                <div className="audionexz-home__testimonials-card-author-info">
-                  <h4 className="audionexz-home__testimonials-card-name">{testimonial.name}</h4>
-                  <p className="audionexz-home__testimonials-card-role">{testimonial.role}</p>
+                    {/* Author Info */}
+                    <div className="audionexz-home__testimonials-card-author">
+                      <div className="audionexz-home__testimonials-card-author-info">
+                        <h4 className="audionexz-home__testimonials-card-name">{testimonial.name}</h4>
+                        <p className="audionexz-home__testimonials-card-role">{testimonial.role}</p>
+                      </div>
+                    </div>
+
+                    {/* Rating */}
+                    <div className="audionexz-home__testimonials-card-rating">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Decorative Border */}
+                  <div className="audionexz-home__testimonials-card-border"></div>
                 </div>
-              </div>
-
-              {/* Rating */}
-              <div className="audionexz-home__testimonials-card-rating">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
-                ))}
-              </div>
+              ))}
             </div>
-
-            {/* Decorative Border */}
-            <div className="audionexz-home__testimonials-card-border"></div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
-
+        </div>
+      </section>
 
       <Footer />
     </div>
