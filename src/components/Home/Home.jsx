@@ -107,13 +107,13 @@ const Home = () => {
 
   // Projects Data
   const projects = [
-    { id: 1, name: "Room For Squares", place: "Hrick Sengupta", image: getImagePath("/assets/projects/project1.jpg") },
-    { id: 2, name: "Niyogi Studio", place: "Nilabjo Niyogi", image: getImagePath("/assets/projects/project2.jpg") },
-    { id: 3, name: "Sunshine Studio", place: "Bangalore, India", image: getImagePath("/assets/projects/project3.jpg") },
-    { id: 4, name: "JMR Studio", place: "Chennai, India", image: getImagePath("/assets/projects/project4.jpg") },
-    { id: 5, name: "KRG Kreative Studio", place: "Hyderabad, India", image: getImagePath("/assets/projects/project5.jpg") },
-    { id: 6, name: "Sound Of Silence", place: "Chanchal Roy", image: getImagePath("/assets/projects/project6.jpg") },
-    { id: 7, name: "Harmony Hub", place: "Kolkata, India", image: getImagePath("/assets/projects/project7.jpg") },
+    { id: 1, name: "Room For Squares", place: "Hrick Sengupta", image: getImagePath("/assets/Room_forsquares.png") },
+    { id: 2, name: "Niyogi Studio", place: "Nilabjo Niyogi", image: getImagePath("/assets/Nilabjo_Niyogi_studio_Niyogi.jpeg") },
+    { id: 3, name: "Sunshine Studio", place: "Suraj Nag", image: getImagePath("/assets/Sunshine_studio_.jpeg") },
+    { id: 4, name: "JMR Studio", place: "Jyotirmoy Roy", image: getImagePath("/assets/JMR_Music_Studio.jpeg") },
+    { id: 5, name: "KRG Kreative Studio", place: "Kashni Raj", image: getImagePath("/assets/KRG_Kreative_studio_Kashni_raj_gupta.jpeg") },
+    { id: 6, name: "Sound Of Silence", place: "Chanchal Roy", image: getImagePath("/assets/Chanchal_Roy_Studio_Sound_Of_silence.jpeg") },
+    { id: 7, name: "Bloopers House Atmos", place: "Salt Lake, Kolkata", image: getImagePath("/assets/Bloopers_House_Studios.png") },
     { id: 8, name: "Beat Factory", place: "Ahmedabad, India", image: getImagePath("/assets/projects/project8.jpg") },
     { id: 9, name: "Sonic Palace", place: "Jaipur, India", image: getImagePath("/assets/projects/project9.jpg") },
     { id: 10, name: "Wave Studio", place: "Lucknow, India", image: getImagePath("/assets/projects/project10.jpg") },
