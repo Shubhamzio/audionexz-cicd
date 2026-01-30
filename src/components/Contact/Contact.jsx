@@ -26,7 +26,7 @@ const Contact = () => {
     {
       icon: '📍',
       title: 'Visit Us',
-      details: ['123 Business Avenue', 'Suite 500', 'New York, NY 10001'],
+      details: ['Das Musicals, Khardah, Rahara, Kol -700118, West Bengal, India', 'Mon-Fri: 9AM-6PM', 'Sat: 10AM-4PM'],
       animation: 'float-up'
     },
     {
@@ -38,7 +38,7 @@ const Contact = () => {
     {
       icon: '✉️',
       title: 'Email Us',
-      details: ['info@mixmastersquare.com', 'support@mixmastersquare.com', '24/7 Support'],
+      details: ['audionexz@gmail.com', '24/7 Support'],
       animation: 'float-up'
     }
   ];
@@ -46,8 +46,6 @@ const Contact = () => {
   // Social links
   const socialLinks = [
     { name: 'Facebook', icon: '📘', url: '#' },
-    { name: 'Twitter', icon: '🐦', url: '#' },
-    { name: 'LinkedIn', icon: '💼', url: '#' },
     { name: 'Instagram', icon: '📷', url: '#' },
     { name: 'YouTube', icon: '📺', url: '#' }
   ];
@@ -204,7 +202,7 @@ const Contact = () => {
         <div className="cnt-container">
           <h1 className="cnt-hero-title cnt-animate">Get In Touch</h1>
           <p className="cnt-hero-subtitle cnt-animate">
-            Welcome to Mix Master Square - Where Sound Meets Perfection
+            Welcome Audionexz - Where Sound Meets Perfection
           </p>
           <p className="cnt-hero-description cnt-animate">
             We're here to transform your acoustic dreams into reality. Whether you're planning
