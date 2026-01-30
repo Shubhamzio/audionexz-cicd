@@ -516,9 +516,7 @@ const Home = () => {
           <h2 className="audionexz-home__testimonials-heading">
             Client <span className="audionexz-home__testimonials-heading--highlight">Testimonials</span>
           </h2>
-          <p className="audionexz-home__testimonials-description">
-            Hear what our valued clients have to say about their experience with Audionexz
-          </p>
+
 
           <div className="audionexz-home__testimonials-slider">
             <div className="audionexz-home__testimonials-track">
