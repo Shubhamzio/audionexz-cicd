@@ -380,7 +380,7 @@ const Home = () => {
               <div className="audionexz-home__story-image-frame"></div>
               <div className="audionexz-home__story-stats">
                 <div className="audionexz-home__story-stat">
-                  <span className="audionexz-home__story-stat-number">40+</span>
+                  <span className="audionexz-home__story-stat-number">88+</span>
                   <span className="audionexz-home__story-stat-label">Projects</span>
                 </div>
                 <div className="audionexz-home__story-stat">
