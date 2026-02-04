@@ -349,7 +349,7 @@ const Home = () => {
             </p>
             <p className="audionexz-home__story-text">
               Our journey began with a simple belief: everyone deserves access to world-class acoustics. Today,
-              we've partnered with leading global audio brands and completed over 40+ projects across India,
+              we've partnered with leading global audio brands and completed over 88+ projects across India,
               each one a testament to our unwavering commitment to sonic excellence.
             </p>
             <button
@@ -413,7 +413,7 @@ const Home = () => {
         <div className="audionexz-home__partners-container">
           <h4 className="audionexz-home__partners-subtitle">PARTNERS</h4>
           <h2 className="audionexz-home__partners-heading">
-            Authorised <span className="audionexz-home__partners-heading--highlight">Distributors</span>
+            Authorised <span className="audionexz-home__partners-heading--highlight">Dealers</span>
           </h2>
           <p className="audionexz-home__partners-description">
             Partnering with world-renowned audio brands to deliver uncompromising quality

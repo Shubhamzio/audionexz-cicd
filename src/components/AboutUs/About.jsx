@@ -53,7 +53,7 @@ const About = () => {
     },
     {
       name: 'Megha Mukherjee',
-      role: 'Founder',
+      role: ' Co Founder',
       image: getImagePath('assets/Megha_das.jpeg'),
       description: 'Strategic operations expert driving excellence in client solutions and partnerships.',
       social: {
@@ -114,7 +114,7 @@ const About = () => {
   ];
 
   const stats = [
-    { number: '40+', label: 'Projects Completed' },
+    { number: '88+', label: 'Projects Completed' },
     { number: '200+', label: 'Partner Brands' },
     { number: '5+', label: 'Years Experience' },
     { number: '100%', label: 'Client Satisfaction' }
