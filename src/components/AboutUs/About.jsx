@@ -244,7 +244,7 @@ const About = () => {
                 </p>
                 <p>
                   Founded by <strong>Tanmoy Das</strong> and <strong>Megha Mukherjee</strong>,
-                  AUDIONEXZ Entertainment Pvt. Ltd. is driven by a shared passion for quality sound,
+                  AUDIONEXZ  is driven by a shared passion for quality sound,
                   design precision, and reliable performance. Whether you're a musician, a studio owner,
                   or a business creating a high-end venue experience, our team provides end-to-end
                   consultation, equipment supply, installation, and calibration to ensure your sound
