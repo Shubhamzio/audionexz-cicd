@@ -416,7 +416,7 @@ const About = () => {
                 <div className="anx-about__mission-icon">🌟</div>
                 <h2 className="anx-about__mission-title">More Than a Company</h2>
                 <p className="anx-about__mission-text">
-                  AUDIONEXZ Entertainment Pvt. Ltd. isn't just a company — it's an
+                  AUDIONEXZ  isn't just a company — it's an
                   <strong> ecosystem for creators, performers, and businesses</strong> who care about great sound.
                 </p>
               </div>
