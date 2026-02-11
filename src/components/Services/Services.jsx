@@ -141,8 +141,8 @@ const Service = () => {
   ];
 
   const metrics = [
-    { value: '500+', label: 'Projects Delivered' },
-    { value: '15+', label: 'Years of Expertise' },
+    { value: '88+', label: 'Projects Delivered' },
+    { value: '4+', label: 'Years of Expertise' },
     { value: '98%', label: 'Client Retention' },
     { value: '50+', label: 'Acoustic Engineers' }
   ];
