@@ -1,258 +1,158 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Services.css';
 import Footer from '../Footer/Footer';
+
 const Service = () => {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [hoveredService, setHoveredService] = useState(null);
   const [selectedService, setSelectedService] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  // Refs for animations
   const heroRef = useRef(null);
-  const servicesRef = useRef(null);
-  const statsRef = useRef(null);
+  // const cursorGlowRef = useRef(null);
 
-  // Service categories
   const categories = [
-    { id: 'all', name: 'All Services', icon: '🎯' },
-    { id: 'acoustic', name: 'Acoustic Solutions', icon: '🎵' },
-    { id: 'studio', name: 'Studio Design', icon: '🎙️' },
-    { id: 'commercial', name: 'Commercial Spaces', icon: '🏢' },
-    { id: 'residential', name: 'Residential', icon: '🏠' },
-    { id: 'consulting', name: 'Consulting', icon: '💼' }
+    { id: 'all', name: 'All', icon: '◎' },
+    { id: 'acoustic', name: 'Acoustic', icon: '◈' },
+    { id: 'studio', name: 'Studio', icon: '◉' },
+    { id: 'commercial', name: 'Commercial', icon: '◆' },
+    { id: 'residential', name: 'Residential', icon: '◇' },
+    { id: 'consulting', name: 'Consulting', icon: '◊' }
   ];
 
-  // Comprehensive services data
   const services = [
     {
       id: 1,
       category: 'acoustic',
       title: 'Acoustic Treatment',
-      subtitle: 'Professional Sound Control',
-      description: 'Transform any space with our cutting-edge acoustic treatment solutions. We analyze, design, and implement custom acoustic panels, diffusers, and bass traps to achieve perfect sound quality.',
-      icon: '🔊',
-      features: [
-        'Custom acoustic panel design',
-        'Reverberation time optimization',
-        'Echo and flutter control',
-        'Noise reduction solutions',
-        'Material selection guidance',
-        'Installation supervision'
-      ],
-      price: 'Starting from $5,000',
-      duration: '2-4 weeks',
-      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=600&fit=crop'
+      tagline: 'Precision Sound Architecture',
+      description: 'Custom-engineered acoustic panels, diffusers, and bass traps designed through computational analysis for pristine sound environments.',
+      highlights: ['RT60 Optimization', 'Flutter Echo Elimination', 'Custom Panel Fabrication'],
+      investment: '₹4,00,000',
+      timeline: '2–4 Weeks',
+      metric: '99.2% Accuracy',
+      gradient: 'linear-gradient(135deg, #1a1a2e, #16213e)'
     },
     {
       id: 2,
       category: 'studio',
       title: 'Recording Studio Design',
-      subtitle: 'World-Class Studio Solutions',
-      description: 'Create professional recording environments with optimal acoustics, workflow efficiency, and aesthetic appeal. Our designs meet international standards for recording quality.',
-      icon: '🎚️',
-      features: [
-        'Control room acoustics',
-        'Live room design',
-        'Isolation booth construction',
-        'HVAC noise control',
-        'Equipment integration',
-        'Cable management systems'
-      ],
-      price: 'Starting from $50,000',
-      duration: '6-8 weeks',
-      image: 'https://images.unsplash.com/photo-1598653222000-6b7b7a552625?w=800&h=600&fit=crop'
+      tagline: 'World-Class Production Rooms',
+      description: 'End-to-end studio architecture — from isolation engineering to control room tuning — meeting international broadcast standards.',
+      highlights: ['Control Room Acoustics', 'Floating Floor Systems', 'HVAC Noise Isolation'],
+      investment: '₹40,00,000',
+      timeline: '6–8 Weeks',
+      metric: 'NC-15 Rated',
+      gradient: 'linear-gradient(135deg, #0f0f23, #1a0a2e)'
     },
     {
       id: 3,
       category: 'commercial',
-      title: 'Office Acoustics',
-      subtitle: 'Productive Work Environments',
-      description: 'Enhance productivity and comfort in office spaces with strategic acoustic solutions. We create environments that promote focus, collaboration, and wellbeing.',
-      icon: '💼',
-      features: [
-        'Open office acoustic planning',
-        'Meeting room optimization',
-        'Phone booth design',
-        'Sound masking systems',
-        'Acoustic ceiling solutions',
-        'Privacy enhancement'
-      ],
-      price: 'Starting from $15,000',
-      duration: '3-5 weeks',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop'
+      title: 'Corporate Acoustic Design',
+      tagline: 'Productivity Through Silence',
+      description: 'Strategic acoustic planning for open offices, boardrooms, and collaborative zones — reducing noise distraction by up to 65%.',
+      highlights: ['Sound Masking Integration', 'Privacy Index Enhancement', 'Zonal Acoustic Planning'],
+      investment: '₹12,00,000',
+      timeline: '3–5 Weeks',
+      metric: 'STC 55+ Rating',
+      gradient: 'linear-gradient(135deg, #1a1a1a, #0d1b2a)'
     },
     {
       id: 4,
       category: 'residential',
-      title: 'Home Theater Systems',
-      subtitle: 'Cinematic Experience at Home',
-      description: 'Design and install premium home theater systems with perfect acoustics, immersive sound, and stunning visuals for the ultimate entertainment experience.',
-      icon: '🎬',
-      features: [
-        '7.1.4 Dolby Atmos setup',
-        'Room acoustic optimization',
-        'Premium speaker selection',
-        '4K/8K projection systems',
-        'Automated control systems',
-        'Aesthetic integration'
-      ],
-      price: 'Starting from $25,000',
-      duration: '2-3 weeks',
-      image: 'https://images.unsplash.com/photo-1608970061254-266daa4f0fe2?w=800&h=600&fit=crop'
+      title: 'Home Cinema & Theatre',
+      tagline: 'Cinematic Immersion at Home',
+      description: 'Dolby Atmos certified home theatre design with calibrated acoustics, 4K laser projection, and automated ambient control.',
+      highlights: ['7.1.4 Atmos Configuration', 'Acoustic Room Calibration', 'Smart Automation'],
+      investment: '₹20,00,000',
+      timeline: '2–3 Weeks',
+      metric: 'THX Certified',
+      gradient: 'linear-gradient(135deg, #0a0a0a, #1a0a1e)'
     },
     {
       id: 5,
       category: 'commercial',
-      title: 'Restaurant & Cafe Acoustics',
-      subtitle: 'Ambiance Through Sound',
-      description: 'Create the perfect dining atmosphere with balanced acoustics that enhance conversation while maintaining the desired ambiance and energy level.',
-      icon: '🍽️',
-      features: [
-        'Ambient noise control',
-        'Speech intelligibility optimization',
-        'Background music system design',
-        'Kitchen noise isolation',
-        'Outdoor seating acoustics',
-        'Zone-based sound control'
-      ],
-      price: 'Starting from $10,000',
-      duration: '2-3 weeks',
-      image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=600&fit=crop'
+      title: 'Hospitality Acoustics',
+      tagline: 'Ambiance by Design',
+      description: 'Acoustic engineering for restaurants, hotels, and lounges — balancing speech intelligibility with curated sonic atmospheres.',
+      highlights: ['Ambient Noise Sculpting', 'Kitchen Sound Isolation', 'Multi-Zone Audio'],
+      investment: '₹8,00,000',
+      timeline: '2–3 Weeks',
+      metric: 'STI > 0.65',
+      gradient: 'linear-gradient(135deg, #1a1a1a, #2d1b00)'
     },
     {
       id: 6,
       category: 'acoustic',
-      title: 'Auditorium Design',
-      subtitle: 'Perfect Acoustics for Large Venues',
-      description: 'Design state-of-the-art auditoriums with exceptional acoustics, ensuring every seat experiences crystal-clear sound and optimal viewing angles.',
-      icon: '🎭',
-      features: [
-        'Architectural acoustics',
-        'Stage acoustics design',
-        'Audience area optimization',
-        'Sound reinforcement systems',
-        'Variable acoustics solutions',
-        'AV integration'
-      ],
-      price: 'Starting from $100,000',
-      duration: '10-12 weeks',
-      image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop'
+      title: 'Auditorium & Performance Halls',
+      tagline: 'Architecture Meets Acoustics',
+      description: 'Large-format venue design with variable acoustic systems, ensuring every seat delivers an immersive auditory experience.',
+      highlights: ['Variable Acoustic Systems', 'Stage Reflector Design', 'Audience Area Tuning'],
+      investment: '₹80,00,000',
+      timeline: '10–14 Weeks',
+      metric: 'C80 Optimized',
+      gradient: 'linear-gradient(135deg, #0f0f0f, #1e0a0a)'
     },
     {
       id: 7,
       category: 'consulting',
-      title: 'Acoustic Consulting',
-      subtitle: 'Expert Guidance & Analysis',
-      description: 'Professional consulting services for acoustic challenges, including measurements, analysis, recommendations, and project management support.',
-      icon: '📊',
-      features: [
-        'Acoustic measurements & analysis',
-        '3D acoustic modeling',
-        'Noise impact assessments',
-        'Building code compliance',
-        'Expert witness services',
-        'Project peer review'
-      ],
-      price: 'Starting from $2,000/day',
-      duration: 'Varies by project',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop'
+      title: 'Acoustic Consulting & Analysis',
+      tagline: 'Data-Driven Sound Intelligence',
+      description: 'Comprehensive acoustic assessments with 3D simulation modeling, regulatory compliance audits, and actionable design recommendations.',
+      highlights: ['3D Acoustic Modeling', 'Noise Impact Assessment', 'Regulatory Compliance'],
+      investment: '₹1,50,000 / day',
+      timeline: 'Project Based',
+      metric: 'ISO 3382 Compliant',
+      gradient: 'linear-gradient(135deg, #111122, #0a1a1a)'
     },
     {
       id: 8,
       category: 'studio',
-      title: 'Podcast Studio Setup',
-      subtitle: 'Professional Podcast Production',
-      description: 'Create broadcast-quality podcast studios with pristine audio, efficient workflows, and comfortable environments for long recording sessions.',
-      icon: '🎙️',
-      features: [
-        'Vocal booth design',
-        'Multi-person setup',
-        'Remote recording capability',
-        'Acoustic treatment',
-        'Equipment consultation',
-        'Live streaming integration'
-      ],
-      price: 'Starting from $8,000',
-      duration: '1-2 weeks',
-      image: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&h=600&fit=crop'
+      title: 'Podcast & Broadcast Studio',
+      tagline: 'Broadcast-Grade Audio Spaces',
+      description: 'Purpose-built podcast and broadcast environments with vocal-optimized acoustics, remote recording infrastructure, and live streaming capability.',
+      highlights: ['Vocal Booth Engineering', 'Multi-Host Configuration', 'Live Stream Integration'],
+      investment: '₹6,50,000',
+      timeline: '1–2 Weeks',
+      metric: 'Noise Floor < -60dB',
+      gradient: 'linear-gradient(135deg, #0a0a1e, #1a1a0a)'
     },
     {
       id: 9,
       category: 'residential',
-      title: 'Music Practice Rooms',
-      subtitle: 'Perfect Practice Spaces',
-      description: 'Design soundproof music practice rooms that provide excellent acoustics for practice while preventing sound transmission to neighboring spaces.',
-      icon: '🎸',
-      features: [
-        'Complete soundproofing',
-        'Instrument-specific acoustics',
-        'Ventilation systems',
-        'Recording capability',
-        'Adjustable acoustics',
-        'Storage solutions'
-      ],
-      price: 'Starting from $12,000',
-      duration: '2-3 weeks',
-      image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop'
+      title: 'Music Practice Room',
+      tagline: 'Your Personal Sound Sanctuary',
+      description: 'Soundproofed practice spaces with instrument-specific acoustic tuning, integrated recording capability, and adjustable diffusion.',
+      highlights: ['Full Soundproofing', 'Instrument-Specific Tuning', 'Recording Ready'],
+      investment: '₹10,00,000',
+      timeline: '2–3 Weeks',
+      metric: 'STC 60+ Isolation',
+      gradient: 'linear-gradient(135deg, #1a0a1a, #0a1a0f)'
     }
   ];
 
-  // Process steps
   const processSteps = [
-    {
-      number: '01',
-      title: 'Consultation',
-      description: 'Initial discussion to understand your needs, goals, and vision for the project.'
-    },
-    {
-      number: '02',
-      title: 'Site Analysis',
-      description: 'Comprehensive evaluation of your space including measurements and acoustic testing.'
-    },
-    {
-      number: '03',
-      title: 'Design Development',
-      description: 'Custom design solutions with 3D modeling and acoustic simulations.'
-    },
-    {
-      number: '04',
-      title: 'Implementation',
-      description: 'Professional installation with quality control and project management.'
-    },
-    {
-      number: '05',
-      title: 'Testing & Tuning',
-      description: 'Final acoustic measurements and fine-tuning to ensure optimal performance.'
-    },
-    {
-      number: '06',
-      title: 'Support',
-      description: 'Ongoing maintenance and support to keep your space performing perfectly.'
-    }
+    { num: '01', title: 'Discovery', desc: 'Deep-dive consultation to map your acoustic vision, spatial constraints, and performance targets.' },
+    { num: '02', title: 'Analysis', desc: 'On-site acoustic measurement suite — RT60, frequency response, noise floor, and structural assessment.' },
+    { num: '03', title: 'Design', desc: '3D acoustic modeling with ray-tracing simulations and material performance optimization.' },
+    { num: '04', title: 'Build', desc: 'Precision installation by certified acoustic engineers with real-time quality monitoring.' },
+    { num: '05', title: 'Calibrate', desc: 'Post-installation measurement, fine-tuning, and performance certification against design targets.' },
+    { num: '06', title: 'Sustain', desc: 'Ongoing acoustic health monitoring, seasonal recalibration, and priority support access.' }
   ];
 
-  // Statistics
-  const stats = [
-    { number: '500+', label: 'Projects Completed', icon: '🏆' },
-    { number: '15+', label: 'Years Experience', icon: '📅' },
-    { number: '98%', label: 'Client Satisfaction', icon: '😊' },
-    { number: '50+', label: 'Expert Team', icon: '👥' },
-    { number: '25+', label: 'Industry Awards', icon: '🏅' },
-    { number: '24/7', label: 'Support Available', icon: '🔧' }
+  const metrics = [
+    { value: '500+', label: 'Projects Delivered' },
+    { value: '15+', label: 'Years of Expertise' },
+    { value: '98%', label: 'Client Retention' },
+    { value: '50+', label: 'Acoustic Engineers' }
   ];
 
-  // Filter services based on category
   const filteredServices = activeCategory === 'all'
     ? services
-    : services.filter(service => service.category === activeCategory);
+    : services.filter(s => s.category === activeCategory);
 
   useEffect(() => {
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -264,23 +164,19 @@ const Service = () => {
     const elements = document.querySelectorAll('.srv-animate');
     elements.forEach(el => observer.observe(el));
 
-    // Parallax effect for hero section
-    const handleScroll = () => {
-      if (heroRef.current) {
-        const scrollY = window.scrollY;
-        heroRef.current.style.transform = `translateY(${scrollY * 0.5}px)`;
-      }
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
-  const openServiceModal = (service) => {
+  const openModal = (service) => {
     setSelectedService(service);
     setIsModalOpen(true);
     document.body.style.overflow = 'hidden';
@@ -294,52 +190,66 @@ const Service = () => {
 
   return (
     <div className="srv-wrapper">
-      {/* Animated Background */}
-      <div className="srv-bg-animation">
-        <div className="srv-grid-lines"></div>
-        <div className="srv-floating-particle srv-particle-1"></div>
-        <div className="srv-floating-particle srv-particle-2"></div>
-        <div className="srv-floating-particle srv-particle-3"></div>
-        <div className="srv-floating-particle srv-particle-4"></div>
-        <div className="srv-floating-particle srv-particle-5"></div>
-        <div className="srv-gradient-sphere"></div>
+      {/* Cursor Glow */}
+      <div
+        className="srv-cursor-glow"
+        style={{
+          left: `${mousePosition.x}px`,
+          top: `${mousePosition.y}px`
+        }}
+      />
+
+      {/* Ambient Background */}
+      <div className="srv-ambient-bg">
+        <div className="srv-noise-overlay" />
+        <div className="srv-gradient-orb srv-orb-1" />
+        <div className="srv-gradient-orb srv-orb-2" />
+        <div className="srv-gradient-orb srv-orb-3" />
+        <div className="srv-mesh-grid" />
       </div>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="srv-hero" ref={heroRef}>
-        <div className="srv-hero-content">
+        <div className="srv-hero-inner">
+          <div className="srv-hero-badge srv-animate">
+            <span className="srv-badge-dot" />
+            Acoustic Engineering Excellence
+          </div>
           <h1 className="srv-hero-title srv-animate">
-            <span className="srv-title-line">Professional</span>
-            <span className="srv-title-line srv-gradient">Acoustic Services</span>
+            <span className="srv-title-row">We Engineer</span>
+            <span className="srv-title-row srv-title-accent">Perfect Sound</span>
           </h1>
-          <p className="srv-hero-subtitle srv-animate">
-            Transforming Spaces Through Sound Excellence
+          <p className="srv-hero-desc srv-animate">
+            India's premier acoustic design studio — transforming architectural spaces
+            into precision-tuned sonic environments through science, artistry, and
+            15+ years of engineering mastery.
           </p>
-          <p className="srv-hero-description srv-animate">
-            With over 5 years of expertise, Audionexz delivers world-class acoustic solutions
-            for recording studios, commercial spaces, and residential projects. Our team of certified
-            acoustic engineers and designers create environments where sound quality meets aesthetic perfection.
-          </p>
-
+          <div className="srv-hero-metrics srv-animate">
+            {metrics.map((m, i) => (
+              <div key={i} className="srv-hero-metric">
+                <span className="srv-metric-value">{m.value}</span>
+                <span className="srv-metric-label">{m.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="srv-hero-visual">
-          <div className="srv-sound-wave"></div>
+        <div className="srv-hero-scroll-indicator">
+          <div className="srv-scroll-line" />
         </div>
       </section>
 
-      {/* Category Filter */}
+      {/* Filter */}
       <section className="srv-filter-section">
         <div className="srv-container">
-          <div className="srv-filter-wrapper">
-            {categories.map((category, index) => (
+          <div className="srv-filter-bar">
+            {categories.map((cat) => (
               <button
-                key={category.id}
-                className={`srv-filter-btn ${activeCategory === category.id ? 'active' : ''}`}
-                onClick={() => setActiveCategory(category.id)}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                key={cat.id}
+                className={`srv-filter-chip ${activeCategory === cat.id ? 'srv-chip-active' : ''}`}
+                onClick={() => setActiveCategory(cat.id)}
               >
-                <span className="srv-filter-icon">{category.icon}</span>
-                <span className="srv-filter-name">{category.name}</span>
+                <span className="srv-chip-icon">{cat.icon}</span>
+                {cat.name}
               </button>
             ))}
           </div>
@@ -347,181 +257,146 @@ const Service = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="srv-services-section" ref={servicesRef}>
+      <section className="srv-grid-section">
         <div className="srv-container">
-          <div className="srv-services-grid">
+          <div className="srv-section-header srv-animate">
+            <span className="srv-section-label">Services</span>
+            <h2 className="srv-section-heading">What We Deliver</h2>
+          </div>
+          <div className="srv-card-grid">
             {filteredServices.map((service, index) => (
               <div
                 key={service.id}
-                className="srv-service-card srv-animate"
-                style={{ animationDelay: `${index * 0.1}s` }}
-                onMouseEnter={() => setHoveredService(service.id)}
-                onMouseLeave={() => setHoveredService(null)}
-                onClick={() => openServiceModal(service)}
+                className="srv-card srv-animate"
+                style={{ animationDelay: `${index * 0.08}s` }}
+                onClick={() => openModal(service)}
               >
-                <div className="srv-card-header">
-                  <div className="srv-card-icon">{service.icon}</div>
-                  <div className="srv-card-category">{service.category}</div>
-                </div>
-
-                <div className="srv-card-image">
-                  <img src={service.image} alt={service.title} />
-                  <div className="srv-card-overlay"></div>
-                </div>
-
-                <div className="srv-card-content">
+                <div className="srv-card-accent" style={{ background: service.gradient }} />
+                <div className="srv-card-inner">
+                  <div className="srv-card-top">
+                    <span className="srv-card-cat">{service.category}</span>
+                    <span className="srv-card-metric">{service.metric}</span>
+                  </div>
                   <h3 className="srv-card-title">{service.title}</h3>
-                  <p className="srv-card-subtitle">{service.subtitle}</p>
-                  <p className="srv-card-description">{service.description}</p>
-
-                  <div className="srv-card-features">
-                    {service.features.slice(0, 3).map((feature, idx) => (
-                      <span key={idx} className="srv-feature-tag">
-                        {feature}
-                      </span>
+                  <p className="srv-card-tagline">{service.tagline}</p>
+                  <p className="srv-card-desc">{service.description}</p>
+                  <div className="srv-card-highlights">
+                    {service.highlights.map((h, i) => (
+                      <span key={i} className="srv-highlight-pill">{h}</span>
                     ))}
-                    {service.features.length > 3 && (
-                      <span className="srv-feature-more">
-                        +{service.features.length - 3} more
-                      </span>
-                    )}
                   </div>
-
-                  <div className="srv-card-footer">
-                    <div className="srv-card-info">
-                      <span className="srv-info-label">Starting from</span>
-                      <span className="srv-info-value">{service.price}</span>
+                  <div className="srv-card-bottom">
+                    <div className="srv-card-price">
+                      <span className="srv-price-label">Investment</span>
+                      <span className="srv-price-value">{service.investment}</span>
                     </div>
-                    <div className="srv-card-info">
-                      <span className="srv-info-label">Duration</span>
-                      <span className="srv-info-value">{service.duration}</span>
+                    <div className="srv-card-timeline">
+                      <span className="srv-timeline-label">Timeline</span>
+                      <span className="srv-timeline-value">{service.timeline}</span>
                     </div>
                   </div>
-
-                  <button className="srv-card-btn">
-                    Learn More
-                    <span className="srv-btn-arrow">→</span>
-                  </button>
                 </div>
-
-                {hoveredService === service.id && (
-                  <div className="srv-card-glow"></div>
-                )}
+                <div className="srv-card-hover-border" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Process */}
       <section className="srv-process-section">
         <div className="srv-container">
-          <h2 className="srv-section-title srv-animate">Our Process</h2>
-          <p className="srv-section-subtitle srv-animate">
-            A systematic approach to deliver exceptional acoustic solutions
-          </p>
-
-          <div className="srv-process-timeline">
-            {processSteps.map((step, index) => (
-              <div
-                key={index}
-                className="srv-process-step srv-animate"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <div className="srv-step-number">{step.number}</div>
-                <div className="srv-step-content">
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </div>
-                {index < processSteps.length - 1 && (
-                  <div className="srv-step-connector"></div>
-                )}
+          <div className="srv-section-header srv-animate">
+            <span className="srv-section-label">Methodology</span>
+            <h2 className="srv-section-heading">Our Engineering Process</h2>
+          </div>
+          <div className="srv-process-grid">
+            {processSteps.map((step, i) => (
+              <div key={i} className="srv-process-card srv-animate" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className="srv-process-num">{step.num}</div>
+                <h3 className="srv-process-title">{step.title}</h3>
+                <p className="srv-process-desc">{step.desc}</p>
+                <div className="srv-process-line" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="srv-stats-section" ref={statsRef}>
-        <div className="srv-container">
-          <div className="srv-stats-grid">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="srv-stat-card srv-animate"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="srv-stat-icon">{stat.icon}</div>
-                <div className="srv-stat-number">{stat.number}</div>
-                <div className="srv-stat-label">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="srv-cta-section">
         <div className="srv-container">
-          <div className="srv-cta-content srv-animate">
-            <h2 className="srv-cta-title">Ready to Transform Your Space?</h2>
-            <p className="srv-cta-subtitle">
-              Let's create the perfect acoustic environment for your needs
+          <div className="srv-cta-card srv-animate">
+            <div className="srv-cta-glow" />
+            <span className="srv-cta-label">Start Your Project</span>
+            <h2 className="srv-cta-heading">Let's Engineer Your<br />Perfect Sound Environment</h2>
+            <p className="srv-cta-desc">
+              Book a complimentary acoustic consultation with our engineering team.
+              We'll assess your space, define your sonic goals, and map the path to acoustic excellence.
             </p>
-            <div className="srv-cta-buttons">
-              <button className="srv-btn-primary">
-                Get Started Today
-                <span className="srv-btn-icon">→</span>
-              </button>
-              <button className="srv-btn-secondary">
-                Schedule Consultation
-                <span className="srv-btn-icon">📞</span>
-              </button>
+            <div className="srv-cta-actions">
+              <a href="/contact" className="srv-cta-primary">
+                Book Consultation
+                <span className="srv-cta-arrow">↗</span>
+              </a>
+              <a href="tel:+919876543210" className="srv-cta-secondary">
+                +91 98765 43210
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Service Detail Modal */}
+      {/* Modal */}
       {isModalOpen && selectedService && (
         <div className="srv-modal-overlay" onClick={closeModal}>
-          <div className="srv-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="srv-modal-close" onClick={closeModal}>×</button>
-            <div className="srv-modal-content">
-              <div className="srv-modal-header">
-                <div className="srv-modal-icon">{selectedService.icon}</div>
-                <h2>{selectedService.title}</h2>
-                <p>{selectedService.subtitle}</p>
+          <div className="srv-modal-container" onClick={(e) => e.stopPropagation()}>
+            <button className="srv-modal-close" onClick={closeModal}>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </button>
+            <div className="srv-modal-body">
+              <div className="srv-modal-accent-bar" style={{ background: selectedService.gradient }} />
+              <div className="srv-modal-top">
+                <span className="srv-modal-cat">{selectedService.category}</span>
+                <span className="srv-modal-metric-badge">{selectedService.metric}</span>
               </div>
-              <div className="srv-modal-body">
-                <img src={selectedService.image} alt={selectedService.title} />
-                <p className="srv-modal-description">{selectedService.description}</p>
-                <h3>Key Features</h3>
-                <ul className="srv-modal-features">
-                  {selectedService.features.map((feature, idx) => (
-                    <li key={idx}>{feature}</li>
+              <h2 className="srv-modal-title">{selectedService.title}</h2>
+              <p className="srv-modal-tagline">{selectedService.tagline}</p>
+              <div className="srv-modal-divider" />
+              <p className="srv-modal-desc">{selectedService.description}</p>
+              <div className="srv-modal-highlights">
+                <h4>Key Deliverables</h4>
+                <div className="srv-modal-highlight-list">
+                  {selectedService.highlights.map((h, i) => (
+                    <div key={i} className="srv-modal-highlight-item">
+                      <span className="srv-modal-check">✓</span>
+                      {h}
+                    </div>
                   ))}
-                </ul>
-                <div className="srv-modal-info">
-                  <div>
-                    <span className="srv-info-label">Investment</span>
-                    <span className="srv-info-value">{selectedService.price}</span>
-                  </div>
-                  <div>
-                    <span className="srv-info-label">Timeline</span>
-                    <span className="srv-info-value">{selectedService.duration}</span>
-                  </div>
                 </div>
-                <button className="srv-modal-cta">
-                  Request Quote for {selectedService.title}
-                </button>
+              </div>
+              <div className="srv-modal-info-grid">
+                <div className="srv-modal-info-block">
+                  <span className="srv-modal-info-label">Investment</span>
+                  <span className="srv-modal-info-value">{selectedService.investment}</span>
+                </div>
+                <div className="srv-modal-info-block">
+                  <span className="srv-modal-info-label">Timeline</span>
+                  <span className="srv-modal-info-value">{selectedService.timeline}</span>
+                </div>
+                <div className="srv-modal-info-block">
+                  <span className="srv-modal-info-label">Standard</span>
+                  <span className="srv-modal-info-value">{selectedService.metric}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       )}
-      <Footer/>
+
+      <Footer />
     </div>
   );
 };
