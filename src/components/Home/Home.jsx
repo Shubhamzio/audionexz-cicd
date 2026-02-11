@@ -22,7 +22,7 @@ const Home = () => {
       id: 1,
       heading: "Recording Studios",
       subheading: "Where Sound Meets Perfection",
-      image: getImagePath("/assets/studio.jpg")
+      image: getImagePath("/assets/homepage_pic.jpeg")
     },
     {
       id: 2,
