@@ -23,7 +23,7 @@ const Consultancy = () => {
       id: 1,
       title: "Acoustical Architecture & Execution",
       description: "Our expert team specializes in creating exceptional acoustic environments through innovative architectural solutions. We combine cutting-edge acoustic modeling with aesthetic design to deliver spaces that sound as impressive as they look. From initial concept to final implementation, we ensure every detail is optimized for superior sound quality and minimal noise interference.",
-      image: "https://images.unsplash.com/photo-1598153346810-860daa814c4b?w=800&h=600&fit=crop",
+      image: '/assets/architecture.png',
       imagePosition: "left"
     },
     {
