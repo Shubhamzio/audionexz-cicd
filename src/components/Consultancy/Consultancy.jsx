@@ -30,7 +30,7 @@ const Consultancy = () => {
       id: 2,
       title: "Cost Analysis & Optimization",
       description: "We provide comprehensive cost analysis services that help you maximize your investment while maintaining the highest quality standards. Our team evaluates every aspect of your project to identify cost-saving opportunities without compromising on acoustic performance. Through strategic planning and efficient resource allocation, we deliver exceptional value for your budget.",
-      image: "/assetts/HVAC.jpg",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
       imagePosition: "right"
     },
     {
