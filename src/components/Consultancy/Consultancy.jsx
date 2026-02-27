@@ -37,7 +37,7 @@ const Consultancy = () => {
       id: 3,
       title: "HVAC Systems Design & Deployment",
       description: "Our HVAC solutions are engineered to maintain optimal climate control while minimizing acoustic interference. We design and deploy sophisticated ventilation systems that operate quietly and efficiently, ensuring comfort without compromising the acoustic integrity of your space. Every system is customized to meet the unique requirements of your environment.",
-      image: "/assets/HVAc.jpg",
+      image: "/assets/HVAC.jpg",
       imagePosition: "left"
     },
     {
