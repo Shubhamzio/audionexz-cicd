@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import './Consultancy.css';
 import Footer from '../Footer/Footer';
+import { useNavigate } from 'react-router-dom';
+
 const Consultancy = () => {
   const sectionRefs = useRef([]);
+  const navigate = useNavigate();
 
   // Service cards data
   const serviceCards = [
@@ -76,6 +79,8 @@ const Consultancy = () => {
       rootMargin: '0px 0px -50px 0px'
     };
 
+
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -89,6 +94,11 @@ const Consultancy = () => {
 
     return () => observer.disconnect();
   }, []);
+
+   const handleNavigateToContact = () => {
+    navigate('/contact');
+  };
+
 
   return (
     <div className="conslt-main-container">
@@ -170,7 +180,7 @@ const Consultancy = () => {
             <p className="conslt-cta-subtitle">
               Let's discuss how we can create the perfect acoustic environment for your needs
             </p>
-            <button className="conslt-cta-button">Get Started Today</button>
+            <button className="conslt-cta-button" onClick={{handleNavigateToContact}}>Get Started Today</button>
           </div>
         </div>
       </section>
