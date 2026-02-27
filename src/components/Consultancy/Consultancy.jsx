@@ -180,7 +180,7 @@ const Consultancy = () => {
             <p className="conslt-cta-subtitle">
               Let's discuss how we can create the perfect acoustic environment for your needs
             </p>
-            <button className="conslt-cta-button" onClick={{handleNavigateToContact}}>Get Started Today</button>
+            <button className="conslt-cta-button" onClick={handleNavigateToContact}>Get Started Today</button>
           </div>
         </div>
       </section>
