@@ -9,6 +9,10 @@ const Home = () => {
   const [isVisible, setIsVisible] = useState({});
   const sectionRefs = useRef([]);
 
+  // NEW: State for project image modal
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+
   // Helper function to get correct image path
   const getImagePath = (path) => {
     const base = import.meta.env.BASE_URL || '/';
@@ -238,6 +242,25 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
+  // NEW: Close modal on ESC key press
+  useEffect(() => {
+    const handleEscKey = (e) => {
+      if (e.key === 'Escape' && isProjectModalOpen) {
+        closeProjectModal();
+      }
+    };
+
+    if (isProjectModalOpen) {
+      document.addEventListener('keydown', handleEscKey);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscKey);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isProjectModalOpen]);
+
   const goToSlide = (index) => {
     setCurrentSlide(index);
   };
@@ -257,6 +280,25 @@ const Home = () => {
   // Image error handler for testimonials
   const handleTestimonialImageError = (e, name) => {
     e.target.src = `https://ui-avatars.com/api/?name=${name.replace(' ', '+')}&size=300&background=1e90ff&color=fff&bold=true&font-size=0.4`;
+  };
+
+  // NEW: Open project modal
+  const openProjectModal = (project) => {
+    setSelectedProject(project);
+    setIsProjectModalOpen(true);
+  };
+
+  // NEW: Close project modal
+  const closeProjectModal = () => {
+    setIsProjectModalOpen(false);
+    setSelectedProject(null);
+  };
+
+  // NEW: Handle modal backdrop click
+  const handleProjectModalBackdropClick = (e) => {
+    if (e.target.classList.contains('audionexz-home__project-modal')) {
+      closeProjectModal();
+    }
   };
 
   return (
@@ -449,7 +491,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== SECTION 4: RECENT PROJECTS ===== */}
+      {/* ===== SECTION 4: RECENT PROJECTS - UPDATED WITH FULL IMAGE VIEW ===== */}
       <section
         id="projects-section"
         ref={(el) => (sectionRefs.current[2] = el)}
@@ -469,19 +511,24 @@ const Home = () => {
           <div className="audionexz-home__projects-track">
             {[...projects, ...projects].map((project, index) => (
               <div key={index} className="audionexz-home__projects-card">
-                <div className="audionexz-home__projects-card-image-wrapper">
+                <div
+                  className="audionexz-home__projects-card-image-wrapper"
+                  onClick={() => openProjectModal(project)}
+                  style={{ cursor: 'pointer' }}
+                >
                   <img
                     src={project.image}
                     alt={project.name}
                     className="audionexz-home__projects-card-image"
                   />
                   <div className="audionexz-home__projects-card-overlay">
-                    <button className="audionexz-home__projects-card-btn">
+                    <div className="audionexz-home__projects-card-view-content">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
-                    </button>
+                      <span>View Full Image</span>
+                    </div>
                   </div>
                 </div>
                 <div className="audionexz-home__projects-card-content">
@@ -498,6 +545,46 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* ===== NEW: PROJECT IMAGE MODAL ===== */}
+      {isProjectModalOpen && selectedProject && (
+        <div
+          className="audionexz-home__project-modal"
+          onClick={handleProjectModalBackdropClick}
+        >
+          <div className="audionexz-home__project-modal-content">
+            {/* Close Button */}
+            <button
+              className="audionexz-home__project-modal-close"
+              onClick={closeProjectModal}
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Image Container */}
+            <div className="audionexz-home__project-modal-image-container">
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.name}
+                className="audionexz-home__project-modal-image"
+              />
+            </div>
+
+            {/* Info Footer */}
+            <div className="audionexz-home__project-modal-info">
+              <h3 className="audionexz-home__project-modal-name">{selectedProject.name}</h3>
+              <p className="audionexz-home__project-modal-place">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                {selectedProject.place}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ===== SECTION 5: TESTIMONIALS - UPDATED WITH BIGGER IMAGES ===== */}
       <section
