@@ -9,6 +9,10 @@ const Home = () => {
   const [isVisible, setIsVisible] = useState({});
   const sectionRefs = useRef([]);
 
+  // NEW: State for testimonial image modal
+  const [selectedTestimonial, setSelectedTestimonial] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   // Helper function to get correct image path
   const getImagePath = (path) => {
     const base = import.meta.env.BASE_URL || '/';
@@ -238,6 +242,25 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
+  // NEW: Close modal on ESC key press
+  useEffect(() => {
+    const handleEscKey = (e) => {
+      if (e.key === 'Escape' && isModalOpen) {
+        closeModal();
+      }
+    };
+
+    if (isModalOpen) {
+      document.addEventListener('keydown', handleEscKey);
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscKey);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isModalOpen]);
+
   const goToSlide = (index) => {
     setCurrentSlide(index);
   };
@@ -257,6 +280,25 @@ const Home = () => {
   // Image error handler for testimonials
   const handleTestimonialImageError = (e, name) => {
     e.target.src = `https://ui-avatars.com/api/?name=${name.replace(' ', '+')}&size=300&background=1e90ff&color=fff&bold=true&font-size=0.4`;
+  };
+
+  // NEW: Open modal with selected testimonial
+  const openModal = (testimonial) => {
+    setSelectedTestimonial(testimonial);
+    setIsModalOpen(true);
+  };
+
+  // NEW: Close modal
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedTestimonial(null);
+  };
+
+  // NEW: Handle modal backdrop click
+  const handleModalBackdropClick = (e) => {
+    if (e.target.classList.contains('audionexz-home__testimonial-modal')) {
+      closeModal();
+    }
   };
 
   return (
@@ -499,7 +541,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== SECTION 5: TESTIMONIALS - UPDATED WITH BIGGER IMAGES ===== */}
+      {/* ===== SECTION 5: TESTIMONIALS - UPDATED WITH CLICK TO VIEW ===== */}
       <section
         id="testimonials-section"
         ref={(el) => (sectionRefs.current[3] = el)}
@@ -522,8 +564,12 @@ const Home = () => {
             <div className="audionexz-home__testimonials-track">
               {[...testimonials, ...testimonials].map((testimonial, index) => (
                 <div key={index} className="audionexz-home__testimonials-card">
-                  {/* Large Image Section */}
-                  <div className="audionexz-home__testimonials-card-image-section">
+                  {/* Large Image Section - NOW CLICKABLE */}
+                  <div
+                    className="audionexz-home__testimonials-card-image-section"
+                    onClick={() => openModal(testimonial)}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <div className="audionexz-home__testimonials-card-image-wrapper">
                       <img
                         src={testimonial.avatar}
@@ -531,7 +577,16 @@ const Home = () => {
                         className="audionexz-home__testimonials-card-image"
                         onError={(e) => handleTestimonialImageError(e, testimonial.name)}
                       />
-                      <div className="audionexz-home__testimonials-card-image-overlay"></div>
+                      <div className="audionexz-home__testimonials-card-image-overlay">
+                        {/* View icon overlay */}
+                        <div className="audionexz-home__testimonials-card-view-icon">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                          </svg>
+                          <span>View Photo</span>
+                        </div>
+                      </div>
                     </div>
                     <div className="audionexz-home__testimonials-card-image-glow"></div>
                   </div>
@@ -576,6 +631,42 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* ===== NEW: TESTIMONIAL IMAGE MODAL ===== */}
+      {isModalOpen && selectedTestimonial && (
+        <div
+          className="audionexz-home__testimonial-modal"
+          onClick={handleModalBackdropClick}
+        >
+          <div className="audionexz-home__testimonial-modal-content">
+            {/* Close Button */}
+            <button
+              className="audionexz-home__testimonial-modal-close"
+              onClick={closeModal}
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Image Container */}
+            <div className="audionexz-home__testimonial-modal-image-container">
+              <img
+                src={selectedTestimonial.avatar}
+                alt={selectedTestimonial.name}
+                className="audionexz-home__testimonial-modal-image"
+                onError={(e) => handleTestimonialImageError(e, selectedTestimonial.name)}
+              />
+            </div>
+
+            {/* Info Footer */}
+            <div className="audionexz-home__testimonial-modal-info">
+              <h3 className="audionexz-home__testimonial-modal-name">{selectedTestimonial.name}</h3>
+              <p className="audionexz-home__testimonial-modal-role">{selectedTestimonial.role}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>
