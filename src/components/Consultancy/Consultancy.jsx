@@ -155,10 +155,7 @@ const Consultancy = () => {
               <div className="conslt-flex-content">
                 <h2 className="conslt-flex-title">{section.title}</h2>
                 <p className="conslt-flex-description">{section.description}</p>
-                <button className="conslt-learn-more-btn">
-                  Learn More
-                  <span className="conslt-btn-arrow">→</span>
-                </button>
+
               </div>
             </div>
           ))}
