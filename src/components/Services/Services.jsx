@@ -28,8 +28,7 @@ const Service = () => {
       tagline: 'Precision Sound Architecture',
       description: 'Custom-engineered acoustic panels, diffusers, and bass traps designed through computational analysis for pristine sound environments.',
       highlights: ['RT60 Optimization', 'Flutter Echo Elimination', 'Custom Panel Fabrication'],
-      investment: '₹4,00,000',
-      timeline: '2–4 Weeks',
+
       metric: '99.2% Accuracy',
       gradient: 'linear-gradient(135deg, #1a1a2e, #16213e)'
     },
@@ -40,8 +39,7 @@ const Service = () => {
       tagline: 'World-Class Production Rooms',
       description: 'End-to-end studio architecture — from isolation engineering to control room tuning — meeting international broadcast standards.',
       highlights: ['Control Room Acoustics', 'Floating Floor Systems', 'HVAC Noise Isolation'],
-      investment: '₹40,00,000',
-      timeline: '6–8 Weeks',
+
       metric: 'NC-15 Rated',
       gradient: 'linear-gradient(135deg, #0f0f23, #1a0a2e)'
     },
@@ -52,8 +50,7 @@ const Service = () => {
       tagline: 'Productivity Through Silence',
       description: 'Strategic acoustic planning for open offices, boardrooms, and collaborative zones — reducing noise distraction by up to 65%.',
       highlights: ['Sound Masking Integration', 'Privacy Index Enhancement', 'Zonal Acoustic Planning'],
-      investment: '₹12,00,000',
-      timeline: '3–5 Weeks',
+
       metric: 'STC 55+ Rating',
       gradient: 'linear-gradient(135deg, #1a1a1a, #0d1b2a)'
     },
@@ -64,8 +61,7 @@ const Service = () => {
       tagline: 'Cinematic Immersion at Home',
       description: 'Dolby Atmos certified home theatre design with calibrated acoustics, 4K laser projection, and automated ambient control.',
       highlights: ['7.1.4 Atmos Configuration', 'Acoustic Room Calibration', 'Smart Automation'],
-      investment: '₹20,00,000',
-      timeline: '2–3 Weeks',
+
       metric: 'THX Certified',
       gradient: 'linear-gradient(135deg, #0a0a0a, #1a0a1e)'
     },
@@ -76,8 +72,8 @@ const Service = () => {
       tagline: 'Ambiance by Design',
       description: 'Acoustic engineering for restaurants, hotels, and lounges — balancing speech intelligibility with curated sonic atmospheres.',
       highlights: ['Ambient Noise Sculpting', 'Kitchen Sound Isolation', 'Multi-Zone Audio'],
-      investment: '₹8,00,000',
-      timeline: '2–3 Weeks',
+
+
       metric: 'STI > 0.65',
       gradient: 'linear-gradient(135deg, #1a1a1a, #2d1b00)'
     },
@@ -88,8 +84,8 @@ const Service = () => {
       tagline: 'Architecture Meets Acoustics',
       description: 'Large-format venue design with variable acoustic systems, ensuring every seat delivers an immersive auditory experience.',
       highlights: ['Variable Acoustic Systems', 'Stage Reflector Design', 'Audience Area Tuning'],
-      investment: '₹80,00,000',
-      timeline: '10–14 Weeks',
+
+
       metric: 'C80 Optimized',
       gradient: 'linear-gradient(135deg, #0f0f0f, #1e0a0a)'
     },
@@ -100,8 +96,7 @@ const Service = () => {
       tagline: 'Data-Driven Sound Intelligence',
       description: 'Comprehensive acoustic assessments with 3D simulation modeling, regulatory compliance audits, and actionable design recommendations.',
       highlights: ['3D Acoustic Modeling', 'Noise Impact Assessment', 'Regulatory Compliance'],
-      investment: '₹1,50,000 / day',
-      timeline: 'Project Based',
+
       metric: 'ISO 3382 Compliant',
       gradient: 'linear-gradient(135deg, #111122, #0a1a1a)'
     },
@@ -112,8 +107,7 @@ const Service = () => {
       tagline: 'Broadcast-Grade Audio Spaces',
       description: 'Purpose-built podcast and broadcast environments with vocal-optimized acoustics, remote recording infrastructure, and live streaming capability.',
       highlights: ['Vocal Booth Engineering', 'Multi-Host Configuration', 'Live Stream Integration'],
-      investment: '₹6,50,000',
-      timeline: '1–2 Weeks',
+
       metric: 'Noise Floor < -60dB',
       gradient: 'linear-gradient(135deg, #0a0a1e, #1a1a0a)'
     },
@@ -124,8 +118,7 @@ const Service = () => {
       tagline: 'Your Personal Sound Sanctuary',
       description: 'Soundproofed practice spaces with instrument-specific acoustic tuning, integrated recording capability, and adjustable diffusion.',
       highlights: ['Full Soundproofing', 'Instrument-Specific Tuning', 'Recording Ready'],
-      investment: '₹10,00,000',
-      timeline: '2–3 Weeks',
+
       metric: 'STC 60+ Isolation',
       gradient: 'linear-gradient(135deg, #1a0a1a, #0a1a0f)'
     }
