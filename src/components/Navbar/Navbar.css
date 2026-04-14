@@ -1,62 +1,61 @@
 /* ========================================
-   NAVBAR STYLES - PROFESSIONAL & GENTLE
+   AUDIONEXZ NAVBAR - MODERN BLACK THEME
+   Unique Prefix: audionexz__
 ======================================== */
 
-/* Import Eye-Soothing Font */
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+/* Import Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* CSS Variables - Gentle Color Palette */
+/* CSS Variables - Modern Dark Theme */
 :root {
-  --primary-color: #6366f1;
-  --primary-light: #818cf8;
-  --primary-dark: #4f46e5;
-  --secondary-color: #8b5cf6;
-  --accent-color: #ec4899;
-  --text-dark: #1f2937;
-  --text-light: #6b7280;
-  --bg-white: #ffffff;
-  --bg-light: #f9fafb;
-  --bg-overlay: rgba(255, 255, 255, 0.95);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --navbar-height: 80px;
+  --audionexz-primary: #00d4ff;
+  --audionexz-secondary: #7c3aed;
+  --audionexz-accent: #ff006e;
+  --audionexz-gradient-1: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+  --audionexz-gradient-2: linear-gradient(135deg, #7c3aed 0%, #ff006e 100%);
+  --audionexz-gradient-3: linear-gradient(90deg, #00d4ff, #7c3aed, #ff006e);
+  --audionexz-bg-dark: #000000;
+  --audionexz-bg-dark-secondary: #0a0a0a;
+  --audionexz-bg-dark-tertiary: #141414;
+  --audionexz-text-white: #ffffff;
+  --audionexz-text-gray: #a0a0a0;
+  --audionexz-text-light-gray: #e0e0e0;
+  --audionexz-shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
+  --audionexz-shadow-glow-purple: 0 0 30px rgba(124, 58, 237, 0.3);
+  --audionexz-shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --audionexz-transition-smooth: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --audionexz-transition-fast: all 0.3s ease;
+  --audionexz-navbar-height: 85px;
 }
 
-/* Reset & Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Navbar Container */
-.navbar {
+/* ========================================
+   NAVBAR CONTAINER
+======================================== */
+.audionexz__navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--navbar-height);
-  background: var(--bg-overlay);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-sm);
-  z-index: 1000;
-  transition: var(--transition);
-  font-family: "Assistant", sans-serif;
-  font-optical-sizing: auto;
+  height: var(--audionexz-navbar-height);
+  background: var(--audionexz-bg-dark);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 9999;
+  transition: var(--audionexz-transition-fast);
+  font-family: 'Poppins', sans-serif;
 }
 
-.navbar-scrolled {
-  height: 70px;
-  box-shadow: var(--shadow-md);
-  background: rgba(255, 255, 255, 0.98);
+.audionexz__navbar--scrolled {
+  height: 75px;
+  background: rgba(0, 0, 0, 0.95);
+  box-shadow: var(--audionexz-shadow-lg);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
 }
 
-.navbar-container {
+.audionexz__navbar-container {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -67,52 +66,88 @@
 /* ========================================
    LOGO STYLES
 ======================================== */
-.navbar-logo {
+.audionexz__navbar-logo {
   text-decoration: none;
-  z-index: 1001;
+  z-index: 10001;
+  transition: var(--audionexz-transition-smooth);
 }
 
-.logo-wrapper {
+.audionexz__logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: var(--transition);
+  gap: 0.7rem;
+  transition: var(--audionexz-transition-smooth);
+  position: relative;
 }
 
-.logo-icon {
-  font-size: 1.8rem;
-  color: var(--primary-color);
-  animation: rotateIcon 4s ease-in-out infinite;
-}
-
-.logo-text {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+.audionexz__logo-icon {
+  font-size: 2rem;
+  background: var(--audionexz-gradient-1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  letter-spacing: 0.5px;
+  animation: audionexz-rotate-icon 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
 }
 
-.navbar-logo:hover .logo-wrapper {
-  transform: scale(1.05);
+.audionexz__logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: var(--audionexz-gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+  position: relative;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
 }
 
-@keyframes rotateIcon {
-  0%, 100% {
-    transform: rotate(0deg);
+.audionexz__navbar-logo:hover .audionexz__logo-wrapper {
+  transform: scale(1.08) translateY(-2px);
+}
+
+.audionexz__navbar-logo:hover .audionexz__logo-icon {
+  animation: audionexz-pulse-glow 1s ease-in-out infinite;
+}
+
+/* Logo Animations */
+@keyframes audionexz-rotate-icon {
+
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
   }
+
+  25% {
+    transform: rotate(90deg) scale(1.1);
+  }
+
   50% {
-    transform: rotate(90deg);
+    transform: rotate(180deg) scale(1);
+  }
+
+  75% {
+    transform: rotate(270deg) scale(1.1);
+  }
+}
+
+@keyframes audionexz-pulse-glow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.8));
   }
 }
 
 /* ========================================
    NAVIGATION MENU
 ======================================== */
-.nav-menu {
+.audionexz__nav-menu {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -121,116 +156,307 @@
   padding: 0;
 }
 
-.nav-item {
+.audionexz__nav-item {
   position: relative;
 }
 
-.nav-link {
+.audionexz__nav-link {
   display: block;
-  padding: 0.7rem 1rem;
-  color: var(--text-dark);
+  padding: 0.8rem 1.2rem;
+  color: var(--audionexz-text-light-gray);
   text-decoration: none;
-  font-size: 12px;
+  font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.5px;
   position: relative;
-  transition: var(--transition);
-  border-radius: 8px;
+  transition: var(--audionexz-transition-fast);
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Hover Effect with Bottom Bar Animation */
-.nav-link::after {
-  content: '';
+.audionexz__nav-link-text {
+  position: relative;
+  z-index: 2;
+  transition: var(--audionexz-transition-fast);
+}
+
+.audionexz__nav-link-glow {
   position: absolute;
-  bottom: 4px;
-  left: 50%;
-  transform: translateX(-50%) scaleX(0);
-  width: 70%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  border-radius: 2px;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--audionexz-gradient-1);
+  opacity: 0;
+  transition: var(--audionexz-transition-fast);
+  z-index: 1;
+  border-radius: 10px;
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
-  transform: translateX(-50%) scaleX(1);
+/* Hover Effects */
+.audionexz__nav-link:hover {
+  color: var(--audionexz-text-white);
+  transform: translateY(-2px);
 }
 
-.nav-link:hover {
-  color: var(--primary-color);
-  background: rgba(99, 102, 241, 0.05);
+.audionexz__nav-link:hover .audionexz__nav-link-glow {
+  opacity: 0.15;
 }
 
-.nav-link.active {
-  color: var(--primary-color);
+.audionexz__nav-link:hover .audionexz__nav-link-text {
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* Active Link */
+.audionexz__nav-link--active {
+  color: var(--audionexz-text-white);
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  box-shadow: var(--audionexz-shadow-glow);
+}
+
+.audionexz__nav-link--active .audionexz__nav-link-text {
+  background: var(--audionexz-gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 600;
 }
 
-/* ========================================
-   SOCIAL ICONS
-======================================== */
-.social-icons {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
+.audionexz__nav-link--active::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: var(--audionexz-gradient-1);
+  border-radius: 2px;
+  animation: audionexz-pulse-line 2s ease-in-out infinite;
 }
 
-.social-link {
-  width: 40px;
-  height: 40px;
+@keyframes audionexz-pulse-line {
+
+  0%,
+  100% {
+    width: 60%;
+    opacity: 1;
+  }
+
+  50% {
+    width: 80%;
+    opacity: 0.7;
+  }
+}
+
+/* ========================================
+   SOCIAL ICONS - DESKTOP
+======================================== */
+.audionexz__social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.audionexz__social-link {
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-light);
-  font-size: 1.1rem;
+  color: var(--audionexz-text-light-gray);
+  font-size: 1.2rem;
   border-radius: 50%;
-  background: var(--bg-light);
-  transition: var(--transition);
-  border: 2px solid transparent;
+  background: var(--audionexz-bg-dark-tertiary);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: var(--audionexz-transition-smooth);
+  position: relative;
+  overflow: hidden;
 }
 
-.social-link:hover {
-  color: white;
+.audionexz__social-icon {
+  position: relative;
+  z-index: 2;
+  transition: var(--audionexz-transition-fast);
+}
+
+.audionexz__social-tooltip {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  background: var(--audionexz-bg-dark-secondary);
+  color: var(--audionexz-text-white);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  transition: var(--audionexz-transition-smooth);
+  border: 1px solid var(--social-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.audionexz__social-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
   background: var(--social-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: var(--audionexz-transition-smooth);
+}
+
+.audionexz__social-link:hover {
+  color: var(--audionexz-text-white);
   border-color: var(--social-color);
-  transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px) rotate(360deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.audionexz__social-link:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.audionexz__social-link:hover .audionexz__social-tooltip {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  bottom: -45px;
 }
 
 /* Mobile Social Icons */
-.mobile-social-container {
+.audionexz__mobile-social-container {
   display: none;
 }
 
 /* ========================================
    HAMBURGER MENU
 ======================================== */
-.hamburger {
+.audionexz__hamburger {
   display: none;
-  width: 45px;
-  height: 45px;
-  background: var(--bg-light);
-  border: none;
-  border-radius: 10px;
-  color: var(--text-dark);
-  font-size: 1.3rem;
+  width: 50px;
+  height: 50px;
+  background: var(--audionexz-bg-dark-tertiary);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 12px;
   cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-  z-index: 1001;
+  padding: 0;
+  transition: var(--audionexz-transition-smooth);
+  z-index: 10001;
+  position: relative;
+  overflow: hidden;
 }
 
-.hamburger:hover {
-  background: var(--primary-color);
-  color: white;
+.audionexz__hamburger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--audionexz-gradient-1);
+  opacity: 0;
+  transition: var(--audionexz-transition-fast);
+}
+
+.audionexz__hamburger:hover {
   transform: scale(1.05);
+  box-shadow: var(--audionexz-shadow-glow);
 }
 
-.hamburger.active {
-  background: var(--accent-color);
-  color: white;
+.audionexz__hamburger:hover::before {
+  opacity: 0.2;
+}
+
+.audionexz__hamburger-box {
+  width: 25px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.audionexz__hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.audionexz__hamburger-inner,
+.audionexz__hamburger-inner::before,
+.audionexz__hamburger-inner::after {
+  width: 25px;
+  height: 2px;
+  background-color: var(--audionexz-primary);
+  border-radius: 4px;
+  position: absolute;
+  transition: var(--audionexz-transition-fast);
+}
+
+.audionexz__hamburger-inner::before,
+.audionexz__hamburger-inner::after {
+  content: '';
+  display: block;
+}
+
+.audionexz__hamburger-inner::before {
+  top: -8px;
+}
+
+.audionexz__hamburger-inner::after {
+  bottom: -8px;
+}
+
+/* Hamburger Active State */
+.audionexz__hamburger--active {
+  border-color: var(--audionexz-accent);
+}
+
+.audionexz__hamburger--active .audionexz__hamburger-inner {
+  transform: rotate(45deg);
+  background-color: var(--audionexz-accent);
+}
+
+.audionexz__hamburger--active .audionexz__hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+}
+
+.audionexz__hamburger--active .audionexz__hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  background-color: var(--audionexz-accent);
+}
+
+/* ========================================
+   MOBILE MENU OVERLAY
+======================================== */
+.audionexz__menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 9998;
+  animation: audionexz-fade-in 0.3s ease;
+}
+
+@keyframes audionexz-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* ========================================
@@ -239,316 +465,386 @@
 
 /* 1200px */
 @media screen and (max-width: 1200px) {
-  .navbar-container {
-    padding: 0 1.5rem;
+  .audionexz__navbar-container {
+    padding: 0 2rem;
     gap: 2rem;
   }
 
-  .nav-link {
-    padding: 0.6rem 0.9rem;
+  .audionexz__nav-link {
+    padding: 0.7rem 1rem;
     font-size: 0.85rem;
-  }
-}
-
-/* 1100px */
-@media screen and (max-width: 1100px) {
-  .nav-menu {
-    gap: 0.3rem;
-  }
-
-  .nav-link {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.82rem;
-  }
-
-  .social-link {
-    width: 38px;
-    height: 38px;
-    font-size: 1rem;
   }
 }
 
 /* 999px - Mobile Menu Activation */
 @media screen and (max-width: 999px) {
-  .hamburger {
-    display: flex;
+  .audionexz__hamburger {
+    display: inline-block;
   }
 
-  .desktop-social {
+  .audionexz__desktop-social {
     display: none;
   }
 
-  .mobile-social-container {
+  .audionexz__mobile-social-container {
     display: block;
     width: 100%;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .mobile-social-icons {
+  .audionexz__mobile-social-icons {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
+    animation: audionexz-slide-up 0.5s ease 0.3s both;
   }
 
-  .social-link-mobile {
-    width: 50px;
-    height: 50px;
+  .audionexz__social-link-mobile {
+    width: 55px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    background: var(--social-color);
+    color: var(--audionexz-text-white);
+    background: var(--audionexz-bg-dark-tertiary);
+    border: 2px solid var(--social-color);
     border-radius: 50%;
-    font-size: 1.3rem;
-    transition: var(--transition);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 1.4rem;
+    transition: var(--audionexz-transition-smooth);
+    position: relative;
+    overflow: hidden;
   }
 
-  .social-link-mobile:hover {
-    transform: translateY(-5px) scale(1.15);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  .audionexz__social-link-mobile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--social-color);
+    transform: scale(0);
+    transition: var(--audionexz-transition-smooth);
+    border-radius: 50%;
   }
 
-  .nav-menu {
+  .audionexz__social-link-mobile .audionexz__social-icon {
+    position: relative;
+    z-index: 2;
+  }
+
+  .audionexz__social-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--social-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: audionexz-ripple 2s ease-out infinite;
+  }
+
+  .audionexz__social-link-mobile:hover {
+    transform: translateY(-8px) scale(1.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  }
+
+  .audionexz__social-link-mobile:hover::before {
+    transform: scale(1);
+  }
+
+  @keyframes audionexz-ripple {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  .audionexz__nav-menu {
     position: fixed;
     left: -100%;
     top: 0;
     flex-direction: column;
-    background: var(--bg-white);
+    background: var(--audionexz-bg-dark);
     width: 100%;
-    max-width: 380px;
+    max-width: 400px;
     height: 100vh;
-    padding: 6rem 2rem 2rem;
+    padding: 7rem 2.5rem 2.5rem;
     gap: 0;
-    box-shadow: var(--shadow-lg);
-    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--audionexz-shadow-lg);
+    transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     overflow-y: auto;
+    border-right: 1px solid rgba(0, 212, 255, 0.3);
+    z-index: 10000;
   }
 
-  .nav-menu.active {
+  .audionexz__nav-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--audionexz-gradient-3);
+    opacity: 0.03;
+    pointer-events: none;
+  }
+
+  .audionexz__nav-menu--active {
     left: 0;
   }
 
-  .nav-item {
+  .audionexz__nav-item {
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    animation: audionexz-slide-in-left 0.5s ease both;
+    animation-delay: calc(var(--item-index) * 0.1s);
   }
 
-  .nav-link {
+  .audionexz__nav-link {
     width: 100%;
-    padding: 1rem 1.2rem;
-    font-size: 1rem;
-    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.05rem;
+    border-radius: 15px;
+    background: var(--audionexz-bg-dark-tertiary);
+    border: 1px solid rgba(255, 255, 255, 0.05);
   }
 
-  .nav-link::after {
+  .audionexz__nav-link:hover,
+  .audionexz__nav-link--active {
+    background: var(--audionexz-bg-dark-secondary);
+    border: 1px solid rgba(0, 212, 255, 0.5);
+    box-shadow: var(--audionexz-shadow-glow);
+    transform: translateX(10px);
+  }
+
+  .audionexz__nav-link--active::before {
     display: none;
   }
 
-  .nav-link:hover,
-  .nav-link.active {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+  @keyframes audionexz-slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes audionexz-slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
-/* 899px */
-@media screen and (max-width: 899px) {
+/* 768px */
+@media screen and (max-width: 768px) {
   :root {
-    --navbar-height: 70px;
+    --audionexz-navbar-height: 75px;
   }
 
-  .logo-text {
+  .audionexz__navbar-container {
+    padding: 0 1.5rem;
+  }
+
+  .audionexz__logo-text {
     font-size: 1.4rem;
   }
 
-  .logo-icon {
-    font-size: 1.6rem;
-  }
-
-  .nav-menu {
+  .audionexz__nav-menu {
     max-width: 350px;
-  }
-}
-
-/* 799px */
-@media screen and (max-width: 799px) {
-  .navbar-container {
-    padding: 0 1.2rem;
-  }
-
-  .nav-menu {
-    max-width: 320px;
-    padding: 5rem 1.5rem 2rem;
-  }
-
-  .hamburger {
-    width: 42px;
-    height: 42px;
-    font-size: 1.2rem;
-  }
-}
-
-/* 699px */
-@media screen and (max-width: 699px) {
-  .logo-text {
-    font-size: 1.3rem;
-  }
-
-  .nav-menu {
-    max-width: 300px;
-  }
-
-  .nav-link {
-    padding: 0.9rem 1rem;
-    font-size: 0.95rem;
   }
 }
 
 /* 599px */
 @media screen and (max-width: 599px) {
   :root {
-    --navbar-height: 65px;
+    --audionexz-navbar-height: 70px;
   }
 
-  .navbar-container {
+  .audionexz__navbar-container {
+    padding: 0 1.2rem;
+  }
+
+  .audionexz__logo-text {
+    font-size: 1.3rem;
+  }
+
+  .audionexz__logo-icon {
+    font-size: 1.6rem;
+  }
+
+  .audionexz__nav-menu {
+    max-width: 320px;
+    padding: 6rem 2rem 2rem;
+  }
+
+  .audionexz__social-link-mobile {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .audionexz__hamburger {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* 480px */
+@media screen and (max-width: 480px) {
+  :root {
+    --audionexz-navbar-height: 65px;
+  }
+
+  .audionexz__navbar-container {
     padding: 0 1rem;
   }
 
-  .logo-text {
+  .audionexz__logo-text {
     font-size: 1.2rem;
   }
 
-  .logo-icon {
+  .audionexz__logo-icon {
     font-size: 1.4rem;
   }
 
-  .nav-menu {
-    max-width: 280px;
-    padding: 5rem 1.2rem 2rem;
+  .audionexz__nav-menu {
+    max-width: 300px;
+    padding: 5.5rem 1.5rem 1.5rem;
   }
 
-  .social-link-mobile {
+  .audionexz__nav-link {
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .audionexz__mobile-social-icons {
+    gap: 1.5rem;
+  }
+
+  .audionexz__social-link-mobile {
     width: 48px;
     height: 48px;
     font-size: 1.2rem;
   }
+
+  .audionexz__hamburger {
+    width: 45px;
+    height: 45px;
+  }
 }
 
-/* 499px */
-@media screen and (max-width: 499px) {
-  .navbar-container {
+/* 380px */
+@media screen and (max-width: 380px) {
+  :root {
+    --audionexz-navbar-height: 60px;
+  }
+
+  .audionexz__navbar-container {
     padding: 0 0.8rem;
   }
 
-  .logo-text {
+  .audionexz__logo-text {
     font-size: 1.1rem;
   }
 
-  .nav-menu {
-    max-width: 260px;
+  .audionexz__logo-icon {
+    font-size: 1.3rem;
   }
 
-  .nav-link {
-    padding: 0.8rem 1rem;
+  .audionexz__nav-menu {
+    max-width: 280px;
+    padding: 5rem 1.2rem 1.2rem;
+  }
+
+  .audionexz__nav-link {
+    padding: 0.9rem 1rem;
     font-size: 0.9rem;
   }
 
-  .hamburger {
-    width: 40px;
-    height: 40px;
-    font-size: 1.1rem;
-  }
-
-  .mobile-social-icons {
+  .audionexz__mobile-social-icons {
     gap: 1.2rem;
   }
 
-  .social-link-mobile {
+  .audionexz__social-link-mobile {
     width: 45px;
     height: 45px;
     font-size: 1.1rem;
   }
-}
 
-/* 399px */
-@media screen and (max-width: 399px) {
-  :root {
-    --navbar-height: 60px;
-  }
-
-  .navbar-container {
-    padding: 0 0.6rem;
-  }
-
-  .logo-text {
-    font-size: 1rem;
-  }
-
-  .logo-icon {
-    font-size: 1.2rem;
-  }
-
-  .nav-menu {
-    max-width: 240px;
-    padding: 4.5rem 1rem 1.5rem;
-  }
-
-  .nav-link {
-    padding: 0.7rem 0.9rem;
-    font-size: 0.85rem;
-  }
-
-  .hamburger {
-    width: 38px;
-    height: 38px;
-    font-size: 1rem;
-  }
-
-  .mobile-social-icons {
-    gap: 1rem;
-  }
-
-  .social-link-mobile {
+  .audionexz__hamburger {
     width: 42px;
     height: 42px;
-    font-size: 1rem;
+  }
+
+  .audionexz__hamburger-box {
+    width: 22px;
+  }
+
+  .audionexz__hamburger-inner,
+  .audionexz__hamburger-inner::before,
+  .audionexz__hamburger-inner::after {
+    width: 22px;
   }
 }
 
 /* ========================================
-   ANIMATIONS
+   SCROLLBAR STYLING (Mobile Menu)
 ======================================== */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.audionexz__nav-menu::-webkit-scrollbar {
+  width: 6px;
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.audionexz__nav-menu::-webkit-scrollbar-track {
+  background: var(--audionexz-bg-dark-tertiary);
 }
 
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
+.audionexz__nav-menu::-webkit-scrollbar-thumb {
+  background: var(--audionexz-primary);
+  border-radius: 10px;
 }
 
-/* Prevent scroll when mobile menu is open */
-body.menu-open {
-  overflow: hidden;
+.audionexz__nav-menu::-webkit-scrollbar-thumb:hover {
+  background: var(--audionexz-secondary);
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+======================================== */
+.audionexz__navbar,
+.audionexz__nav-link,
+.audionexz__social-link,
+.audionexz__hamburger {
+  will-change: transform;
+}
+
+/* Reduce Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
