@@ -287,7 +287,7 @@ const Home = () => {
       id: 10,
       name: "Shamidh Mukherjee",
       role: "Vocalist, Music Director",
-      avatar: getImagePath("/assets/Shamidh_chatterjee_1.jpeg"),
+      avatar: getImagePath("/assets/Shamid_chatterjee_1.jpeg"),
       text: "Working with Audionexz was a game-changer for our production quality.",
     },
     {
