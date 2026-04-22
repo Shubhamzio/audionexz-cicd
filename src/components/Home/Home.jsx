@@ -280,7 +280,7 @@ const Home = () => {
       id: 9,
       name: "Shobhon Chatterjee",
       role: "Musician, Vocalist",
-      avatar: getImagePath("/assets/Shobhon_chatterjee.jpeg"),
+      avatar: getImagePath("/assets/Shobhon _chatterjee.jpeg"),
       text: "From concept to completion, the team was professional and delivered exceptional results.",
     },
     {
