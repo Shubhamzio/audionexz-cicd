@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Projects.css';
-import Footer from '../Footer/Footer.jsx';
+import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Projects.css";
+import Footer from "../Footer/Footer.jsx";
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -11,27 +11,27 @@ const Projects = () => {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: "0px 0px -50px 0px",
     };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('anxProjects--visible');
+          entry.target.classList.add("anxProjects--visible");
         }
       });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.anxProjects__animate');
-    animatedElements.forEach(el => observer.observe(el));
+    const animatedElements = document.querySelectorAll(".anxProjects__animate");
+    animatedElements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
 
   // Helper function for image paths
   const getImagePath = (path) => {
-    const base = import.meta.env.BASE_URL || '/';
-    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+    const base = import.meta.env.BASE_URL || "/";
+    const cleanPath = path.startsWith("/") ? path.slice(1) : path;
     return `${base}${cleanPath}`;
   };
 
@@ -43,10 +43,15 @@ const Projects = () => {
       location: "Hrick Sengupta",
       category: "Jampad",
       year: "2024",
-      description: "A state-of-the-art recording studio featuring Dolby Atmos integration, custom acoustic panels, and world-class monitoring systems. This project showcases our expertise in creating professional-grade recording environments that inspire creativity while delivering pristine audio quality.",
-      features: ["Dolby Atmos", "Custom Acoustics", "SSL Console", "Isolated Vocal Booth"],
+      description:
+        "A state-of-the-art recording studio featuring Dolby Atmos integration, custom acoustic panels, and world-class monitoring systems. This project showcases our expertise in creating professional-grade recording environments that inspire creativity while delivering pristine audio quality.",
+      features: [
+        "Dolby Atmos",
+        "Custom Acoustics",
+        "SSL Console",
+        "Isolated Vocal Booth",
+      ],
       image: getImagePath("assets/Room_for_squares.png"),
-
     },
     {
       id: 2,
@@ -54,10 +59,15 @@ const Projects = () => {
       location: "Rashni Raj Gupta",
       category: "Recording Studio",
       year: "2024",
-      description: "An innovative music production facility designed for modern artists. Featuring floating floors, variable acoustics, and cutting-edge gear from Universal Audio and Neumann. The space seamlessly blends technical excellence with artistic inspiration.",
-      features: ["Floating Floor", "Variable Acoustics", "Universal Audio", "Neumann Mics"],
+      description:
+        "An innovative music production facility designed for modern artists. Featuring floating floors, variable acoustics, and cutting-edge gear from Universal Audio and Neumann. The space seamlessly blends technical excellence with artistic inspiration.",
+      features: [
+        "Floating Floor",
+        "Variable Acoustics",
+        "Universal Audio",
+        "Neumann Mics",
+      ],
       image: getImagePath("assets/KRG_Kreative_studio_Kashni_raj_gupta.jpeg"),
-
     },
     {
       id: 3,
@@ -65,10 +75,10 @@ const Projects = () => {
       location: "Suraj Nag",
       category: "Recording Studio",
       year: "2023",
-      description: "A comprehensive post-production suite for film and television. Equipped with 7.1.4 surround sound monitoring, ADR booth, and Foley stage. This facility serves as the creative hub for major South Indian film productions.",
+      description:
+        "A comprehensive post-production suite for film and television. Equipped with 7.1.4 surround sound monitoring, ADR booth, and Foley stage. This facility serves as the creative hub for major South Indian film productions.",
       features: ["7.1.4 Surround", "ADR Suite", "Foley Stage", "Pro Tools HDX"],
       image: getImagePath("assets/Sunshine_studio_.jpeg"),
-
     },
     {
       id: 4,
@@ -76,10 +86,15 @@ const Projects = () => {
       location: "Nilabjo Niyogi",
       category: "Recording Studio",
       year: "2023",
-      description: "A precision mastering environment built to the highest international standards. Features custom-built monitoring with Genelec 'The Ones' series and analog processing from Rupert Neve Designs. Every detail was crafted for critical listening.",
-      features: ["Genelec Monitoring", "Rupert Neve", "Acoustic Treatment", "Reference Grade"],
+      description:
+        "A precision mastering environment built to the highest international standards. Features custom-built monitoring with Genelec 'The Ones' series and analog processing from Rupert Neve Designs. Every detail was crafted for critical listening.",
+      features: [
+        "Genelec Monitoring",
+        "Rupert Neve",
+        "Acoustic Treatment",
+        "Reference Grade",
+      ],
       image: getImagePath("assets/Nilabjo_Niyogi_studio_Niyogi.jpeg"),
-
     },
     {
       id: 5,
@@ -87,10 +102,15 @@ const Projects = () => {
       location: "Jyotirmoy Roy",
       category: "Recording Studio",
       year: "2023",
-      description: "A versatile live recording space designed for orchestras and large ensembles. The room features adjustable acoustic curtains, a spacious 2000 sq ft tracking room, and sight lines optimized for conductor visibility.",
-      features: ["2000 sq ft", "Orchestra Ready", "Variable Curtains", "SSL AWS"],
+      description:
+        "A versatile live recording space designed for orchestras and large ensembles. The room features adjustable acoustic curtains, a spacious 2000 sq ft tracking room, and sight lines optimized for conductor visibility.",
+      features: [
+        "2000 sq ft",
+        "Orchestra Ready",
+        "Variable Curtains",
+        "SSL AWS",
+      ],
       image: getImagePath("assets/JMR_Music_Studio.jpeg"),
-
     },
     {
       id: 6,
@@ -98,28 +118,33 @@ const Projects = () => {
       location: "Chanchal Roy",
       category: "Recording Studio",
       year: "2024",
-      description: "A modern production suite tailored for electronic music and hip-hop producers. Features an immersive monitoring environment, premium synthesizers, and seamless integration with major DAWs. The perfect space for chart-topping hits.",
-      features: ["Electronic Focus", "Synth Collection", "Immersive Audio", "Ableton Certified"],
+      description:
+        "A modern production suite tailored for electronic music and hip-hop producers. Features an immersive monitoring environment, premium synthesizers, and seamless integration with major DAWs. The perfect space for chart-topping hits.",
+      features: [
+        "Electronic Focus",
+        "Synth Collection",
+        "Immersive Audio",
+        "Ableton Certified",
+      ],
       image: getImagePath("assets/Chanchal_Roy_Studio_Sound_Of_silence.jpeg"),
-
-    }
+    },
   ];
 
   // Stats Data
   const stats = [
-    { number: "40+", label: "Projects Completed" },
+    { number: "90+", label: "Projects Completed" },
     { number: "15+", label: "Cities Covered" },
     { number: "100%", label: "Client Satisfaction" },
-    { number: "5+", label: "Years Experience" }
+    { number: "5+", label: "Years Experience" },
   ];
 
   const handleContactClick = () => {
-    navigate('/contact');
+    navigate("/contact");
   };
 
   const handleImageError = (e) => {
-    e.target.style.display = 'none';
-    e.target.parentElement.classList.add('anxProjects__cardImagePlaceholder');
+    e.target.style.display = "none";
+    e.target.parentElement.classList.add("anxProjects__cardImagePlaceholder");
   };
 
   return (
@@ -144,12 +169,14 @@ const Projects = () => {
             </div>
 
             <h1 className="anxProjects__heroTitle anxProjects__animate">
-              Our <span className="anxProjects__heroTitleHighlight">Projects</span>
+              Our{" "}
+              <span className="anxProjects__heroTitleHighlight">Projects</span>
             </h1>
 
             <p className="anxProjects__heroSubtitle anxProjects__animate">
-              Explore our portfolio of world-class recording studios, post-production facilities,
-              and acoustic spaces that we've designed and built across India.
+              Explore our portfolio of world-class recording studios,
+              post-production facilities, and acoustic spaces that we've
+              designed and built across India.
             </p>
 
             <div className="anxProjects__heroDivider anxProjects__animate">
@@ -162,8 +189,12 @@ const Projects = () => {
             <div className="anxProjects__heroStats anxProjects__animate">
               {stats.map((stat, index) => (
                 <div key={index} className="anxProjects__heroStatItem">
-                  <span className="anxProjects__heroStatNumber">{stat.number}</span>
-                  <span className="anxProjects__heroStatLabel">{stat.label}</span>
+                  <span className="anxProjects__heroStatNumber">
+                    {stat.number}
+                  </span>
+                  <span className="anxProjects__heroStatLabel">
+                    {stat.label}
+                  </span>
                 </div>
               ))}
             </div>
@@ -183,10 +214,14 @@ const Projects = () => {
             <div className="anxProjects__portfolioHeader anxProjects__animate">
               <h4 className="anxProjects__sectionSubtitle">FEATURED WORK</h4>
               <h2 className="anxProjects__sectionTitle">
-                Studio <span className="anxProjects__sectionTitleHighlight">Transformations</span>
+                Studio{" "}
+                <span className="anxProjects__sectionTitleHighlight">
+                  Transformations
+                </span>
               </h2>
               <p className="anxProjects__sectionDescription">
-                Each project represents our commitment to acoustic excellence and innovative design
+                Each project represents our commitment to acoustic excellence
+                and innovative design
               </p>
             </div>
 
@@ -195,9 +230,12 @@ const Projects = () => {
               {projects.map((project, index) => (
                 <article
                   key={project.id}
-                  className={`anxProjects__card anxProjects__animate anxProjects__card--${index % 2 === 0 ? 'left' : 'right'}`}
-                  style={{ '--delay': `${index * 0.15}s`, '--accent': project.gradient }}
-                  ref={el => projectRefs.current[index] = el}
+                  className={`anxProjects__card anxProjects__animate anxProjects__card--${index % 2 === 0 ? "left" : "right"}`}
+                  style={{
+                    "--delay": `${index * 0.15}s`,
+                    "--accent": project.gradient,
+                  }}
+                  ref={(el) => (projectRefs.current[index] = el)}
                 >
                   {/* Card Image */}
                   <div className="anxProjects__cardImageWrapper">
@@ -209,7 +247,10 @@ const Projects = () => {
                       onError={handleImageError}
                       loading="lazy"
                     />
-                    <div className="anxProjects__cardImageGradient" style={{ background: project.gradient }}></div>
+                    <div
+                      className="anxProjects__cardImageGradient"
+                      style={{ background: project.gradient }}
+                    ></div>
 
                     {/* Category Badge */}
                     <div className="anxProjects__cardCategory">
@@ -227,14 +268,20 @@ const Projects = () => {
                     <div className="anxProjects__cardHeader">
                       <h3 className="anxProjects__cardTitle">{project.name}</h3>
                       <div className="anxProjects__cardLocation">
-                        <svg className="anxProjects__cardLocationIcon" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        <svg
+                          className="anxProjects__cardLocationIcon"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                         </svg>
                         <span>{project.location}</span>
                       </div>
                     </div>
 
-                    <p className="anxProjects__cardDescription">{project.description}</p>
+                    <p className="anxProjects__cardDescription">
+                      {project.description}
+                    </p>
 
                     {/* Features */}
                     <div className="anxProjects__cardFeatures">
@@ -248,14 +295,16 @@ const Projects = () => {
                     {/* Card Footer */}
                     <div className="anxProjects__cardFooter">
                       <div className="anxProjects__cardNumber">
-                        <span>{String(project.id).padStart(2, '0')}</span>
+                        <span>{String(project.id).padStart(2, "0")}</span>
                       </div>
-
                     </div>
                   </div>
 
                   {/* Decorative Line */}
-                  <div className="anxProjects__cardAccent" style={{ background: project.gradient }}></div>
+                  <div
+                    className="anxProjects__cardAccent"
+                    style={{ background: project.gradient }}
+                  ></div>
                 </article>
               ))}
             </div>
@@ -268,30 +317,44 @@ const Projects = () => {
             <div className="anxProjects__processHeader anxProjects__animate">
               <h4 className="anxProjects__sectionSubtitle">HOW WE WORK</h4>
               <h2 className="anxProjects__sectionTitle">
-                Our <span className="anxProjects__sectionTitleHighlight">Process</span>
+                Our{" "}
+                <span className="anxProjects__sectionTitleHighlight">
+                  Process
+                </span>
               </h2>
             </div>
 
             <div className="anxProjects__processGrid">
-              <div className="anxProjects__processStep anxProjects__animate" style={{ '--delay': '0.1s' }}>
+              <div
+                className="anxProjects__processStep anxProjects__animate"
+                style={{ "--delay": "0.1s" }}
+              >
                 <div className="anxProjects__processStepNumber">01</div>
                 <div className="anxProjects__processStepIcon">💬</div>
                 <h3 className="anxProjects__processStepTitle">Consultation</h3>
                 <p className="anxProjects__processStepText">
-                  We begin with understanding your vision, requirements, and acoustic goals
+                  We begin with understanding your vision, requirements, and
+                  acoustic goals
                 </p>
               </div>
 
-              <div className="anxProjects__processStep anxProjects__animate" style={{ '--delay': '0.2s' }}>
+              <div
+                className="anxProjects__processStep anxProjects__animate"
+                style={{ "--delay": "0.2s" }}
+              >
                 <div className="anxProjects__processStepNumber">02</div>
                 <div className="anxProjects__processStepIcon">📐</div>
                 <h3 className="anxProjects__processStepTitle">Design</h3>
                 <p className="anxProjects__processStepText">
-                  Our experts create detailed acoustic designs and 3D visualizations
+                  Our experts create detailed acoustic designs and 3D
+                  visualizations
                 </p>
               </div>
 
-              <div className="anxProjects__processStep anxProjects__animate" style={{ '--delay': '0.3s' }}>
+              <div
+                className="anxProjects__processStep anxProjects__animate"
+                style={{ "--delay": "0.3s" }}
+              >
                 <div className="anxProjects__processStepNumber">03</div>
                 <div className="anxProjects__processStepIcon">🔧</div>
                 <h3 className="anxProjects__processStepTitle">Build</h3>
@@ -300,7 +363,10 @@ const Projects = () => {
                 </p>
               </div>
 
-              <div className="anxProjects__processStep anxProjects__animate" style={{ '--delay': '0.4s' }}>
+              <div
+                className="anxProjects__processStep anxProjects__animate"
+                style={{ "--delay": "0.4s" }}
+              >
                 <div className="anxProjects__processStepNumber">04</div>
                 <div className="anxProjects__processStepIcon">🎚️</div>
                 <h3 className="anxProjects__processStepTitle">Calibrate</h3>
@@ -316,18 +382,27 @@ const Projects = () => {
         <section className="anxProjects__testimonial">
           <div className="anxProjects__testimonialContainer anxProjects__animate">
             <div className="anxProjects__testimonialQuote">
-              <svg className="anxProjects__testimonialQuoteIcon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              <svg
+                className="anxProjects__testimonialQuoteIcon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
             </div>
             <blockquote className="anxProjects__testimonialText">
-              "AUDIONEXZ transformed our vision into reality. The studio they built for us
-              exceeds international standards and has become our creative sanctuary."
+              "AUDIONEXZ transformed our vision into reality. The studio they
+              built for us exceeds international standards and has become our
+              creative sanctuary."
             </blockquote>
             <div className="anxProjects__testimonialAuthor">
               <div className="anxProjects__testimonialAuthorInfo">
-                <h4 className="anxProjects__testimonialAuthorName">Hrick Sengupta</h4>
-                <p className="anxProjects__testimonialAuthorRole">Founder, Room For Squares Studios</p>
+                <h4 className="anxProjects__testimonialAuthorName">
+                  Hrick Sengupta
+                </h4>
+                <p className="anxProjects__testimonialAuthorRole">
+                  Founder, Room For Squares Studios
+                </p>
               </div>
             </div>
           </div>
@@ -338,14 +413,25 @@ const Projects = () => {
           <div className="anxProjects__ctaContainer anxProjects__animate">
             <div className="anxProjects__ctaGlow"></div>
             <div className="anxProjects__ctaContent">
-              <h2 className="anxProjects__ctaTitle">Ready to Build Your Dream Studio?</h2>
+              <h2 className="anxProjects__ctaTitle">
+                Ready to Build Your Dream Studio?
+              </h2>
               <p className="anxProjects__ctaText">
-                Let's discuss your project and create something extraordinary together
+                Let's discuss your project and create something extraordinary
+                together
               </p>
-              <button className="anxProjects__ctaButton" onClick={handleContactClick}>
+              <button
+                className="anxProjects__ctaButton"
+                onClick={handleContactClick}
+              >
                 <span>Start Your Project</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </button>
             </div>
