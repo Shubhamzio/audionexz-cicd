@@ -4,7 +4,7 @@ import "./Footer.css";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
-  const currentYear = 2025;
+  const currentYear = 2026;
 
   const links = [
     { name: "Home", path: "/" },
