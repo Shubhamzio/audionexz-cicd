@@ -42,7 +42,7 @@ const Projects = () => {
       name: "Room For Squares Studios",
       location: "Hrick Sengupta",
       category: "Recording Studio",
-      year: "2024",
+      year: "2025",
       description:
         "A state-of-the-art recording studio featuring Yamaha monitors, custom acoustic panels, and an SSL console. This project showcases our expertise in creating professional-grade recording environments that inspire creativity while delivering pristine audio quality.",
       features: ["Yamaha Monitors", "Custom Acoustics", "SSL Console"],
@@ -53,7 +53,7 @@ const Projects = () => {
       name: "KRG Kreative Studio",
       location: "Rashni Raj Gupta",
       category: "Recording Studio",
-      year: "2024",
+      year: "2025",
       description:
         "An innovative music production facility designed for modern artists. Featuring custom-built acoustics, an immersive Dolby Atmos 9.1.6 home theater system, Denon systems, and premium Genelec speakers. The space seamlessly blends technical excellence with artistic inspiration.",
       features: [
@@ -69,7 +69,7 @@ const Projects = () => {
       name: "SunShine Studio",
       location: "Suraj Nag",
       category: "Recording Studio",
-      year: "2023",
+      year: "2024",
       description:
         "A comprehensive post-production suite for mixing and mastering. Equipped with EVE Audio speakers, UAD Audio Interface, and Genelec monitors. Custom tuning and acoustics designed specifically for critical mixing and mastering work.",
       features: [
@@ -85,7 +85,7 @@ const Projects = () => {
       name: "Niyogi Studio",
       location: "Nilabjo Niyogi",
       category: "Recording Studio",
-      year: "2023",
+      year: "2025",
       description:
         "A precision mastering environment built to the highest international standards. Features RME Audio Interface and premium analog hardware processing. Every detail was crafted for critical listening and audio perfection.",
       features: ["RME Audio Interface", "Analog Hardware", "Reference Grade"],
@@ -96,7 +96,7 @@ const Projects = () => {
       name: "JMR Music Studio",
       location: "Jyotirmoy Roy",
       category: "Recording Studio",
-      year: "2023",
+      year: "2024",
       description:
         "A world-class recording facility featuring a 7.2.4 Adam Speakers system including S3H, A77H, A7V monitors and Adam Subwoofers. Equipped with premium Manley gear including Manley Gold Microphone, Manley Massive Passive EQ, Manley Voxbox, and Manley Pultec. The perfect space for professional audio production.",
       features: [
@@ -113,7 +113,7 @@ const Projects = () => {
       name: "Sound Of Silence",
       location: "Chanchal Roy",
       category: "Recording Studio",
-      year: "2024",
+      year: "2025",
       description:
         "A modern production suite featuring Adam A77X monitors and Neumann TLM 107 microphone. Custom-built acoustics designed for optimal sound quality and creative workflow.",
       features: ["Adam A77X", "Neumann TLM 107", "Custom Acoustics"],
@@ -124,7 +124,7 @@ const Projects = () => {
       name: "Blooper House Studios",
       location: "Kolkata",
       category: "Recording Studio",
-      year: "2024",
+      year: "2026",
       description:
         "A cutting-edge Dolby Atmos mixing facility with 7.2.4 configuration using premium Neumann speakers. Powered by Antelope Audio Orion 32 interface, Synergy Core with MRC processing. Custom-built acoustics designed specifically for Dolby Atmos movie mixing and mastering.",
       features: [
@@ -151,7 +151,7 @@ const Projects = () => {
 
   // Stats Data
   const stats = [
-    { number: "90+", label: "Projects Completed" },
+    { number: "100+", label: "Projects Completed" },
     { number: "15+", label: "Cities Covered" },
     { number: "100%", label: "Client Satisfaction" },
     { number: "5+", label: "Years Experience" },
