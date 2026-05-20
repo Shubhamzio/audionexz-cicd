@@ -10,8 +10,6 @@ import {
 } from "react-icons/fa";
 import "./Navbar.css";
 
-const Logo = "/audionexz-cicd/The_logo.png";
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -82,7 +80,7 @@ const Navbar = () => {
         <Link to="/" className="audionexz__navbar-logo" onClick={closeMenu}>
           <div className="audionexz__logo-wrapper">
             <img
-              src={Logo}
+              src="/assets/The_logo.png"
               alt="Audionexz Logo"
               className="audionexz__logo-image"
             />
