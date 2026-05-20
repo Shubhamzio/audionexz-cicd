@@ -1,31 +1,40 @@
 /* ================================================================
-   AUDIONEXZ PROJECTS PAGE - COMPLETELY ISOLATED STYLES
+   AUDIONEXZ PROJECTS PAGE - COMPLETELY ISOLATED STYLES V2
    Prefix: anxProjects
-   Version: 1.0
+   Version: 2.0
    ================================================================ */
 
-/* Import Poppins Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+/* ================================================================
+   SCOPED FONT - Only applied inside projects
+   ================================================================ */
+.anxProjects,
+.anxProjects * {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
 
 /* ================================================================
    BASE STYLES
    ================================================================ */
 .anxProjects {
-  /* Reset */
-  all: unset;
   display: block;
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
 
   /* Base Styles */
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
   color: #ffffff;
-  background: linear-gradient(180deg, #000000 0%, #050510 20%, #0a0a1a 40%, #0d1b2a 70%, #0f2744 100%);
+  background: linear-gradient(180deg,
+      #000000 0%,
+      #050510 20%,
+      #0a0a1a 40%,
+      #0d1b2a 70%,
+      #0f2744 100%);
   min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
   box-sizing: border-box;
+  contain: layout style;
 }
 
 /* Reset all children */
@@ -33,6 +42,35 @@
 .anxProjects *::before,
 .anxProjects *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset specific elements */
+.anxProjects ul,
+.anxProjects ol {
+  list-style: none;
+}
+
+.anxProjects a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.anxProjects h1,
+.anxProjects h2,
+.anxProjects h3,
+.anxProjects h4,
+.anxProjects h5,
+.anxProjects h6 {
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.anxProjects p {
   margin: 0;
   padding: 0;
 }
@@ -54,46 +92,55 @@
    SECTION COMMON STYLES
    ================================================================ */
 .anxProjects__sectionSubtitle {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #1e90ff;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  color: #1e90ff !important;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin: 0 0 15px 0;
-  padding: 0;
+  margin: 0 0 15px 0 !important;
+  padding: 0 !important;
 }
 
 .anxProjects__sectionTitle {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 20px 0;
-  padding: 0;
-  line-height: 1.2;
+  font-size: 2.8rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 20px 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
+  background: none !important;
+  -webkit-text-fill-color: #ffffff !important;
 }
 
 .anxProjects__sectionTitleHighlight {
-  background: linear-gradient(135deg, #1e90ff 0%, #00d4ff 50%, #1e90ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-size: 200% 200%;
-  animation: anxProjects__gradientShift 4s ease infinite;
+  background: linear-gradient(135deg, #1e90ff 0%, #00d4ff 50%, #1e90ff 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  background-size: 200% 200% !important;
+  animation: anxProjectsGradientShift 4s ease infinite;
 }
 
-@keyframes anxProjects__gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+@keyframes anxProjectsGradientShift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .anxProjects__sectionDescription {
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
   max-width: 600px;
-  margin: 0;
-  padding: 0;
-  line-height: 1.7;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  line-height: 1.7 !important;
 }
 
 /* ================================================================
@@ -157,54 +204,308 @@
   background: #1e90ff;
   border-radius: 50%;
   opacity: 0.4;
-  animation: anxProjects__float 20s infinite ease-in-out;
+  animation: anxProjectsFloat 20s infinite ease-in-out;
 }
 
 /* Generate random positions for particles */
-.anxProjects__heroParticle:nth-child(1) { left: 5%; top: 10%; animation-delay: 0s; animation-duration: 18s; }
-.anxProjects__heroParticle:nth-child(2) { left: 15%; top: 80%; animation-delay: 1s; animation-duration: 22s; }
-.anxProjects__heroParticle:nth-child(3) { left: 25%; top: 30%; animation-delay: 2s; animation-duration: 20s; }
-.anxProjects__heroParticle:nth-child(4) { left: 35%; top: 60%; animation-delay: 3s; animation-duration: 19s; }
-.anxProjects__heroParticle:nth-child(5) { left: 45%; top: 20%; animation-delay: 4s; animation-duration: 21s; }
-.anxProjects__heroParticle:nth-child(6) { left: 55%; top: 70%; animation-delay: 5s; animation-duration: 17s; }
-.anxProjects__heroParticle:nth-child(7) { left: 65%; top: 40%; animation-delay: 6s; animation-duration: 23s; }
-.anxProjects__heroParticle:nth-child(8) { left: 75%; top: 15%; animation-delay: 7s; animation-duration: 18s; }
-.anxProjects__heroParticle:nth-child(9) { left: 85%; top: 85%; animation-delay: 8s; animation-duration: 20s; }
-.anxProjects__heroParticle:nth-child(10) { left: 95%; top: 50%; animation-delay: 9s; animation-duration: 22s; }
-.anxProjects__heroParticle:nth-child(11) { left: 10%; top: 45%; animation-delay: 10s; animation-duration: 19s; }
-.anxProjects__heroParticle:nth-child(12) { left: 20%; top: 65%; animation-delay: 11s; animation-duration: 21s; }
-.anxProjects__heroParticle:nth-child(13) { left: 30%; top: 25%; animation-delay: 12s; animation-duration: 18s; }
-.anxProjects__heroParticle:nth-child(14) { left: 40%; top: 75%; animation-delay: 13s; animation-duration: 20s; }
-.anxProjects__heroParticle:nth-child(15) { left: 50%; top: 35%; animation-delay: 14s; animation-duration: 22s; }
-.anxProjects__heroParticle:nth-child(16) { left: 60%; top: 55%; animation-delay: 15s; animation-duration: 17s; }
-.anxProjects__heroParticle:nth-child(17) { left: 70%; top: 90%; animation-delay: 16s; animation-duration: 19s; }
-.anxProjects__heroParticle:nth-child(18) { left: 80%; top: 5%; animation-delay: 17s; animation-duration: 21s; }
-.anxProjects__heroParticle:nth-child(19) { left: 90%; top: 40%; animation-delay: 18s; animation-duration: 18s; }
-.anxProjects__heroParticle:nth-child(20) { left: 3%; top: 55%; animation-delay: 19s; animation-duration: 20s; }
-.anxProjects__heroParticle:nth-child(21) { left: 13%; top: 35%; animation-delay: 0.5s; animation-duration: 22s; }
-.anxProjects__heroParticle:nth-child(22) { left: 23%; top: 95%; animation-delay: 1.5s; animation-duration: 19s; }
-.anxProjects__heroParticle:nth-child(23) { left: 33%; top: 15%; animation-delay: 2.5s; animation-duration: 21s; }
-.anxProjects__heroParticle:nth-child(24) { left: 43%; top: 85%; animation-delay: 3.5s; animation-duration: 18s; }
-.anxProjects__heroParticle:nth-child(25) { left: 53%; top: 45%; animation-delay: 4.5s; animation-duration: 20s; }
-.anxProjects__heroParticle:nth-child(26) { left: 63%; top: 25%; animation-delay: 5.5s; animation-duration: 22s; }
-.anxProjects__heroParticle:nth-child(27) { left: 73%; top: 65%; animation-delay: 6.5s; animation-duration: 17s; }
-.anxProjects__heroParticle:nth-child(28) { left: 83%; top: 75%; animation-delay: 7.5s; animation-duration: 19s; }
-.anxProjects__heroParticle:nth-child(29) { left: 93%; top: 30%; animation-delay: 8.5s; animation-duration: 21s; }
-.anxProjects__heroParticle:nth-child(30) { left: 48%; top: 8%; animation-delay: 9.5s; animation-duration: 18s; }
+.anxProjects__heroParticle:nth-child(1) {
+  left: 5%;
+  top: 10%;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
 
-@keyframes anxProjects__float {
-  0%, 100% {
+.anxProjects__heroParticle:nth-child(2) {
+  left: 15%;
+  top: 80%;
+  animation-delay: 1s;
+  animation-duration: 22s;
+}
+
+.anxProjects__heroParticle:nth-child(3) {
+  left: 25%;
+  top: 30%;
+  animation-delay: 2s;
+  animation-duration: 20s;
+}
+
+.anxProjects__heroParticle:nth-child(4) {
+  left: 35%;
+  top: 60%;
+  animation-delay: 3s;
+  animation-duration: 19s;
+}
+
+.anxProjects__heroParticle:nth-child(5) {
+  left: 45%;
+  top: 20%;
+  animation-delay: 4s;
+  animation-duration: 21s;
+}
+
+.anxProjects__heroParticle:nth-child(6) {
+  left: 55%;
+  top: 70%;
+  animation-delay: 5s;
+  animation-duration: 17s;
+}
+
+.anxProjects__heroParticle:nth-child(7) {
+  left: 65%;
+  top: 40%;
+  animation-delay: 6s;
+  animation-duration: 23s;
+}
+
+.anxProjects__heroParticle:nth-child(8) {
+  left: 75%;
+  top: 15%;
+  animation-delay: 7s;
+  animation-duration: 18s;
+}
+
+.anxProjects__heroParticle:nth-child(9) {
+  left: 85%;
+  top: 85%;
+  animation-delay: 8s;
+  animation-duration: 20s;
+}
+
+.anxProjects__heroParticle:nth-child(10) {
+  left: 95%;
+  top: 50%;
+  animation-delay: 9s;
+  animation-duration: 22s;
+}
+
+.anxProjects__heroParticle:nth-child(11) {
+  left: 10%;
+  top: 45%;
+  animation-delay: 10s;
+  animation-duration: 19s;
+}
+
+.anxProjects__heroParticle:nth-child(12) {
+  left: 20%;
+  top: 65%;
+  animation-delay: 11s;
+  animation-duration: 21s;
+}
+
+.anxProjects__heroParticle:nth-child(13) {
+  left: 30%;
+  top: 25%;
+  animation-delay: 12s;
+  animation-duration: 18s;
+}
+
+.anxProjects__heroParticle:nth-child(14) {
+  left: 40%;
+  top: 75%;
+  animation-delay: 13s;
+  animation-duration: 20s;
+}
+
+.anxProjects__heroParticle:nth-child(15) {
+  left: 50%;
+  top: 35%;
+  animation-delay: 14s;
+  animation-duration: 22s;
+}
+
+.anxProjects__heroParticle:nth-child(16) {
+  left: 60%;
+  top: 55%;
+  animation-delay: 15s;
+  animation-duration: 17s;
+}
+
+.anxProjects__heroParticle:nth-child(17) {
+  left: 70%;
+  top: 90%;
+  animation-delay: 16s;
+  animation-duration: 19s;
+}
+
+.anxProjects__heroParticle:nth-child(18) {
+  left: 80%;
+  top: 5%;
+  animation-delay: 17s;
+  animation-duration: 21s;
+}
+
+.anxProjects__heroParticle:nth-child(19) {
+  left: 90%;
+  top: 40%;
+  animation-delay: 18s;
+  animation-duration: 18s;
+}
+
+.anxProjects__heroParticle:nth-child(20) {
+  left: 3%;
+  top: 55%;
+  animation-delay: 19s;
+  animation-duration: 20s;
+}
+
+.anxProjects__heroParticle:nth-child(21) {
+  left: 13%;
+  top: 35%;
+  animation-delay: 0.5s;
+  animation-duration: 22s;
+}
+
+.anxProjects__heroParticle:nth-child(22) {
+  left: 23%;
+  top: 95%;
+  animation-delay: 1.5s;
+  animation-duration: 19s;
+}
+
+.anxProjects__heroParticle:nth-child(23) {
+  left: 33%;
+  top: 15%;
+  animation-delay: 2.5s;
+  animation-duration: 21s;
+}
+
+.anxProjects__heroParticle:nth-child(24) {
+  left: 43%;
+  top: 85%;
+  animation-delay: 3.5s;
+  animation-duration: 18s;
+}
+
+.anxProjects__heroParticle:nth-child(25) {
+  left: 53%;
+  top: 45%;
+  animation-delay: 4.5s;
+  animation-duration: 20s;
+}
+
+.anxProjects__heroParticle:nth-child(26) {
+  left: 63%;
+  top: 25%;
+  animation-delay: 5.5s;
+  animation-duration: 22s;
+}
+
+.anxProjects__heroParticle:nth-child(27) {
+  left: 73%;
+  top: 65%;
+  animation-delay: 6.5s;
+  animation-duration: 17s;
+}
+
+.anxProjects__heroParticle:nth-child(28) {
+  left: 83%;
+  top: 75%;
+  animation-delay: 7.5s;
+  animation-duration: 19s;
+}
+
+.anxProjects__heroParticle:nth-child(29) {
+  left: 93%;
+  top: 30%;
+  animation-delay: 8.5s;
+  animation-duration: 21s;
+}
+
+.anxProjects__heroParticle:nth-child(30) {
+  left: 48%;
+  top: 8%;
+  animation-delay: 9.5s;
+  animation-duration: 18s;
+}
+
+.anxProjects__heroParticle:nth-child(31) {
+  left: 8%;
+  top: 70%;
+  animation-delay: 2s;
+  animation-duration: 24s;
+}
+
+.anxProjects__heroParticle:nth-child(32) {
+  left: 38%;
+  top: 90%;
+  animation-delay: 3s;
+  animation-duration: 19s;
+}
+
+.anxProjects__heroParticle:nth-child(33) {
+  left: 58%;
+  top: 10%;
+  animation-delay: 4s;
+  animation-duration: 21s;
+}
+
+.anxProjects__heroParticle:nth-child(34) {
+  left: 78%;
+  top: 50%;
+  animation-delay: 5s;
+  animation-duration: 17s;
+}
+
+.anxProjects__heroParticle:nth-child(35) {
+  left: 88%;
+  top: 20%;
+  animation-delay: 6s;
+  animation-duration: 23s;
+}
+
+.anxProjects__heroParticle:nth-child(36) {
+  left: 2%;
+  top: 40%;
+  animation-delay: 7s;
+  animation-duration: 18s;
+}
+
+.anxProjects__heroParticle:nth-child(37) {
+  left: 42%;
+  top: 60%;
+  animation-delay: 8s;
+  animation-duration: 20s;
+}
+
+.anxProjects__heroParticle:nth-child(38) {
+  left: 68%;
+  top: 80%;
+  animation-delay: 9s;
+  animation-duration: 22s;
+}
+
+.anxProjects__heroParticle:nth-child(39) {
+  left: 92%;
+  top: 15%;
+  animation-delay: 0.5s;
+  animation-duration: 19s;
+}
+
+.anxProjects__heroParticle:nth-child(40) {
+  left: 18%;
+  top: 50%;
+  animation-delay: 1.5s;
+  animation-duration: 21s;
+}
+
+@keyframes anxProjectsFloat {
+
+  0%,
+  100% {
     transform: translateY(0) translateX(0) scale(1);
     opacity: 0.4;
   }
+
   25% {
     transform: translateY(-40px) translateX(20px) scale(1.2);
     opacity: 0.7;
   }
+
   50% {
     transform: translateY(-20px) translateX(-15px) scale(0.8);
     opacity: 0.5;
   }
+
   75% {
     transform: translateY(-60px) translateX(10px) scale(1.1);
     opacity: 0.6;
@@ -231,42 +532,45 @@
 
 .anxProjects__heroBadgeIcon {
   font-size: 1.2rem;
+  display: inline-flex;
 }
 
 .anxProjects__heroBadgeText {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #ffffff;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
   letter-spacing: 1px;
 }
 
 .anxProjects__heroTitle {
-  font-size: 4.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin: 0 0 25px 0;
-  padding: 0;
-  line-height: 1.1;
+  font-size: 4.5rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 25px 0 !important;
+  padding: 0 !important;
+  line-height: 1.1 !important;
   letter-spacing: -1px;
+  background: none !important;
+  -webkit-text-fill-color: #ffffff !important;
 }
 
 .anxProjects__heroTitleHighlight {
-  background: linear-gradient(135deg, #1e90ff 0%, #00d4ff 50%, #1e90ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-size: 200% 200%;
-  animation: anxProjects__gradientShift 4s ease infinite;
+  background: linear-gradient(135deg, #1e90ff 0%, #00d4ff 50%, #1e90ff 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  background-size: 200% 200% !important;
+  animation: anxProjectsGradientShift 4s ease infinite;
 }
 
 .anxProjects__heroSubtitle {
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.7;
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  line-height: 1.7 !important;
   max-width: 700px;
-  margin: 0 auto 40px;
-  padding: 0;
+  margin: 0 auto 40px !important;
+  padding: 0 !important;
 }
 
 .anxProjects__heroDivider {
@@ -277,11 +581,12 @@
 }
 
 .anxProjects__heroDivider span {
+  display: inline-block;
   width: 12px;
   height: 12px;
   background: #1e90ff;
   border-radius: 50%;
-  animation: anxProjects__pulse 1.5s infinite;
+  animation: anxProjectsPulse 1.5s infinite;
 }
 
 .anxProjects__heroDivider span:nth-child(2) {
@@ -294,9 +599,18 @@
   background: #6366f1;
 }
 
-@keyframes anxProjects__pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.6; }
+@keyframes anxProjectsPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
 }
 
 /* Hero Stats */
@@ -313,8 +627,8 @@
 
 .anxProjects__heroStatNumber {
   display: block;
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
   background: linear-gradient(135deg, #ffffff 0%, #1e90ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -323,9 +637,9 @@
 }
 
 .anxProjects__heroStatLabel {
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.6) !important;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -343,7 +657,7 @@
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.85rem;
   font-weight: 400;
-  animation: anxProjects__bounce 2s infinite;
+  animation: anxProjectsBounce 2s infinite;
 }
 
 .anxProjects__heroScrollLine {
@@ -353,9 +667,16 @@
   border-radius: 2px;
 }
 
-@keyframes anxProjects__bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(10px); }
+@keyframes anxProjectsBounce {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
 }
 
 /* ================================================================
@@ -414,7 +735,7 @@
   direction: rtl;
 }
 
-.anxProjects__card--right > * {
+.anxProjects__card--right>* {
   direction: ltr;
 }
 
@@ -457,6 +778,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
+  display: block;
 }
 
 .anxProjects__card:hover .anxProjects__cardImage {
@@ -479,6 +801,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 200px;
 }
 
 .anxProjects__cardImagePlaceholder::after {
@@ -499,8 +822,8 @@
   display: inline-block;
   background: rgba(30, 144, 255, 0.9);
   color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
   padding: 8px 16px;
   border-radius: 20px;
   text-transform: uppercase;
@@ -520,8 +843,8 @@
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   color: #ffffff;
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
   padding: 6px 14px;
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -541,12 +864,12 @@
 }
 
 .anxProjects__cardTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
 }
 
 .anxProjects__cardLocation {
@@ -562,15 +885,16 @@
   width: 18px;
   height: 18px;
   color: #1e90ff;
+  display: inline-block;
 }
 
 .anxProjects__cardDescription {
-  font-size: 1rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.8;
-  margin: 0;
-  padding: 0;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  line-height: 1.8 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Features */
@@ -585,9 +909,9 @@
   display: inline-block;
   background: rgba(30, 144, 255, 0.1);
   border: 1px solid rgba(30, 144, 255, 0.3);
-  color: #1e90ff;
-  font-size: 0.8rem;
-  font-weight: 500;
+  color: #1e90ff !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
   padding: 8px 16px;
   border-radius: 20px;
   transition: all 0.3s ease;
@@ -609,42 +933,10 @@
 }
 
 .anxProjects__cardNumber {
-  font-size: 3rem;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.08);
-  line-height: 1;
-}
-
-.anxProjects__cardButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-  padding: 12px 24px;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.anxProjects__cardButton svg {
-  width: 18px;
-  height: 18px;
-  transition: transform 0.3s ease;
-}
-
-.anxProjects__cardButton:hover {
-  background: linear-gradient(135deg, #1e90ff 0%, #00d4ff 100%);
-  border-color: transparent;
-  transform: translateX(5px);
-}
-
-.anxProjects__cardButton:hover svg {
-  transform: translateX(5px);
+  font-size: 3rem !important;
+  font-weight: 800 !important;
+  color: rgba(255, 255, 255, 0.08) !important;
+  line-height: 1 !important;
 }
 
 /* ================================================================
@@ -692,9 +984,9 @@
   top: -15px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #1e90ff;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: #1e90ff !important;
   background: #0d1b2a;
   padding: 5px 15px;
   border-radius: 20px;
@@ -704,23 +996,24 @@
 .anxProjects__processStepIcon {
   font-size: 3rem;
   margin-bottom: 20px;
+  display: block;
 }
 
 .anxProjects__processStepTitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin: 0 0 15px 0;
-  padding: 0;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 15px 0 !important;
+  padding: 0 !important;
 }
 
 .anxProjects__processStepText {
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.7;
-  margin: 0;
-  padding: 0;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* ================================================================
@@ -750,16 +1043,17 @@
   height: 50px;
   color: #1e90ff;
   opacity: 0.5;
+  display: inline-block;
 }
 
 .anxProjects__testimonialText {
-  font-size: 1.4rem;
-  font-weight: 400;
+  font-size: 1.4rem !important;
+  font-weight: 400 !important;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.8;
-  margin: 0 0 30px 0;
-  padding: 0;
+  color: rgba(255, 255, 255, 0.9) !important;
+  line-height: 1.8 !important;
+  margin: 0 0 30px 0 !important;
+  padding: 0 !important;
 }
 
 .anxProjects__testimonialAuthor {
@@ -772,19 +1066,19 @@
 }
 
 .anxProjects__testimonialAuthorName {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin: 0 0 5px 0;
-  padding: 0;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 5px 0 !important;
+  padding: 0 !important;
 }
 
 .anxProjects__testimonialAuthorRole {
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: #1e90ff;
-  margin: 0;
-  padding: 0;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  color: #1e90ff !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* ================================================================
@@ -823,47 +1117,48 @@
 }
 
 .anxProjects__ctaTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 15px 0;
-  padding: 0;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 15px 0 !important;
+  padding: 0 !important;
 }
 
 .anxProjects__ctaText {
-  font-size: 1.15rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0 0 35px 0;
-  padding: 0;
+  font-size: 1.15rem !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  margin: 0 0 35px 0 !important;
+  padding: 0 !important;
 }
 
 .anxProjects__ctaButton {
-  display: inline-flex;
+  display: inline-flex !important;
   align-items: center;
   gap: 12px;
-  background: linear-gradient(135deg, #1e90ff 0%, #00d4ff 100%);
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 18px 40px;
-  border: none;
-  border-radius: 50px;
+  background: linear-gradient(135deg, #1e90ff 0%, #00d4ff 100%) !important;
+  color: #ffffff !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  padding: 18px 40px !important;
+  border: none !important;
+  border-radius: 50px !important;
   cursor: pointer;
-  transition: all 0.4s ease;
-  box-shadow: 0 10px 40px rgba(30, 144, 255, 0.3);
+  transition: all 0.4s ease !important;
+  box-shadow: 0 10px 40px rgba(30, 144, 255, 0.3) !important;
 }
 
 .anxProjects__ctaButton svg {
   width: 22px;
   height: 22px;
   transition: transform 0.3s ease;
+  display: inline-block;
 }
 
 .anxProjects__ctaButton:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 60px rgba(30, 144, 255, 0.4);
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 60px rgba(30, 144, 255, 0.4) !important;
 }
 
 .anxProjects__ctaButton:hover svg {
@@ -919,7 +1214,7 @@
   display: flex;
   align-items: flex-end;
   gap: 4px;
-  height: 30px;
+  height: 40px;
   z-index: 100;
 }
 
@@ -927,18 +1222,19 @@
   width: 4px;
   background: linear-gradient(to top, #1e90ff, #00d4ff);
   border-radius: 2px;
-  animation: anxProjects__visualize 1s ease-in-out infinite;
+  animation: anxProjectsVisualize 1s ease-in-out infinite;
 }
 
-.anxProjects__visualizerBar:nth-child(1) { height: 10px; animation-delay: 0s; }
-.anxProjects__visualizerBar:nth-child(2) { height: 20px; animation-delay: 0.1s; }
-.anxProjects__visualizerBar:nth-child(3) { height: 15px; animation-delay: 0.2s; }
-.anxProjects__visualizerBar:nth-child(4) { height: 25px; animation-delay: 0.3s; }
-.anxProjects__visualizerBar:nth-child(5) { height: 12px; animation-delay: 0.4s; }
+@keyframes anxProjectsVisualize {
 
-@keyframes anxProjects__visualize {
-  0%, 100% { transform: scaleY(1); }
-  50% { transform: scaleY(0.4); }
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0.4);
+  }
 }
 
 /* ================================================================
@@ -948,11 +1244,11 @@
 /* 1299px */
 @media screen and (max-width: 1299px) {
   .anxProjects__heroTitle {
-    font-size: 4rem;
+    font-size: 4rem !important;
   }
 
   .anxProjects__sectionTitle {
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
   }
 
   .anxProjects__card {
@@ -961,14 +1257,14 @@
   }
 
   .anxProjects__cardTitle {
-    font-size: 1.8rem;
+    font-size: 1.8rem !important;
   }
 }
 
 /* 1199px */
 @media screen and (max-width: 1199px) {
   .anxProjects__heroTitle {
-    font-size: 3.5rem;
+    font-size: 3.5rem !important;
   }
 
   .anxProjects__heroStats {
@@ -976,7 +1272,7 @@
   }
 
   .anxProjects__heroStatNumber {
-    font-size: 2.2rem;
+    font-size: 2.2rem !important;
   }
 
   .anxProjects__card {
@@ -1039,11 +1335,11 @@
   }
 
   .anxProjects__heroTitle {
-    font-size: 3rem;
+    font-size: 3rem !important;
   }
 
   .anxProjects__heroSubtitle {
-    font-size: 1.1rem;
+    font-size: 1.1rem !important;
   }
 
   .anxProjects__heroStats {
@@ -1051,11 +1347,11 @@
   }
 
   .anxProjects__heroStatNumber {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
 
   .anxProjects__heroStatLabel {
-    font-size: 0.8rem;
+    font-size: 0.8rem !important;
   }
 
   .anxProjects__portfolio {
@@ -1071,14 +1367,14 @@
   }
 
   .anxProjects__testimonialText {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
 }
 
 /* 899px */
 @media screen and (max-width: 899px) {
   .anxProjects__sectionTitle {
-    font-size: 2.2rem;
+    font-size: 2.2rem !important;
   }
 
   .anxProjects__processGrid {
@@ -1094,18 +1390,18 @@
   }
 
   .anxProjects__ctaTitle {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
 }
 
 /* 799px */
 @media screen and (max-width: 799px) {
   .anxProjects__heroTitle {
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
   }
 
   .anxProjects__heroSubtitle {
-    font-size: 1rem;
+    font-size: 1rem !important;
   }
 
   .anxProjects__heroStats {
@@ -1120,7 +1416,7 @@
   }
 
   .anxProjects__heroStatNumber {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
 
   .anxProjects__processGrid {
@@ -1134,7 +1430,7 @@
   }
 
   .anxProjects__testimonialText {
-    font-size: 1.1rem;
+    font-size: 1.1rem !important;
   }
 }
 
@@ -1145,11 +1441,11 @@
   }
 
   .anxProjects__heroTitle {
-    font-size: 2.2rem;
+    font-size: 2.2rem !important;
   }
 
   .anxProjects__sectionTitle {
-    font-size: 1.9rem;
+    font-size: 1.9rem !important;
   }
 
   .anxProjects__card {
@@ -1158,24 +1454,24 @@
   }
 
   .anxProjects__cardTitle {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
   }
 
   .anxProjects__cardDescription {
-    font-size: 0.95rem;
+    font-size: 0.95rem !important;
   }
 
   .anxProjects__cardFeatureTag {
-    font-size: 0.75rem;
+    font-size: 0.75rem !important;
     padding: 6px 12px;
   }
 
   .anxProjects__ctaTitle {
-    font-size: 1.7rem;
+    font-size: 1.7rem !important;
   }
 
   .anxProjects__ctaText {
-    font-size: 1rem;
+    font-size: 1rem !important;
   }
 }
 
@@ -1190,16 +1486,16 @@
   }
 
   .anxProjects__heroBadgeText {
-    font-size: 0.8rem;
+    font-size: 0.8rem !important;
   }
 
   .anxProjects__heroTitle {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
 
   .anxProjects__heroSubtitle {
-    font-size: 0.95rem;
-    margin-bottom: 30px;
+    font-size: 0.95rem !important;
+    margin-bottom: 30px !important;
   }
 
   .anxProjects__heroDivider {
@@ -1212,15 +1508,15 @@
   }
 
   .anxProjects__sectionSubtitle {
-    font-size: 0.75rem;
+    font-size: 0.75rem !important;
   }
 
   .anxProjects__sectionTitle {
-    font-size: 1.7rem;
+    font-size: 1.7rem !important;
   }
 
   .anxProjects__sectionDescription {
-    font-size: 0.95rem;
+    font-size: 0.95rem !important;
   }
 
   .anxProjects__portfolio {
@@ -1236,7 +1532,7 @@
   }
 
   .anxProjects__cardTitle {
-    font-size: 1.4rem;
+    font-size: 1.4rem !important;
   }
 
   .anxProjects__process {
@@ -1248,7 +1544,7 @@
   }
 
   .anxProjects__processStepTitle {
-    font-size: 1.1rem;
+    font-size: 1.1rem !important;
   }
 
   .anxProjects__testimonial {
@@ -1265,7 +1561,7 @@
   }
 
   .anxProjects__testimonialText {
-    font-size: 1rem;
+    font-size: 1rem !important;
   }
 
   .anxProjects__cta {
@@ -1278,12 +1574,12 @@
   }
 
   .anxProjects__ctaTitle {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
   }
 
   .anxProjects__ctaButton {
-    padding: 15px 30px;
-    font-size: 1rem;
+    padding: 15px 30px !important;
+    font-size: 1rem !important;
   }
 
   .anxProjects__visualizer {
@@ -1295,23 +1591,23 @@
 /* 499px */
 @media screen and (max-width: 499px) {
   .anxProjects__heroTitle {
-    font-size: 1.8rem;
+    font-size: 1.8rem !important;
   }
 
   .anxProjects__heroSubtitle {
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
   }
 
   .anxProjects__heroStatNumber {
-    font-size: 1.8rem;
+    font-size: 1.8rem !important;
   }
 
   .anxProjects__heroStatLabel {
-    font-size: 0.75rem;
+    font-size: 0.75rem !important;
   }
 
   .anxProjects__sectionTitle {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
   }
 
   .anxProjects__card {
@@ -1320,17 +1616,17 @@
   }
 
   .anxProjects__cardCategory span {
-    font-size: 0.7rem;
+    font-size: 0.7rem !important;
     padding: 6px 12px;
   }
 
   .anxProjects__cardYear span {
-    font-size: 0.75rem;
+    font-size: 0.75rem !important;
     padding: 5px 10px;
   }
 
   .anxProjects__cardTitle {
-    font-size: 1.3rem;
+    font-size: 1.3rem !important;
   }
 
   .anxProjects__cardLocation {
@@ -1338,7 +1634,7 @@
   }
 
   .anxProjects__cardDescription {
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
   }
 
   .anxProjects__cardFeatures {
@@ -1346,13 +1642,8 @@
   }
 
   .anxProjects__cardFeatureTag {
-    font-size: 0.7rem;
+    font-size: 0.7rem !important;
     padding: 5px 10px;
-  }
-
-  .anxProjects__cardButton {
-    padding: 10px 20px;
-    font-size: 0.85rem;
   }
 
   .anxProjects__processStep {
@@ -1360,39 +1651,39 @@
   }
 
   .anxProjects__testimonialAuthorName {
-    font-size: 1rem;
+    font-size: 1rem !important;
   }
 
   .anxProjects__ctaTitle {
-    font-size: 1.3rem;
+    font-size: 1.3rem !important;
   }
 
   .anxProjects__ctaText {
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
   }
 
   .anxProjects__ctaButton {
-    padding: 14px 25px;
-    font-size: 0.95rem;
+    padding: 14px 25px !important;
+    font-size: 0.95rem !important;
   }
 }
 
 /* 399px and below */
 @media screen and (max-width: 399px) {
   .anxProjects__heroTitle {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
   }
 
   .anxProjects__sectionTitle {
-    font-size: 1.3rem;
+    font-size: 1.3rem !important;
   }
 
   .anxProjects__cardTitle {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
 
   .anxProjects__ctaTitle {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
 }
 
@@ -1413,7 +1704,7 @@
   }
 
   .anxProjects__ctaButton:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) !important;
   }
 }
 
@@ -1422,26 +1713,34 @@
    ================================================================ */
 @media (prefers-reduced-motion: reduce) {
   .anxProjects__animate {
-    transition: none;
-    opacity: 1;
-    transform: none;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   .anxProjects__heroParticle {
-    animation: none;
+    animation: none !important;
   }
 
   .anxProjects__visualizerBar {
-    animation: none;
+    animation: none !important;
   }
 
   .anxProjects__heroDivider span {
-    animation: none;
+    animation: none !important;
   }
 
   .anxProjects__sectionTitleHighlight,
   .anxProjects__heroTitleHighlight {
-    animation: none;
+    animation: none !important;
+  }
+
+  .anxProjects__card:hover {
+    transform: none !important;
+  }
+
+  .anxProjects__card:hover .anxProjects__cardImage {
+    transform: none !important;
   }
 }
 
@@ -1450,13 +1749,13 @@
    ================================================================ */
 @media print {
   .anxProjects {
-    background: #ffffff;
-    color: #000000;
+    background: #ffffff !important;
+    color: #000000 !important;
   }
 
   .anxProjects__visualizer,
   .anxProjects__heroParticles,
   .anxProjects__heroScroll {
-    display: none;
+    display: none !important;
   }
 }

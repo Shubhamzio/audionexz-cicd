@@ -35,37 +35,32 @@ const Projects = () => {
     return `${base}${cleanPath}`;
   };
 
-  // Projects Data
+  // Projects Data - UPDATED with new features and projects
   const projects = [
     {
       id: 1,
       name: "Room For Squares Studios",
       location: "Hrick Sengupta",
-      category: "Jampad",
+      category: "Recording Studio",
       year: "2024",
       description:
-        "A state-of-the-art recording studio featuring Dolby Atmos integration, custom acoustic panels, and world-class monitoring systems. This project showcases our expertise in creating professional-grade recording environments that inspire creativity while delivering pristine audio quality.",
-      features: [
-        "Dolby Atmos",
-        "Custom Acoustics",
-        "SSL Console",
-        "Isolated Vocal Booth",
-      ],
+        "A state-of-the-art recording studio featuring Yamaha monitors, custom acoustic panels, and an SSL console. This project showcases our expertise in creating professional-grade recording environments that inspire creativity while delivering pristine audio quality.",
+      features: ["Yamaha Monitors", "Custom Acoustics", "SSL Console"],
       image: getImagePath("assets/Room_for_squares.png"),
     },
     {
       id: 2,
-      name: "KRG Kreative studio",
+      name: "KRG Kreative Studio",
       location: "Rashni Raj Gupta",
       category: "Recording Studio",
       year: "2024",
       description:
-        "An innovative music production facility designed for modern artists. Featuring floating floors, variable acoustics, and cutting-edge gear from Universal Audio and Neumann. The space seamlessly blends technical excellence with artistic inspiration.",
+        "An innovative music production facility designed for modern artists. Featuring custom-built acoustics, an immersive Dolby Atmos 9.1.6 home theater system, Denon systems, and premium Genelec speakers. The space seamlessly blends technical excellence with artistic inspiration.",
       features: [
-        "Floating Floor",
-        "Variable Acoustics",
-        "Universal Audio",
-        "Neumann Mics",
+        "Custom Acoustics",
+        "Atmos 9.1.6",
+        "Denon Systems",
+        "Genelec Speakers",
       ],
       image: getImagePath("assets/KRG_Kreative_studio_Kashni_raj_gupta.jpeg"),
     },
@@ -76,8 +71,13 @@ const Projects = () => {
       category: "Recording Studio",
       year: "2023",
       description:
-        "A comprehensive post-production suite for film and television. Equipped with 7.1.4 surround sound monitoring, ADR booth, and Foley stage. This facility serves as the creative hub for major South Indian film productions.",
-      features: ["7.1.4 Surround", "ADR Suite", "Foley Stage", "Pro Tools HDX"],
+        "A comprehensive post-production suite for mixing and mastering. Equipped with EVE Audio speakers, UAD Audio Interface, and Genelec monitors. Custom tuning and acoustics designed specifically for critical mixing and mastering work.",
+      features: [
+        "EVE Audio Speakers",
+        "UAD Audio Interface",
+        "Genelec Monitors",
+        "Mixing & Mastering",
+      ],
       image: getImagePath("assets/Sunshine_studio_.jpeg"),
     },
     {
@@ -87,13 +87,8 @@ const Projects = () => {
       category: "Recording Studio",
       year: "2023",
       description:
-        "A precision mastering environment built to the highest international standards. Features custom-built monitoring with Genelec 'The Ones' series and analog processing from Rupert Neve Designs. Every detail was crafted for critical listening.",
-      features: [
-        "Genelec Monitoring",
-        "Rupert Neve",
-        "Acoustic Treatment",
-        "Reference Grade",
-      ],
+        "A precision mastering environment built to the highest international standards. Features RME Audio Interface and premium analog hardware processing. Every detail was crafted for critical listening and audio perfection.",
+      features: ["RME Audio Interface", "Analog Hardware", "Reference Grade"],
       image: getImagePath("assets/Nilabjo_Niyogi_studio_Niyogi.jpeg"),
     },
     {
@@ -103,30 +98,54 @@ const Projects = () => {
       category: "Recording Studio",
       year: "2023",
       description:
-        "A versatile live recording space designed for orchestras and large ensembles. The room features adjustable acoustic curtains, a spacious 2000 sq ft tracking room, and sight lines optimized for conductor visibility.",
+        "A world-class recording facility featuring a 7.2.4 Adam Speakers system including S3H, A77H, A7V monitors and Adam Subwoofers. Equipped with premium Manley gear including Manley Gold Microphone, Manley Massive Passive EQ, Manley Voxbox, and Manley Pultec. The perfect space for professional audio production.",
       features: [
-        "2000 sq ft",
-        "Orchestra Ready",
-        "Variable Curtains",
-        "SSL AWS",
+        "7.2.4 Adam Speakers",
+        "Manley Gold Mic",
+        "Manley Massive Passive",
+        "Manley Voxbox",
+        "Manley Pultec",
       ],
       image: getImagePath("assets/JMR_Music_Studio.jpeg"),
     },
     {
       id: 6,
-      name: "Sound Of Silenece",
+      name: "Sound Of Silence",
       location: "Chanchal Roy",
       category: "Recording Studio",
       year: "2024",
       description:
-        "A modern production suite tailored for electronic music and hip-hop producers. Features an immersive monitoring environment, premium synthesizers, and seamless integration with major DAWs. The perfect space for chart-topping hits.",
-      features: [
-        "Electronic Focus",
-        "Synth Collection",
-        "Immersive Audio",
-        "Ableton Certified",
-      ],
+        "A modern production suite featuring Adam A77X monitors and Neumann TLM 107 microphone. Custom-built acoustics designed for optimal sound quality and creative workflow.",
+      features: ["Adam A77X", "Neumann TLM 107", "Custom Acoustics"],
       image: getImagePath("assets/Chanchal_Roy_Studio_Sound_Of_silence.jpeg"),
+    },
+    {
+      id: 7,
+      name: "Blooper House Studios",
+      location: "Kolkata",
+      category: "Recording Studio",
+      year: "2024",
+      description:
+        "A cutting-edge Dolby Atmos mixing facility with 7.2.4 configuration using premium Neumann speakers. Powered by Antelope Audio Orion 32 interface, Synergy Core with MRC processing. Custom-built acoustics designed specifically for Dolby Atmos movie mixing and mastering.",
+      features: [
+        "7.2.4 Dolby Atmos",
+        "Neumann Speakers",
+        "Antelope Orion 32",
+        "Synergy Core MRC",
+        "Atmos Mixing",
+      ],
+      image: getImagePath("assets/Bloopers_house.jpeg"),
+    },
+    {
+      id: 8,
+      name: "Vinayaka Bar & Pub",
+      location: "Kolkata",
+      category: "Commercial",
+      year: "2024",
+      description:
+        "Professional soundproofing and sound installation project for a premium bar and pub. Complete acoustic treatment including sound isolation, noise control, and high-quality sound system installation for an immersive entertainment experience.",
+      features: ["Sound Proofing", "Sound Installation", "Acoustic Treatment"],
+      image: getImagePath("assets/Vinayaka_Bar_&_Pub.jpeg"),
     },
   ];
 
@@ -156,7 +175,7 @@ const Projects = () => {
             <div className="anxProjects__heroGradient"></div>
             <div className="anxProjects__heroPattern"></div>
             <div className="anxProjects__heroParticles">
-              {[...Array(30)].map((_, i) => (
+              {[...Array(40)].map((_, i) => (
                 <span key={i} className="anxProjects__heroParticle"></span>
               ))}
             </div>
@@ -445,8 +464,15 @@ const Projects = () => {
 
         {/* ===== AUDIO VISUALIZER ===== */}
         <div className="anxProjects__visualizer">
-          {[...Array(5)].map((_, i) => (
-            <span key={i} className="anxProjects__visualizerBar"></span>
+          {[...Array(7)].map((_, i) => (
+            <span
+              key={i}
+              className="anxProjects__visualizerBar"
+              style={{
+                height: `${Math.random() * 20 + 8}px`,
+                animationDelay: `${i * 0.1}s`,
+              }}
+            ></span>
           ))}
         </div>
       </div>
