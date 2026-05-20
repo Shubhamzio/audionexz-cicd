@@ -1,7 +1,7 @@
 /* ================================================================
    AUDIONEXZ FOOTER - COMPLETELY ISOLATED STYLES
    Prefix: anxFooterMain
-   Version: 3.0
+   Version: 4.0 - Added Developer Credit
    ================================================================ */
 
 /* ================================================================
@@ -16,13 +16,10 @@
    MAIN FOOTER CONTAINER
    ================================================================ */
 .anxFooterMain {
-  /* DO NOT use 'all: unset' - it breaks containment */
   display: block;
   position: relative;
   overflow: hidden;
   width: 100%;
-
-  /* Base styles */
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
@@ -33,8 +30,6 @@
       #0d1b2a 70%,
       #1a3a5c 100%);
   box-sizing: border-box;
-
-  /* Isolate from outside */
   contain: layout style;
 }
 
@@ -570,6 +565,127 @@
 }
 
 /* ================================================================
+   DEVELOPER CREDIT SECTION - NEW
+   ================================================================ */
+.anxFooterMain__developer {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.anxFooterMain__developerDivider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 20%,
+      rgba(30, 144, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0.05) 80%,
+      transparent 100%);
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: block;
+}
+
+.anxFooterMain__developerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.anxFooterMain__developerText {
+  font-size: 0.85rem !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.6;
+}
+
+.anxFooterMain__developerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.6) !important;
+  position: relative;
+}
+
+.anxFooterMain__developerLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #1e90ff, #00d4ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.anxFooterMain__developerLink:hover::after {
+  transform: scaleX(1);
+}
+
+.anxFooterMain__developerLink:hover {
+  color: #1e90ff !important;
+}
+
+.anxFooterMain__developerBrand {
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  background: linear-gradient(135deg, #1e90ff 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+}
+
+.anxFooterMain__developerFull {
+  font-size: 0.75rem !important;
+  font-weight: 300 !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  letter-spacing: 0.5px;
+}
+
+.anxFooterMain__developerBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: anxFooterMainHeartbeat 2s infinite ease-in-out;
+}
+
+.anxFooterMain__developerBadgeText {
+  font-size: 1rem;
+  display: inline-block;
+}
+
+@keyframes anxFooterMainHeartbeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+/* ================================================================
    KEYFRAME ANIMATION - UNIQUELY NAMED TO AVOID CONFLICTS
    ================================================================ */
 @keyframes anxFooterMainFadeInUp {
@@ -655,6 +771,10 @@
 
   .anxFooterMain__bottomContent {
     padding: 20px 25px;
+  }
+
+  .anxFooterMain__developerContent {
+    padding: 15px 25px;
   }
 }
 
@@ -769,6 +889,13 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .anxFooterMain__developerContent {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 15px 20px;
+  }
 }
 
 /* ================================================================
@@ -839,6 +966,14 @@
   .anxFooterMain__bottomLink {
     font-size: 0.8rem !important;
   }
+
+  .anxFooterMain__developerText {
+    font-size: 0.8rem !important;
+  }
+
+  .anxFooterMain__developerBrand {
+    font-size: 0.9rem !important;
+  }
 }
 
 /* ================================================================
@@ -895,6 +1030,18 @@
   .anxFooterMain__bottomLink {
     font-size: 0.75rem !important;
   }
+
+  .anxFooterMain__developerContent {
+    padding: 12px 15px;
+  }
+
+  .anxFooterMain__developerText {
+    font-size: 0.75rem !important;
+  }
+
+  .anxFooterMain__developerBrand {
+    font-size: 0.85rem !important;
+  }
 }
 
 /* ================================================================
@@ -948,6 +1095,10 @@
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 10px 30px rgba(30, 144, 255, 0.4);
   }
+
+  .anxFooterMain__developerLink:hover {
+    color: #1e90ff !important;
+  }
 }
 
 /* ================================================================
@@ -960,7 +1111,8 @@
   }
 
   .anxFooterMain__socialBlock,
-  .anxFooterMain__newsletter {
+  .anxFooterMain__newsletter,
+  .anxFooterMain__developer {
     display: none !important;
   }
 }
@@ -978,7 +1130,10 @@
   .anxFooterMain__navLinkArrow,
   .anxFooterMain__navLinkText,
   .anxFooterMain__socialLink,
-  .anxFooterMain__contactLink {
+  .anxFooterMain__contactLink,
+  .anxFooterMain__developerLink,
+  .anxFooterMain__developerBadge {
     transition: none !important;
+    animation: none !important;
   }
 }

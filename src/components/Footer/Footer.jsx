@@ -216,6 +216,31 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* ── Developer Credit ──────────────────────────────────── */}
+      <div className="anxFooterMain__developer">
+        <div className="anxFooterMain__developerDivider" role="separator" />
+        <div className="anxFooterMain__developerContent">
+          <p className="anxFooterMain__developerText">
+            Developed by{" "}
+            <a
+              href="https://jsknowledge.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="anxFooterMain__developerLink"
+              title="Visit JSKnowledge"
+            >
+              <span className="anxFooterMain__developerBrand">JSK</span>
+              <span className="anxFooterMain__developerFull">
+                (jsknowledge)
+              </span>
+            </a>
+          </p>
+          <div className="anxFooterMain__developerBadge">
+            <span className="anxFooterMain__developerBadgeText"></span>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };
