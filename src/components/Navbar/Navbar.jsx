@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import Logo from "../../assets/The_logo.png";
+
 import {
   FaFacebookF,
   FaInstagram,
@@ -9,6 +9,8 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import "./Navbar.css";
+
+const Logo = "/audionexz-cicd/The_logo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
