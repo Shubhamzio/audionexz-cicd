@@ -650,6 +650,11 @@
     --audionexz-navbar-height: 75px;
   }
 
+  .audionexz__logo-image {
+    height: 2.8rem;
+    width: 5.8rem;
+  }
+
   .audionexz__navbar-container {
     padding: 0 1.5rem;
   }
