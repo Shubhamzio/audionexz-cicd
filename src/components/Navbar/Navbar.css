@@ -67,27 +67,18 @@
    LOGO STYLES
 ======================================== */
 .audionexz__navbar-logo {
-  text-decoration: none;
-  z-index: 10001;
-  transition: var(--audionexz-transition-smooth);
+  height: 50px;
+  width: 100px;
 }
 
 .audionexz__logo-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  transition: var(--audionexz-transition-smooth);
-  position: relative;
+  height: 3rem;
+  width: 5rem;
 }
 
-.audionexz__logo-icon {
-  font-size: 2rem;
-  background: var(--audionexz-gradient-1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: audionexz-rotate-icon 6s ease-in-out infinite;
-  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+.audionexz__logo-image {
+  height: 3.5rem;
+  width: 7rem;
 }
 
 .audionexz__logo-text {
@@ -103,9 +94,7 @@
   text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
 }
 
-.audionexz__navbar-logo:hover .audionexz__logo-wrapper {
-  transform: scale(1.08) translateY(-2px);
-}
+
 
 .audionexz__navbar-logo:hover .audionexz__logo-icon {
   animation: audionexz-pulse-glow 1s ease-in-out infinite;

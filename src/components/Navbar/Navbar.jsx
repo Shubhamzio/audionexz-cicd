@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
+import Logo from "/assets/The_logo.png";
 import {
   FaFacebookF,
   FaInstagram,
@@ -78,8 +79,11 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="audionexz__navbar-logo" onClick={closeMenu}>
           <div className="audionexz__logo-wrapper">
-            <span className="audionexz__logo-icon">◆</span>
-            <span className="audionexz__logo-text">AUDIONEXZ</span>
+            <img
+              src={Logo}
+              alt="Audionexz Logo"
+              className="audionexz__logo-image"
+            />
           </div>
         </Link>
 
