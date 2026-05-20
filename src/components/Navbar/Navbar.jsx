@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import Logo from "/assets/The_logo.png";
+import Logo from "../../assets/The_logo.png";
 import {
   FaFacebookF,
   FaInstagram,
