@@ -9,10 +9,9 @@ const Service = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const heroRef = useRef(null);
-  // const cursorGlowRef = useRef(null);
 
   const categories = [
-    { id: "all", name: "All", icon: "◎" },
+    { id: "all", name: "All Services", icon: "◎" },
     { id: "acoustic", name: "Acoustic", icon: "◈" },
     { id: "studio", name: "Studio", icon: "◉" },
     { id: "commercial", name: "Commercial", icon: "◆" },
@@ -33,8 +32,8 @@ const Service = () => {
         "Flutter Echo Elimination",
         "Custom Panel Fabrication",
       ],
-
       metric: "99.2% Accuracy",
+
       gradient: "linear-gradient(135deg, #1a1a2e, #16213e)",
     },
     {
@@ -49,8 +48,8 @@ const Service = () => {
         "Floating Floor Systems",
         "HVAC Noise Isolation",
       ],
-
       metric: "NC-15 Rated",
+
       gradient: "linear-gradient(135deg, #0f0f23, #1a0a2e)",
     },
     {
@@ -65,8 +64,8 @@ const Service = () => {
         "Privacy Index Enhancement",
         "Zonal Acoustic Planning",
       ],
-
       metric: "STC 55+ Rating",
+
       gradient: "linear-gradient(135deg, #1a1a1a, #0d1b2a)",
     },
     {
@@ -81,8 +80,8 @@ const Service = () => {
         "Acoustic Room Calibration",
         "Smart Automation",
       ],
-
       metric: "THX Certified",
+
       gradient: "linear-gradient(135deg, #0a0a0a, #1a0a1e)",
     },
     {
@@ -97,8 +96,8 @@ const Service = () => {
         "Kitchen Sound Isolation",
         "Multi-Zone Audio",
       ],
-
       metric: "STI > 0.65",
+
       gradient: "linear-gradient(135deg, #1a1a1a, #2d1b00)",
     },
     {
@@ -113,8 +112,8 @@ const Service = () => {
         "Stage Reflector Design",
         "Audience Area Tuning",
       ],
-
       metric: "C80 Optimized",
+
       gradient: "linear-gradient(135deg, #0f0f0f, #1e0a0a)",
     },
     {
@@ -129,8 +128,8 @@ const Service = () => {
         "Noise Impact Assessment",
         "Regulatory Compliance",
       ],
-
       metric: "ISO 3382 Compliant",
+
       gradient: "linear-gradient(135deg, #111122, #0a1a1a)",
     },
     {
@@ -145,8 +144,8 @@ const Service = () => {
         "Multi-Host Configuration",
         "Live Stream Integration",
       ],
-
       metric: "Noise Floor < -60dB",
+
       gradient: "linear-gradient(135deg, #0a0a1e, #1a1a0a)",
     },
     {
@@ -161,8 +160,8 @@ const Service = () => {
         "Instrument-Specific Tuning",
         "Recording Ready",
       ],
-
       metric: "STC 60+ Isolation",
+
       gradient: "linear-gradient(135deg, #1a0a1a, #0a1a0f)",
     },
   ];
@@ -207,10 +206,16 @@ const Service = () => {
     { value: "50+", label: "Acoustic Engineers" },
   ];
 
+  // FIXED: Filter logic - ensure we're correctly filtering the services
   const filteredServices =
     activeCategory === "all"
       ? services
       : services.filter((s) => s.category === activeCategory);
+
+  // Debug - remove after testing
+  console.log("Active Category:", activeCategory);
+  console.log("Filtered Services:", filteredServices);
+  console.log("Total Services:", services.length);
 
   useEffect(() => {
     const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
@@ -285,7 +290,7 @@ const Service = () => {
           <p className="srv-hero-desc srv-animate">
             India's premier acoustic design studio — transforming architectural
             spaces into precision-tuned sonic environments through science,
-            artistry, and 15+ years of engineering mastery.
+            artistry, and years of engineering mastery.
           </p>
           <div className="srv-hero-metrics srv-animate">
             {metrics.map((m, i) => (
@@ -326,52 +331,71 @@ const Service = () => {
             <span className="srv-section-label">Services</span>
             <h2 className="srv-section-heading">What We Deliver</h2>
           </div>
-          <div className="srv-card-grid">
-            {filteredServices.map((service, index) => (
-              <div
-                key={service.id}
-                className="srv-card srv-animate"
-                style={{ animationDelay: `${index * 0.08}s` }}
-                onClick={() => openModal(service)}
+
+          {/* Show message when no services match */}
+          {filteredServices.length === 0 ? (
+            <div className="srv-empty-state">
+              <span className="srv-empty-icon">🔇</span>
+              <h3>No Services Found</h3>
+              <p>
+                No services available in this category yet. Try another category
+                or view all services.
+              </p>
+              <button
+                className="srv-empty-btn"
+                onClick={() => setActiveCategory("all")}
               >
+                View All Services
+              </button>
+            </div>
+          ) : (
+            <div className="srv-card-grid">
+              {filteredServices.map((service, index) => (
                 <div
-                  className="srv-card-accent"
-                  style={{ background: service.gradient }}
-                />
-                <div className="srv-card-inner">
-                  <div className="srv-card-top">
-                    <span className="srv-card-cat">{service.category}</span>
-                    <span className="srv-card-metric">{service.metric}</span>
-                  </div>
-                  <h3 className="srv-card-title">{service.title}</h3>
-                  <p className="srv-card-tagline">{service.tagline}</p>
-                  <p className="srv-card-desc">{service.description}</p>
-                  <div className="srv-card-highlights">
-                    {service.highlights.map((h, i) => (
-                      <span key={i} className="srv-highlight-pill">
-                        {h}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="srv-card-bottom">
-                    <div className="srv-card-price">
-                      <span className="srv-price-label">Investment</span>
-                      <span className="srv-price-value">
-                        {service.investment}
-                      </span>
+                  key={service.id}
+                  className="srv-card srv-animate"
+                  style={{ animationDelay: `${index * 0.08}s` }}
+                  onClick={() => openModal(service)}
+                >
+                  <div
+                    className="srv-card-accent"
+                    style={{ background: service.gradient }}
+                  />
+                  <div className="srv-card-inner">
+                    <div className="srv-card-top">
+                      <span className="srv-card-cat">{service.category}</span>
+                      <span className="srv-card-metric">{service.metric}</span>
                     </div>
-                    <div className="srv-card-timeline">
-                      <span className="srv-timeline-label">Timeline</span>
-                      <span className="srv-timeline-value">
-                        {service.timeline}
-                      </span>
+                    <h3 className="srv-card-title">{service.title}</h3>
+                    <p className="srv-card-tagline">{service.tagline}</p>
+                    <p className="srv-card-desc">{service.description}</p>
+                    <div className="srv-card-highlights">
+                      {service.highlights.map((h, i) => (
+                        <span key={i} className="srv-highlight-pill">
+                          {h}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="srv-card-bottom">
+                      <div className="srv-card-price">
+                        <span className="srv-price-label">Investment</span>
+                        <span className="srv-price-value">
+                          {service.investment}
+                        </span>
+                      </div>
+                      <div className="srv-card-timeline">
+                        <span className="srv-timeline-label">Timeline</span>
+                        <span className="srv-timeline-value">
+                          {service.timeline}
+                        </span>
+                      </div>
                     </div>
                   </div>
+                  <div className="srv-card-hover-border" />
                 </div>
-                <div className="srv-card-hover-border" />
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
