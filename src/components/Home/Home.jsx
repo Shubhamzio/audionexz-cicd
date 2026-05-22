@@ -103,7 +103,7 @@ const Home = () => {
     {
       id: 11,
       name: "Genelec",
-      logo: getImagePath("/assets/Gelelec_logo.svg.png"),
+      logo: getImagePath("/assets/gelelec_logo.jpg"),
     },
     { id: 12, name: "Hercules", logo: getImagePath("/assets/hercules.jpg") },
     { id: 13, name: "Heritage", logo: getImagePath("/assets/heritage.png") },
