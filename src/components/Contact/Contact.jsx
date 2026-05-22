@@ -3,12 +3,30 @@ import "./Contact.css";
 import Footer from "../Footer/Footer";
 
 const Contact = () => {
-  // Contact information with updated phone numbers
+  // WhatsApp number mapping - phone number to WhatsApp number
+  const whatsappNumbers = {
+    "+91 79804 53542": "917980453542",
+    "+91 89814 09359": "918981409359",
+  };
+
+  // Helper function to open WhatsApp
+  const openWhatsApp = (phoneNumber, message = "") => {
+    const waNumber = whatsappNumbers[phoneNumber];
+    if (!waNumber) return;
+    const encodedMessage = encodeURIComponent(
+      message || `Hello, I'm interested in your services.`,
+    );
+    const waUrl = `https://wa.me/${waNumber}?text=${encodedMessage}`;
+    window.open(waUrl, "_blank", "noopener,noreferrer");
+  };
+
+  // Contact information
   const contactInfo = [
     {
-      icon: "📞",
+      icon: "🎧",
       title: "Equipment Enquiry",
       details: ["+91 79804 53542"],
+      whatsappMessage: "Hello, I'm interested in equipment enquiry.",
       animation: "float-up",
       delay: "0s",
     },
@@ -16,6 +34,7 @@ const Contact = () => {
       icon: "🔊",
       title: "Acoustic & Project Enquiry",
       details: ["+91 89814 09359"],
+      whatsappMessage: "Hello, I'm interested in acoustic and project enquiry.",
       animation: "float-down",
       delay: "0.2s",
     },
@@ -51,7 +70,11 @@ const Contact = () => {
       icon: "📷",
       url: "https://www.instagram.com/dasmusickolkata?igsh=aDZocm9yYmIxZ2Z6&utm_source=qr",
     },
-    { name: "WhatsApp", icon: "💬", url: "https://wa.me/8981409359" },
+    {
+      name: "WhatsApp",
+      icon: "💬",
+      url: "https://wa.me/918981409359",
+    },
   ];
 
   // Studio images for the gallery
@@ -97,12 +120,6 @@ const Contact = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Handle phone click with analytics tracking
-  const handlePhoneClick = (phone) => {
-    console.log(`Phone number clicked: ${phone}`);
-    window.location.href = `tel:${phone.replace(/\s/g, "")}`;
-  };
-
   return (
     <div className="cnt-wrapper">
       {/* Animated Background Elements */}
@@ -126,10 +143,10 @@ const Contact = () => {
                 key={i}
                 className="cnt-particle"
                 style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 5}s`,
-                  animationDuration: `${3 + Math.random() * 4}s`,
+                  left: `${(i * 5.3) % 100}%`,
+                  top: `${(i * 7.7) % 100}%`,
+                  animationDelay: `${(i * 0.25) % 5}s`,
+                  animationDuration: `${3 + (i % 4)}s`,
                 }}
               />
             ))}
@@ -151,32 +168,51 @@ const Contact = () => {
               space, our expert team is ready to guide you.
             </p>
 
-            {/* Quick action buttons */}
+            {/* Quick action buttons - UPDATED to WhatsApp */}
             <div className="cnt-hero-actions cnt-animate">
-              <a
-                href="tel:+918981409359"
+              <button
                 className="cnt-action-btn cnt-primary-btn"
-                onClick={() => handlePhoneClick("+91 89814 09359")}
+                onClick={() =>
+                  openWhatsApp(
+                    "+91 89814 09359",
+                    "Hello, I'm interested in acoustic and project enquiry.",
+                  )
+                }
+                aria-label="Chat on WhatsApp for Acoustics and Projects"
               >
-                <span className="cnt-btn-icon">📞</span>
+                <span className="cnt-btn-icon">💬</span>
                 <span className="cnt-btn-text">
                   <span className="cnt-btn-label">
                     For Acoustics & Projects
                   </span>
                   <span className="cnt-btn-value">+91 89814 09359</span>
                 </span>
-              </a>
-              <a
-                href="tel:+917980453542"
+              </button>
+
+              <button
                 className="cnt-action-btn cnt-secondary-btn"
-                onClick={() => handlePhoneClick("+91 79804 53542")}
+                onClick={() =>
+                  openWhatsApp(
+                    "+91 79804 53542",
+                    "Hello, I'm interested in equipment enquiry.",
+                  )
+                }
+                aria-label="Chat on WhatsApp for Equipment Enquiry"
               >
                 <span className="cnt-btn-icon">🎧</span>
                 <span className="cnt-btn-text">
                   <span className="cnt-btn-label">For Equipment Enquiry</span>
                   <span className="cnt-btn-value">+91 79804 53542</span>
                 </span>
-              </a>
+              </button>
+            </div>
+
+            {/* WhatsApp indicator badge */}
+            <div className="cnt-whatsapp-indicator cnt-animate">
+              <span className="cnt-wa-dot"></span>
+              <span className="cnt-wa-text">
+                Tap to chat instantly on WhatsApp
+              </span>
             </div>
           </div>
         </div>
@@ -205,11 +241,11 @@ const Contact = () => {
       <section className="cnt-main-section">
         <div className="cnt-container">
           <div className="cnt-section-header cnt-animate">
-            <span className="cnt-section-badge">📞 Get In Touch</span>
+            <span className="cnt-section-badge">💬 Chat With Us</span>
             <h2 className="cnt-section-title">How Can We Help You?</h2>
             <p className="cnt-section-subtitle">
-              Choose the right channel for your enquiry. Our team is ready to
-              assist you.
+              Click any number to chat instantly on WhatsApp. Our team is ready
+              to assist you.
             </p>
           </div>
 
@@ -220,6 +256,27 @@ const Contact = () => {
                 key={index}
                 className={`cnt-contact-card cnt-animate cnt-${info.animation}`}
                 style={{ animationDelay: info.delay }}
+                // If card has whatsapp number, make it clickable
+                onClick={() => {
+                  if (info.whatsappMessage) {
+                    const phoneNum = info.details.find((d) =>
+                      d.includes("+91"),
+                    );
+                    if (phoneNum) {
+                      openWhatsApp(phoneNum, info.whatsappMessage);
+                    }
+                  }
+                }}
+                role={info.whatsappMessage ? "button" : undefined}
+                tabIndex={info.whatsappMessage ? 0 : undefined}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && info.whatsappMessage) {
+                    const phoneNum = info.details.find((d) =>
+                      d.includes("+91"),
+                    );
+                    if (phoneNum) openWhatsApp(phoneNum, info.whatsappMessage);
+                  }
+                }}
               >
                 <div className="cnt-card-glow"></div>
                 <div className="cnt-card-icon-wrapper">
@@ -231,16 +288,27 @@ const Contact = () => {
                   {info.details.map((detail, idx) => (
                     <p
                       key={idx}
-                      className={`cnt-card-detail ${detail.includes("+91") ? "cnt-phone" : ""}`}
+                      className={`cnt-card-detail ${
+                        detail.includes("+91") ? "cnt-phone" : ""
+                      }`}
                     >
                       {detail.includes("+91") ? (
-                        <a
-                          href={`tel:${detail.replace(/\s/g, "")}`}
-                          className="cnt-phone-link"
+                        <button
+                          className="cnt-phone-link cnt-wa-link"
                           onClick={(e) => {
-                            e.preventDefault();
-                            handlePhoneClick(detail);
+                            e.stopPropagation();
+                            openWhatsApp(detail, info.whatsappMessage);
                           }}
+                          aria-label={`Chat on WhatsApp: ${detail}`}
+                        >
+                          <span className="cnt-wa-icon-small">💬</span>
+                          {detail}
+                        </button>
+                      ) : detail.includes("@") ? (
+                        <a
+                          href={`mailto:${detail}`}
+                          className="cnt-email-link"
+                          onClick={(e) => e.stopPropagation()}
                         >
                           {detail}
                         </a>
@@ -249,37 +317,57 @@ const Contact = () => {
                       )}
                     </p>
                   ))}
+                  {/* WhatsApp badge for phone cards */}
+                  {info.whatsappMessage && (
+                    <div className="cnt-wa-badge">
+                      <span>💬</span>
+                      <span>Tap to WhatsApp</span>
+                    </div>
+                  )}
                 </div>
                 <div className="cnt-card-connector"></div>
               </div>
             ))}
           </div>
 
-          {/* Direct Contact Strip */}
+          {/* Direct Contact Strip - UPDATED to WhatsApp */}
           <div className="cnt-direct-contact cnt-animate">
             <div className="cnt-direct-content">
-              <h3>Prefer a Direct Call?</h3>
-              <p>Speak directly with our team members</p>
+              <h3>Chat Directly on WhatsApp</h3>
+              <p>Instant responses from our team members</p>
             </div>
             <div className="cnt-direct-numbers">
-              <a
-                href="tel:+917980453542"
+              <button
                 className="cnt-direct-btn"
-                onClick={() => handlePhoneClick("+91 79804 53542")}
+                onClick={() =>
+                  openWhatsApp(
+                    "+91 79804 53542",
+                    "Hello, I'm interested in equipment enquiry.",
+                  )
+                }
+                aria-label="WhatsApp Equipment Enquiry"
               >
                 <span className="cnt-direct-icon">🎧</span>
                 <span className="cnt-direct-label">Equipment</span>
                 <span className="cnt-direct-number">+91 79804 53542</span>
-              </a>
-              <a
-                href="tel:+918981409359"
+                <span className="cnt-direct-wa">💬 WhatsApp</span>
+              </button>
+
+              <button
                 className="cnt-direct-btn"
-                onClick={() => handlePhoneClick("+91 89814 09359")}
+                onClick={() =>
+                  openWhatsApp(
+                    "+91 89814 09359",
+                    "Hello, I'm interested in acoustic and project enquiry.",
+                  )
+                }
+                aria-label="WhatsApp Projects Enquiry"
               >
                 <span className="cnt-direct-icon">🔊</span>
                 <span className="cnt-direct-label">Projects</span>
                 <span className="cnt-direct-number">+91 89814 09359</span>
-              </a>
+                <span className="cnt-direct-wa">💬 WhatsApp</span>
+              </button>
             </div>
           </div>
 
@@ -311,7 +399,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Map Placeholder */}
+            {/* Map */}
             <div className="cnt-map-section cnt-animate">
               <h3 className="cnt-map-title">Find Us</h3>
               <div className="cnt-map-container">
