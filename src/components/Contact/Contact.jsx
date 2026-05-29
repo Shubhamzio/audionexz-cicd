@@ -437,13 +437,13 @@ const Contact = () => {
               <div className="cnt-hours-icon">📅</div>
               <h4>Weekdays</h4>
               <p>Monday - Friday</p>
-              <span className="cnt-time">9:00 AM - 6:00 PM</span>
+              <span className="cnt-time">11:00 AM - 8:30 PM</span>
             </div>
             <div className="cnt-hours-card cnt-highlight">
               <div className="cnt-hours-icon">⭐</div>
               <h4>Saturday</h4>
               <p>Weekend Support</p>
-              <span className="cnt-time">10:00 AM - 4:00 PM</span>
+              <span className="cnt-time">11:30 AM - 8:30 PM</span>
             </div>
             <div className="cnt-hours-card">
               <div className="cnt-hours-icon">🔔</div>

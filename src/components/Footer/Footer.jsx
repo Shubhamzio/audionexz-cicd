@@ -40,6 +40,18 @@ const Footer = () => {
 
   return (
     <footer className="anxFooterMain">
+      {/* ── Decorative Background Layers ─────────────────────── */}
+      <div className="anxFooterMain__topBorder" aria-hidden="true" />
+      <div className="anxFooterMain__grid" aria-hidden="true" />
+
+      {/* Floating particles */}
+      <div className="anxFooterMain__particles" aria-hidden="true">
+        {[...Array(8)].map((_, i) => (
+          <span key={i} className="anxFooterMain__particle" />
+        ))}
+      </div>
+
+      {/* ── Main Content Wrapper ──────────────────────────────── */}
       <div className="anxFooterMain__wrapper">
         <div className="anxFooterMain__container">
           {/* ── Column 1 : Brand & Address ─────────────────────── */}
@@ -230,7 +242,7 @@ const Footer = () => {
               className="anxFooterMain__developerLink"
               title="Visit JSKnowledge"
             >
-              <span className="anxFooterMain__developerBrand">JSK</span>
+              <span className="anxFooterMain__developerBrand">{`<JSK/>`}</span>
               <span className="anxFooterMain__developerFull">
                 (jsknowledge)
               </span>
