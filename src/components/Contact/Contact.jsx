@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import "./Contact.css";
 import Footer from "../Footer/Footer";
-
+import Auditorium from "/assets/Auditorium_1.jpg";
+import HomeTheater from "/assets/Home_Theater.jpg";
 const Contact = () => {
   // WhatsApp number mapping - phone number to WhatsApp number
   const whatsappNumbers = {
@@ -85,12 +86,12 @@ const Contact = () => {
       label: "Recording Studios",
     },
     {
-      src: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?w=600&h=400&fit=crop",
+      src: HomeTheater,
       alt: "Home Theater",
       label: "Home Theaters",
     },
     {
-      src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=400&fit=crop",
+      src: Auditorium,
       alt: "Auditorium",
       label: "Auditoriums",
     },
