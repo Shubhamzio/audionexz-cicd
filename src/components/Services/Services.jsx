@@ -201,9 +201,8 @@ const Service = () => {
 
   const metrics = [
     { value: "100+", label: "Projects Delivered" },
-    { value: "5+", label: "Years of Expertise" },
+    { value: "7+", label: "Years of Expertise" },
     { value: "100%", label: "Client Retention" },
-    { value: "50+", label: "Acoustic Engineers" },
   ];
 
   // FIXED: Filter logic - ensure we're correctly filtering the services
@@ -364,7 +363,6 @@ const Service = () => {
                   <div className="srv-card-inner">
                     <div className="srv-card-top">
                       <span className="srv-card-cat">{service.category}</span>
-                      <span className="srv-card-metric">{service.metric}</span>
                     </div>
                     <h3 className="srv-card-title">{service.title}</h3>
                     <p className="srv-card-tagline">{service.tagline}</p>
@@ -377,18 +375,8 @@ const Service = () => {
                       ))}
                     </div>
                     <div className="srv-card-bottom">
-                      <div className="srv-card-price">
-                        <span className="srv-price-label">Investment</span>
-                        <span className="srv-price-value">
-                          {service.investment}
-                        </span>
-                      </div>
-                      <div className="srv-card-timeline">
-                        <span className="srv-timeline-label">Timeline</span>
-                        <span className="srv-timeline-value">
-                          {service.timeline}
-                        </span>
-                      </div>
+                      <div className="srv-card-price"></div>
+                      <div className="srv-card-timeline"></div>
                     </div>
                   </div>
                   <div className="srv-card-hover-border" />
