@@ -263,7 +263,7 @@ const Home = () => {
       id: 8,
       name: "Srijit Mukherjee",
       role: "Film Director",
-      avatar: getImagePath("/assets/Srijit_chatterjee_3.HEIC"),
+      avatar: getImagePath("/assets/Srijit_M.png"),
       text: "The quality of work is unmatched. They truly understand the science of sound.",
     },
     {
