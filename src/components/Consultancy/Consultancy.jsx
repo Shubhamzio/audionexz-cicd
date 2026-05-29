@@ -1,190 +1,528 @@
-import React, { useEffect, useRef } from 'react';
-import './Consultancy.css';
-import Footer from '../Footer/Footer';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef } from "react";
+import "./Consultancy.css";
+import Footer from "../Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Consultancy = () => {
   const sectionRefs = useRef([]);
   const navigate = useNavigate();
 
-  // Service cards data
-  const serviceCards = [
-    { id: 1, name: "Recording and Mixing Studios", icon: "🎙️" },
-    { id: 2, name: "Banquet Halls", icon: "🏛️" },
-    { id: 3, name: "Auditorium", icon: "🎭" },
-    { id: 4, name: "Interiors", icon: "🏠" },
-    { id: 5, name: "Board Rooms", icon: "💼" },
-    { id: 6, name: "Hotels and Restaurants", icon: "🏨" },
-    { id: 7, name: "Cafeteria", icon: "☕" },
-    { id: 8, name: "Educational Institutions", icon: "🎓" },
-    { id: 9, name: "Home/Mini Theaters", icon: "🎬" }
-  ];
-
-  // Flex sections data
-  const flexSections = [
+  // Core services data
+  const coreServices = [
     {
       id: 1,
-      title: "Acoustical Architecture & Execution",
-      description: "Our expert team specializes in creating exceptional acoustic environments through innovative architectural solutions. We combine cutting-edge acoustic modeling with aesthetic design to deliver spaces that sound as impressive as they look. From initial concept to final implementation, we ensure every detail is optimized for superior sound quality and minimal noise interference.",
-      image: '/assets/architecture.png',
-      imagePosition: "left"
+      icon: "📐",
+      title: "Room Acoustic Analysis",
+      description:
+        "Professional acoustic measurement and analysis to optimize your space for perfect sound reproduction.",
     },
     {
       id: 2,
-      title: "Cost Analysis & Optimization",
-      description: "We provide comprehensive cost analysis services that help you maximize your investment while maintaining the highest quality standards. Our team evaluates every aspect of your project to identify cost-saving opportunities without compromising on acoustic performance. Through strategic planning and efficient resource allocation, we deliver exceptional value for your budget.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
-      imagePosition: "right"
+      icon: "🎚️",
+      title: "Equipment Consultation",
+      description:
+        "Expert guidance on selecting the best audio equipment tailored to your specific needs and budget.",
     },
     {
       id: 3,
-      title: "HVAC Systems Design & Deployment",
-      description: "Our HVAC solutions are engineered to maintain optimal climate control while minimizing acoustic interference. We design and deploy sophisticated ventilation systems that operate quietly and efficiently, ensuring comfort without compromising the acoustic integrity of your space. Every system is customized to meet the unique requirements of your environment.",
-      image: "/assets/HVAC.jpg",
-      imagePosition: "left"
+      icon: "🔧",
+      title: "Installation & Setup",
+      description:
+        "Complete installation services ensuring optimal equipment placement and configuration.",
     },
     {
       id: 4,
-      title: "Electrical Infrastructure & Deployment",
-      description: "We design and implement robust electrical infrastructure that powers your acoustic and multimedia systems reliably and efficiently. Our solutions include intelligent power distribution, surge protection, and backup systems to ensure uninterrupted operation. Every installation meets the highest safety standards while providing the flexibility for future upgrades.",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
-      imagePosition: "right"
+      icon: "🎯",
+      title: "Acoustic Treatment",
+      description:
+        "Custom acoustic treatment solutions including panels, diffusers, and bass traps for superior sound control.",
+    },
+  ];
+
+  // Specialty spaces
+  const specialtySpaces = [
+    {
+      id: 1,
+      name: "Recording Studios",
+      icon: "🎙️",
+      description:
+        "Professional recording environments with pristine acoustics",
+    },
+    {
+      id: 2,
+      name: "Mixing Studios",
+      icon: "🎛️",
+      description: "Acoustically balanced spaces for critical listening",
+    },
+    {
+      id: 3,
+      name: "Auditoriums",
+      icon: "🎭",
+      description: "Large-scale acoustic solutions for performance venues",
+    },
+    {
+      id: 4,
+      name: "Broadcast Studios",
+      icon: "📡",
+      description: "Noise-controlled environments for broadcasting",
     },
     {
       id: 5,
-      title: "Hardware Supply & Infrastructure Installation",
-      description: "We source and install premium acoustic hardware and infrastructure components from leading manufacturers worldwide. Our comprehensive supply chain ensures access to the latest technology and materials, while our expert installation team guarantees proper implementation. From acoustic panels to specialized mounting systems, we provide complete hardware solutions.",
-      image: "https://images.unsplash.com/photo-1565608087341-404b25492fee?w=800&h=600&fit=crop",
-      imagePosition: "left"
+      name: "Home Studios",
+      icon: "🏠",
+      description: "Personal recording spaces with professional results",
     },
     {
       id: 6,
-      title: "Interior Architecture & Execution",
-      description: "Our interior architecture services blend aesthetic excellence with acoustic functionality to create stunning spaces that perform flawlessly. We work with premium materials and innovative design techniques to achieve the perfect balance between visual appeal and sound quality. Every interior is crafted to reflect your brand while optimizing acoustic performance.",
-      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=600&fit=crop",
-      imagePosition: "right"
+      name: "Podcast Studios",
+      icon: "🎧",
+      description: "Intimate recording spaces for podcast production",
     },
     {
       id: 7,
-      title: "Comprehensive Support & Maintenance Programs",
-      description: "Our commitment extends beyond installation with comprehensive support and maintenance programs designed to keep your systems performing at their peak. We offer regular inspections, preventive maintenance, and 24/7 technical support to ensure minimal downtime. Our team is always ready to provide updates, repairs, and optimization services.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop",
-      imagePosition: "left"
-    }
+      name: "Mastering Suites",
+      icon: "💿",
+      description: "Ultra-precise acoustic environments for mastering",
+    },
+    {
+      id: 8,
+      name: "Live Rooms",
+      icon: "🎸",
+      description: "Dynamic spaces for live instrument recording",
+    },
+  ];
+
+  // Service process
+  const processSteps = [
+    {
+      id: 1,
+      number: "01",
+      title: "Initial Consultation",
+      description:
+        "We begin with a comprehensive discussion to understand your vision, requirements, and budget constraints.",
+      icon: "💬",
+    },
+    {
+      id: 2,
+      number: "02",
+      title: "Acoustic Assessment",
+      description:
+        "Our team conducts detailed measurements and analysis of your space using advanced acoustic testing equipment.",
+      icon: "📊",
+    },
+    {
+      id: 3,
+      number: "03",
+      title: "Custom Design",
+      description:
+        "We create tailored acoustic treatment plans and equipment recommendations specific to your needs.",
+      icon: "✏️",
+    },
+    {
+      id: 4,
+      number: "04",
+      title: "Equipment Sourcing",
+      description:
+        "Access to premium audio equipment from world-leading manufacturers at competitive prices.",
+      icon: "📦",
+    },
+    {
+      id: 5,
+      number: "05",
+      title: "Professional Installation",
+      description:
+        "Expert installation ensuring optimal placement, wiring, and calibration of all equipment.",
+      icon: "🔨",
+    },
+    {
+      id: 6,
+      number: "06",
+      title: "Final Calibration",
+      description:
+        "Precise tuning and acoustic calibration to achieve perfect sound reproduction in your space.",
+      icon: "🎯",
+    },
+    {
+      id: 7,
+      number: "07",
+      title: "Training & Support",
+      description:
+        "Comprehensive training on equipment operation and ongoing technical support.",
+      icon: "🎓",
+    },
+    {
+      id: 8,
+      number: "08",
+      title: "Maintenance",
+      description:
+        "Regular maintenance programs to keep your studio performing at its peak.",
+      icon: "⚙️",
+    },
+  ];
+
+  // What we offer
+  const offerings = [
+    {
+      id: 1,
+      title: "Acoustic Room Design",
+      image:
+        "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=600&fit=crop",
+      description:
+        "Transform any space into an acoustically optimized environment. We analyze room dimensions, surfaces, and existing conditions to create custom treatment plans. Our designs incorporate proven acoustic principles with modern aesthetics, ensuring your studio not only sounds exceptional but looks professional too.",
+      features: [
+        "RT60 Analysis",
+        "Modal Response Optimization",
+        "Reflection Point Treatment",
+        "Diffusion Strategy",
+      ],
+    },
+    {
+      id: 2,
+      title: "Equipment Selection & Supply",
+      image:
+        "https://images.unsplash.com/photo-1519508234439-4f23643125c1?w=800&h=600&fit=crop",
+      description:
+        "Navigate the complex world of professional audio equipment with confidence. Our expert consultants help you select the perfect gear for your specific needs and budget. From microphones and preamps to monitors and interfaces, we provide access to premium equipment from industry-leading brands.",
+      features: [
+        "Brand Partnerships",
+        "Equipment Testing",
+        "Budget Optimization",
+        "Future-Proof Solutions",
+      ],
+    },
+    {
+      id: 3,
+      title: "Installation Services",
+      image:
+        "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&h=600&fit=crop",
+      description:
+        "Professional installation is crucial for optimal performance. Our certified technicians handle every aspect of your studio setup, from acoustic panel mounting to complex wiring systems. We ensure proper equipment placement, cable management, and system integration for a clean, professional result.",
+      features: [
+        "Panel Installation",
+        "Cable Management",
+        "Equipment Mounting",
+        "System Integration",
+      ],
+    },
+    {
+      id: 4,
+      title: "Acoustic Treatment Solutions",
+      image:
+        "https://images.unsplash.com/photo-1544216717-3bbf52512659?w=800&h=600&fit=crop",
+      description:
+        "Control your room's acoustics with precision-engineered treatment products. We supply and install a complete range of acoustic solutions including absorption panels, bass traps, diffusers, and ceiling clouds. All treatments are customized to address your specific acoustic challenges.",
+      features: [
+        "Absorption Panels",
+        "Bass Traps",
+        "Acoustic Diffusers",
+        "Ceiling Clouds",
+      ],
+    },
+    {
+      id: 5,
+      title: "Room Calibration & Tuning",
+      image:
+        "https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=800&h=600&fit=crop",
+      description:
+        "Achieve reference-quality monitoring through precise acoustic calibration. Using advanced measurement tools and techniques, we tune your room and monitoring system to deliver accurate, uncolored sound reproduction. This critical step ensures you can trust what you hear.",
+      features: [
+        "Monitor Alignment",
+        "Room EQ Optimization",
+        "Sweet Spot Analysis",
+        "Reference Testing",
+      ],
+    },
+    {
+      id: 6,
+      title: "Ongoing Support",
+      image:
+        "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&h=600&fit=crop",
+      description:
+        "Your success is our priority. We provide comprehensive post-installation support including equipment training, troubleshooting assistance, and maintenance services. Our team is always available to answer questions and help you get the most from your studio investment.",
+      features: [
+        "Technical Support",
+        "Equipment Training",
+        "System Updates",
+        "Preventive Maintenance",
+      ],
+    },
   ];
 
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: "0px 0px -50px 0px",
     };
 
-
-
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('conslt-visible');
+          entry.target.classList.add("anxConslt--visible");
         }
       });
     }, observerOptions);
 
-    const elements = document.querySelectorAll('.conslt-fade-in');
-    elements.forEach(el => observer.observe(el));
+    const elements = document.querySelectorAll(".anxConslt__animate");
+    elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
 
-   const handleNavigateToContact = () => {
-    navigate('/contact');
+  const handleNavigateToContact = () => {
+    navigate("/contact");
   };
 
-
   return (
-    <div className="conslt-main-container">
-      {/* Floating Animation Elements */}
-      <div className="conslt-floating-elements">
-        <div className="conslt-float-circle conslt-circle-1"></div>
-        <div className="conslt-float-circle conslt-circle-2"></div>
-        <div className="conslt-float-circle conslt-circle-3"></div>
-        <div className="conslt-float-square conslt-square-1"></div>
-        <div className="conslt-float-square conslt-square-2"></div>
+    <div className="anxConslt">
+      {/* Animated Background */}
+      <div className="anxConslt__bgAnimation">
+        <div className="anxConslt__bgParticle anxConslt__bgParticle--1"></div>
+        <div className="anxConslt__bgParticle anxConslt__bgParticle--2"></div>
+        <div className="anxConslt__bgParticle anxConslt__bgParticle--3"></div>
+        <div className="anxConslt__bgParticle anxConslt__bgParticle--4"></div>
+        <div className="anxConslt__bgParticle anxConslt__bgParticle--5"></div>
       </div>
 
-      {/* Header Section */}
-      <section className="conslt-header-section">
-        <div className="conslt-container">
-          <h1 className="conslt-main-heading conslt-fade-in">Consultancy</h1>
-          <p className="conslt-main-paragraph conslt-fade-in">
-            Mix Master Square is your premier acoustic consultancy partner, specializing in
-            cutting-edge acoustic solutions for diverse spaces. With over a decade of expertise,
-            we transform ordinary environments into extraordinary acoustic experiences. Our team
-            of certified acoustic engineers and designers work collaboratively to deliver solutions
-            that exceed expectations, ensuring perfect sound quality and aesthetic appeal in every project.
-          </p>
+      {/* Hero Section */}
+      <section className="anxConslt__hero">
+        <div className="anxConslt__heroOverlay"></div>
+        <div className="anxConslt__container">
+          <div className="anxConslt__heroContent anxConslt__animate">
+            <span className="anxConslt__heroBadge">
+              <span className="anxConslt__heroBadgeIcon">🎵</span>
+              Professional Audio Consultancy
+            </span>
+            <h1 className="anxConslt__heroTitle">
+              Creating{" "}
+              <span className="anxConslt__heroTitleHighlight">
+                Perfect Acoustic
+              </span>{" "}
+              Environments
+            </h1>
+            <p className="anxConslt__heroSubtitle">
+              Expert acoustic design, equipment consultation, and installation
+              services for recording studios, auditoriums, and professional
+              audio spaces. Transform your vision into sonic reality.
+            </p>
+            <div className="anxConslt__heroStats">
+              <div className="anxConslt__heroStat">
+                <span className="anxConslt__heroStatNumber">100+</span>
+                <span className="anxConslt__heroStatLabel">
+                  Projects Completed
+                </span>
+              </div>
+              <div className="anxConslt__heroStat">
+                <span className="anxConslt__heroStatNumber">7+</span>
+                <span className="anxConslt__heroStatLabel">
+                  Years Experience
+                </span>
+              </div>
+              <div className="anxConslt__heroStat">
+                <span className="anxConslt__heroStatNumber">100%</span>
+                <span className="anxConslt__heroStatLabel">
+                  Commitment to Quality
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="anxConslt__heroScroll">
+          <span>Scroll to explore</span>
+          <div className="anxConslt__heroScrollLine"></div>
         </div>
       </section>
 
-      {/* Service Cards Section */}
-      <section className="conslt-services-section">
-        <div className="conslt-container">
-          <div className="conslt-services-grid">
-            {serviceCards.map((service, index) => (
+      {/* Core Services */}
+      <section className="anxConslt__coreServices">
+        <div className="anxConslt__container">
+          <div className="anxConslt__sectionHeader anxConslt__animate">
+            <span className="anxConslt__sectionSubtitle">What We Do</span>
+            <h2 className="anxConslt__sectionTitle">
+              Core{" "}
+              <span className="anxConslt__sectionTitleHighlight">Services</span>
+            </h2>
+            <p className="anxConslt__sectionDescription">
+              Comprehensive acoustic solutions from concept to completion
+            </p>
+          </div>
+          <div className="anxConslt__coreGrid">
+            {coreServices.map((service, index) => (
               <div
                 key={service.id}
-                className="conslt-service-card conslt-fade-in"
+                className="anxConslt__coreCard anxConslt__animate"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="conslt-card-icon">{service.icon}</div>
-                <h3 className="conslt-card-title">{service.name}</h3>
+                <div className="anxConslt__coreCardGlow"></div>
+                <div className="anxConslt__coreCardIcon">{service.icon}</div>
+                <h3 className="anxConslt__coreCardTitle">{service.title}</h3>
+                <p className="anxConslt__coreCardDescription">
+                  {service.description}
+                </p>
+                <div className="anxConslt__coreCardLine"></div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Flex Sections */}
-      <section className="conslt-flex-sections">
-        <div className="conslt-container">
-          {flexSections.map((section, index) => (
-            <div
-              key={section.id}
-              className={`conslt-flex-item conslt-fade-in ${
-                section.imagePosition === 'left' ? 'conslt-image-left' : 'conslt-image-right'
-              }`}
-              ref={el => sectionRefs.current[index] = el}
-            >
-              <div className="conslt-flex-image">
-                <img
-                  src={section.image}
-                  alt={section.title}
-                  loading="lazy"
-                />
-                <div className="conslt-image-overlay"></div>
-              </div>
-              <div className="conslt-flex-content">
-                <h2 className="conslt-flex-title">{section.title}</h2>
-                <p className="conslt-flex-description">{section.description}</p>
-
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="conslt-cta-section">
-        <div className="conslt-container">
-          <div className="conslt-cta-content conslt-fade-in">
-            <h2 className="conslt-cta-title">Ready to Transform Your Space?</h2>
-            <p className="conslt-cta-subtitle">
-              Let's discuss how we can create the perfect acoustic environment for your needs
+      {/* Specialty Spaces */}
+      <section className="anxConslt__specialty">
+        <div className="anxConslt__container">
+          <div className="anxConslt__sectionHeader anxConslt__animate">
+            <span className="anxConslt__sectionSubtitle">Expertise</span>
+            <h2 className="anxConslt__sectionTitle">
+              Specialty{" "}
+              <span className="anxConslt__sectionTitleHighlight">Spaces</span>
+            </h2>
+            <p className="anxConslt__sectionDescription">
+              We design and optimize acoustic environments for various
+              professional applications
             </p>
-            <button className="conslt-cta-button" onClick={handleNavigateToContact}>Get Started Today</button>
+          </div>
+          <div className="anxConslt__specialtyGrid">
+            {specialtySpaces.map((space, index) => (
+              <div
+                key={space.id}
+                className="anxConslt__specialtyCard anxConslt__animate"
+                style={{ animationDelay: `${index * 0.05}s` }}
+              >
+                <div className="anxConslt__specialtyCardInner">
+                  <div className="anxConslt__specialtyCardIcon">
+                    {space.icon}
+                  </div>
+                  <h3 className="anxConslt__specialtyCardName">{space.name}</h3>
+                  <p className="anxConslt__specialtyCardDescription">
+                    {space.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-      <Footer/>
+
+      {/* Process Section */}
+      <section className="anxConslt__process">
+        <div className="anxConslt__container">
+          <div className="anxConslt__sectionHeader anxConslt__animate">
+            <span className="anxConslt__sectionSubtitle">Our Approach</span>
+            <h2 className="anxConslt__sectionTitle">
+              How We{" "}
+              <span className="anxConslt__sectionTitleHighlight">Work</span>
+            </h2>
+            <p className="anxConslt__sectionDescription">
+              A systematic approach ensuring perfect results every time
+            </p>
+          </div>
+          <div className="anxConslt__processTimeline">
+            {processSteps.map((step, index) => (
+              <div
+                key={step.id}
+                className="anxConslt__processStep anxConslt__animate"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="anxConslt__processStepNumber">
+                  {step.number}
+                </div>
+                <div className="anxConslt__processStepIcon">{step.icon}</div>
+                <div className="anxConslt__processStepContent">
+                  <h3 className="anxConslt__processStepTitle">{step.title}</h3>
+                  <p className="anxConslt__processStepDescription">
+                    {step.description}
+                  </p>
+                </div>
+                {index < processSteps.length - 1 && (
+                  <div className="anxConslt__processStepConnector"></div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Offerings Section */}
+      <section className="anxConslt__offerings">
+        <div className="anxConslt__container">
+          <div className="anxConslt__sectionHeader anxConslt__animate">
+            <span className="anxConslt__sectionSubtitle">
+              Complete Solutions
+            </span>
+            <h2 className="anxConslt__sectionTitle">
+              What We{" "}
+              <span className="anxConslt__sectionTitleHighlight">Offer</span>
+            </h2>
+          </div>
+          <div className="anxConslt__offeringsGrid">
+            {offerings.map((offering, index) => (
+              <div
+                key={offering.id}
+                className="anxConslt__offeringCard anxConslt__animate"
+                ref={(el) => (sectionRefs.current[index] = el)}
+              >
+                <div className="anxConslt__offeringImageWrapper">
+                  <img
+                    src={offering.image}
+                    alt={offering.title}
+                    className="anxConslt__offeringImage"
+                    loading="lazy"
+                  />
+                  <div className="anxConslt__offeringImageOverlay"></div>
+                </div>
+                <div className="anxConslt__offeringContent">
+                  <h3 className="anxConslt__offeringTitle">{offering.title}</h3>
+                  <p className="anxConslt__offeringDescription">
+                    {offering.description}
+                  </p>
+                  <div className="anxConslt__offeringFeatures">
+                    {offering.features.map((feature, idx) => (
+                      <span key={idx} className="anxConslt__offeringFeature">
+                        <span className="anxConslt__offeringFeatureIcon">
+                          ✓
+                        </span>
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="anxConslt__cta">
+        <div className="anxConslt__container">
+          <div className="anxConslt__ctaContent anxConslt__animate">
+            <div className="anxConslt__ctaGlow"></div>
+            <h2 className="anxConslt__ctaTitle">
+              Ready to Build Your Dream Studio?
+            </h2>
+            <p className="anxConslt__ctaSubtitle">
+              Let's create an acoustic environment that brings out the best in
+              your work. Our team of experts is ready to help you achieve sonic
+              perfection.
+            </p>
+            <button
+              className="anxConslt__ctaButton"
+              onClick={handleNavigateToContact}
+            >
+              <span>Start Your Project</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M7.5 15L12.5 10L7.5 5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };

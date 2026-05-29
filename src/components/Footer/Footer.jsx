@@ -247,9 +247,6 @@ const Footer = () => {
               </span>
             </a>
           </p>
-          <div className="anxFooterMain__developerBadge">
-            <span className="anxFooterMain__developerBadgeText">❤️</span>
-          </div>
         </div>
       </div>
     </footer>
