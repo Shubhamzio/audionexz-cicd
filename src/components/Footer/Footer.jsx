@@ -13,7 +13,6 @@ const Footer = () => {
     { name: "Contact", path: "/contact" },
     { name: "Projects", path: "/projects" },
     { name: "Services", path: "/services" },
-    { name: "Testimonials", path: "/testimonials" },
   ];
 
   const socialLinks = [
