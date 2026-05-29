@@ -277,7 +277,7 @@ const Home = () => {
       id: 10,
       name: "Shamidh Mukherjee",
       role: "Vocalist, Music Director",
-      avatar: getImagePath("/assets/Shamid_chatterjee_1.jpeg"),
+      avatar: getImagePath("/assets/Shamidh_Ch.jpeg"),
       text: "Neobalad Studio's seamless integration of world-class acoustics and premium equipment by AudioNexz is nothing short of a sonic masterpiece.",
     },
     {
