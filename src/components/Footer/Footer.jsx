@@ -202,7 +202,7 @@ const Footer = () => {
         <div className="anxFooterMain__bottomDivider" role="separator" />
         <div className="anxFooterMain__bottomContent">
           <p className="anxFooterMain__copyright">
-            © {currentYear} <strong>AUDIONEXZ</strong> Entertainment Pvt. Ltd.
+            © {currentYear} <strong>AUDIONEXZ</strong>
             All Rights Reserved.
           </p>
           <div className="anxFooterMain__bottomLinks">
