@@ -464,6 +464,9 @@ const Home = () => {
       {/* ===== NEW SECTION 1.5: SERVICES SHOWCASE ===== */}
       <section className="audionexz-home__services">
         <div className="audionexz-home__services-container">
+          <h1 style={{ textAlign: "Center", marginBottom: "2.5rem" }}>
+            We Provide
+          </h1>
           <div className="audionexz-home__services-grid">
             {/* Service 1: Architectural Acoustics */}
             <div className="audionexz-home__services-card">

@@ -122,8 +122,8 @@ const About = () => {
   const stats = [
     { number: "100+", label: "Projects Completed" },
     { number: "200+", label: "Partner Brands" },
-    { number: "5+", label: "Years Experience" },
-    { number: "100%", label: "Client Satisfaction" },
+    { number: "7+", label: "Years Experience" },
+    { number: "100%", label: "Commitment to excellence" },
   ];
 
   const brands = [
@@ -182,7 +182,7 @@ const About = () => {
             <div className="anx-about__hero-badge anx-about__animate">
               <span className="anx-about__hero-badge-icon">🎵</span>
               <span className="anx-about__hero-badge-text">
-                Established 2023
+                Established 2020
               </span>
             </div>
 
@@ -490,17 +490,15 @@ const About = () => {
             <div className="anx-about__mission-card anx-about__animate">
               <div className="anx-about__mission-glow"></div>
               <div className="anx-about__mission-content">
-                <div className="anx-about__mission-icon">🌟</div>
-                <h2 className="anx-about__mission-title">
-                  More Than a Company
-                </h2>
+                <div className="anx-about__mission-icon">✨</div>
+                <h2 className="anx-about__mission-title"></h2>
                 <p className="anx-about__mission-text">
-                  AUDIONEXZ isn't just a company — it's an
+                  AUDIONEXZ — it's an
                   <strong>
                     {" "}
                     ecosystem for creators, performers, and businesses
                   </strong>{" "}
-                  who care about great sound.
+                  who care about great sound & equipments.
                 </p>
               </div>
             </div>
@@ -514,7 +512,7 @@ const About = () => {
               <span>🎵</span>
             </div>
             <h2 className="anx-about__tagline-text">
-              Design. Install. Create. Perform.
+              Design. Install. Create. Excellence.
             </h2>
             <p className="anx-about__tagline-subtitle">
               With AUDIONEXZ, sound speaks quality.
