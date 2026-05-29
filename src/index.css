@@ -1,7 +1,9 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-
-
+/* App.css or index.css - Add this */
+footer.anxFooterMain {
+    background: linear-gradient(160deg,
+            #000008 0%,
+            #040420 40%,
+            #060828 70%,
+            #000010 100%) !important;
+    color: #ffffff !important;
 }

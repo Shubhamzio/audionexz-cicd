@@ -1,19 +1,19 @@
 /* ================================================================
-   AUDIONEXZ PROJECTS PAGE - COMPLETELY ISOLATED STYLES V2
+   AUDIONEXZ PROJECTS PAGE - COMPLETELY ISOLATED STYLES V4
    Prefix: anxProjects
-   Version: 2.0
+   Version: 4.0 - FOOTER-SAFE + WRAPPER-SAFE EDITION
    ================================================================ */
 
 /* ================================================================
-   SCOPED FONT - Only applied inside projects
+   SCOPED FONT - Only applied inside projects wrapper
    ================================================================ */
-.anxProjects,
-.anxProjects * {
+.anxProjects:not(footer):not(footer *),
+.anxProjects:not(footer):not(footer *) * {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* ================================================================
-   BASE STYLES
+   BASE STYLES - Only applies to direct .anxProjects wrapper
    ================================================================ */
 .anxProjects {
   display: block;
@@ -34,43 +34,51 @@
       #0f2744 100%);
   min-height: 100vh;
   box-sizing: border-box;
+  isolation: isolate;
   contain: layout style;
 }
 
-/* Reset all children */
-.anxProjects *,
-.anxProjects *::before,
-.anxProjects *::after {
+/* Reset all children - EXCEPT footer AND external sections */
+.anxProjects>*:not(footer),
+.anxProjects>*:not(footer) *,
+.anxProjects>*:not(footer) *::before,
+.anxProjects>*:not(footer) *::after {
   box-sizing: border-box;
+}
+
+/* Only reset direct children elements within anxProjects sections */
+.anxProjects__hero *,
+.anxProjects__portfolio *,
+.anxProjects__process *,
+.anxProjects__testimonial *,
+.anxProjects__cta * {
   margin: 0;
   padding: 0;
 }
 
-/* Reset specific elements */
-.anxProjects ul,
-.anxProjects ol {
+/* Reset specific elements - EXCLUDE footer */
+.anxProjects ul:not(footer ul):not(footer * ul),
+.anxProjects ol:not(footer ol):not(footer * ol) {
   list-style: none;
 }
 
-.anxProjects a {
+.anxProjects a:not(footer a):not(footer * a) {
   text-decoration: none;
   color: inherit;
 }
 
-.anxProjects h1,
-.anxProjects h2,
-.anxProjects h3,
-.anxProjects h4,
-.anxProjects h5,
-.anxProjects h6 {
+.anxProjects h1:not(footer h1):not(footer * h1),
+.anxProjects h2:not(footer h2):not(footer * h2),
+.anxProjects h3:not(footer h3):not(footer * h3),
+.anxProjects h4:not(footer h4):not(footer * h4),
+.anxProjects h5:not(footer h5):not(footer * h5),
+.anxProjects h6:not(footer h6):not(footer * h6) {
   font-weight: inherit;
   font-size: inherit;
   line-height: inherit;
-  margin: 0;
-  padding: 0;
 }
 
-.anxProjects p {
+.anxProjects p:not(footer p):not(footer * p) {
   margin: 0;
   padding: 0;
 }
@@ -1759,3 +1767,5 @@
     display: none !important;
   }
 }
+
+/* important */

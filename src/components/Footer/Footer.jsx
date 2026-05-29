@@ -40,27 +40,21 @@ const Footer = () => {
 
   return (
     <footer className="anxFooterMain">
-      {/* ── Decorative Background Layers ─────────────────────── */}
+      {/* Top Border */}
       <div className="anxFooterMain__topBorder" aria-hidden="true" />
-      <div className="anxFooterMain__grid" aria-hidden="true" />
 
-      {/* Floating particles */}
-      <div className="anxFooterMain__particles" aria-hidden="true">
-        {[...Array(8)].map((_, i) => (
-          <span key={i} className="anxFooterMain__particle" />
-        ))}
-      </div>
-
-      {/* ── Main Content Wrapper ──────────────────────────────── */}
+      {/* Main Content */}
       <div className="anxFooterMain__wrapper">
         <div className="anxFooterMain__container">
-          {/* ── Column 1 : Brand & Address ─────────────────────── */}
+          {/* Column 1 - Brand & Address */}
           <div className="anxFooterMain__column anxFooterMain__column--address">
+            {/* Brand */}
             <div className="anxFooterMain__brand">
               <h2 className="anxFooterMain__logo">AUDIONEXZ</h2>
               <p className="anxFooterMain__tagline">Sound Speaks Quality</p>
             </div>
 
+            {/* Address */}
             <div className="anxFooterMain__addressBlock">
               <h3 className="anxFooterMain__heading">
                 <span className="anxFooterMain__headingIcon" aria-hidden="true">
@@ -80,6 +74,7 @@ const Footer = () => {
               </address>
             </div>
 
+            {/* Contact */}
             <div className="anxFooterMain__contactBlock">
               <div className="anxFooterMain__contactItem">
                 <span className="anxFooterMain__contactIcon" aria-hidden="true">
@@ -106,7 +101,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* ── Column 2 : Quick Links ─────────────────────────── */}
+          {/* Column 2 - Quick Links */}
           <div className="anxFooterMain__column anxFooterMain__column--links">
             <h3 className="anxFooterMain__heading">
               <span className="anxFooterMain__headingIcon" aria-hidden="true">
@@ -139,7 +134,7 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* ── Column 3 : Services ────────────────────────────── */}
+          {/* Column 3 - Services */}
           <div className="anxFooterMain__column anxFooterMain__column--services">
             <h3 className="anxFooterMain__heading">
               <span className="anxFooterMain__headingIcon" aria-hidden="true">
@@ -157,13 +152,17 @@ const Footer = () => {
                 "Consultation",
               ].map((service) => (
                 <li key={service} className="anxFooterMain__servicesItem">
+                  <span
+                    className="anxFooterMain__servicesDot"
+                    aria-hidden="true"
+                  />
                   {service}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* ── Column 4 : Social ──────────────────────────────── */}
+          {/* Column 4 - Social */}
           <div className="anxFooterMain__column anxFooterMain__column--social">
             <h3 className="anxFooterMain__heading">
               <span className="anxFooterMain__headingIcon" aria-hidden="true">
@@ -199,7 +198,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* ── Bottom Bar ─────────────────────────────────────────── */}
+      {/* Bottom Bar */}
       <div className="anxFooterMain__bottom">
         <div className="anxFooterMain__bottomDivider" role="separator" />
         <div className="anxFooterMain__bottomContent">
@@ -229,7 +228,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* ── Developer Credit ──────────────────────────────────── */}
+      {/* Developer Credit */}
       <div className="anxFooterMain__developer">
         <div className="anxFooterMain__developerDivider" role="separator" />
         <div className="anxFooterMain__developerContent">
@@ -242,14 +241,14 @@ const Footer = () => {
               className="anxFooterMain__developerLink"
               title="Visit JSKnowledge"
             >
-              <span className="anxFooterMain__developerBrand">{`<JSK/>`}</span>
+              <span className="anxFooterMain__developerBrand">JSK</span>
               <span className="anxFooterMain__developerFull">
                 (jsknowledge)
               </span>
             </a>
           </p>
           <div className="anxFooterMain__developerBadge">
-            <span className="anxFooterMain__developerBadgeText"></span>
+            <span className="anxFooterMain__developerBadgeText">❤️</span>
           </div>
         </div>
       </div>

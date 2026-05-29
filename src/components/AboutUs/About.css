@@ -35,6 +35,13 @@
   position: relative;
 }
 
+
+/* Add at the BOTTOM of Contact.css */
+/* footer.anxFooterMain,
+footer.anxFooterMain * {
+  background-color: unset;
+} */
+
 .anx-about *,
 .anx-about *::before,
 .anx-about *::after {
@@ -120,8 +127,8 @@
   width: 100%;
   height: 100%;
   background: radial-gradient(ellipse at top center, rgba(30, 144, 255, 0.15) 0%, transparent 60%),
-              radial-gradient(ellipse at bottom right, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-              linear-gradient(180deg, #000000 0%, #0a0a1a 100%);
+    radial-gradient(ellipse at bottom right, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, #000000 0%, #0a0a1a 100%);
 }
 
 .anx-about__hero-particles {
@@ -141,32 +148,148 @@
   animation: anx-about-float 15s infinite ease-in-out;
 }
 
-.anx-about__hero-particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
-.anx-about__hero-particle:nth-child(2) { left: 20%; top: 80%; animation-delay: 1s; }
-.anx-about__hero-particle:nth-child(3) { left: 30%; top: 40%; animation-delay: 2s; }
-.anx-about__hero-particle:nth-child(4) { left: 40%; top: 60%; animation-delay: 3s; }
-.anx-about__hero-particle:nth-child(5) { left: 50%; top: 30%; animation-delay: 4s; }
-.anx-about__hero-particle:nth-child(6) { left: 60%; top: 70%; animation-delay: 5s; }
-.anx-about__hero-particle:nth-child(7) { left: 70%; top: 50%; animation-delay: 6s; }
-.anx-about__hero-particle:nth-child(8) { left: 80%; top: 20%; animation-delay: 7s; }
-.anx-about__hero-particle:nth-child(9) { left: 90%; top: 90%; animation-delay: 8s; }
-.anx-about__hero-particle:nth-child(10) { left: 15%; top: 55%; animation-delay: 9s; }
-.anx-about__hero-particle:nth-child(11) { left: 25%; top: 15%; animation-delay: 10s; }
-.anx-about__hero-particle:nth-child(12) { left: 35%; top: 85%; animation-delay: 11s; }
-.anx-about__hero-particle:nth-child(13) { left: 45%; top: 45%; animation-delay: 12s; }
-.anx-about__hero-particle:nth-child(14) { left: 55%; top: 75%; animation-delay: 13s; }
-.anx-about__hero-particle:nth-child(15) { left: 65%; top: 25%; animation-delay: 14s; }
-.anx-about__hero-particle:nth-child(16) { left: 75%; top: 65%; animation-delay: 15s; }
-.anx-about__hero-particle:nth-child(17) { left: 85%; top: 35%; animation-delay: 16s; }
-.anx-about__hero-particle:nth-child(18) { left: 95%; top: 55%; animation-delay: 17s; }
-.anx-about__hero-particle:nth-child(19) { left: 5%; top: 45%; animation-delay: 18s; }
-.anx-about__hero-particle:nth-child(20) { left: 55%; top: 10%; animation-delay: 19s; }
+.anx-about__hero-particle:nth-child(1) {
+  left: 10%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.anx-about__hero-particle:nth-child(2) {
+  left: 20%;
+  top: 80%;
+  animation-delay: 1s;
+}
+
+.anx-about__hero-particle:nth-child(3) {
+  left: 30%;
+  top: 40%;
+  animation-delay: 2s;
+}
+
+.anx-about__hero-particle:nth-child(4) {
+  left: 40%;
+  top: 60%;
+  animation-delay: 3s;
+}
+
+.anx-about__hero-particle:nth-child(5) {
+  left: 50%;
+  top: 30%;
+  animation-delay: 4s;
+}
+
+.anx-about__hero-particle:nth-child(6) {
+  left: 60%;
+  top: 70%;
+  animation-delay: 5s;
+}
+
+.anx-about__hero-particle:nth-child(7) {
+  left: 70%;
+  top: 50%;
+  animation-delay: 6s;
+}
+
+.anx-about__hero-particle:nth-child(8) {
+  left: 80%;
+  top: 20%;
+  animation-delay: 7s;
+}
+
+.anx-about__hero-particle:nth-child(9) {
+  left: 90%;
+  top: 90%;
+  animation-delay: 8s;
+}
+
+.anx-about__hero-particle:nth-child(10) {
+  left: 15%;
+  top: 55%;
+  animation-delay: 9s;
+}
+
+.anx-about__hero-particle:nth-child(11) {
+  left: 25%;
+  top: 15%;
+  animation-delay: 10s;
+}
+
+.anx-about__hero-particle:nth-child(12) {
+  left: 35%;
+  top: 85%;
+  animation-delay: 11s;
+}
+
+.anx-about__hero-particle:nth-child(13) {
+  left: 45%;
+  top: 45%;
+  animation-delay: 12s;
+}
+
+.anx-about__hero-particle:nth-child(14) {
+  left: 55%;
+  top: 75%;
+  animation-delay: 13s;
+}
+
+.anx-about__hero-particle:nth-child(15) {
+  left: 65%;
+  top: 25%;
+  animation-delay: 14s;
+}
+
+.anx-about__hero-particle:nth-child(16) {
+  left: 75%;
+  top: 65%;
+  animation-delay: 15s;
+}
+
+.anx-about__hero-particle:nth-child(17) {
+  left: 85%;
+  top: 35%;
+  animation-delay: 16s;
+}
+
+.anx-about__hero-particle:nth-child(18) {
+  left: 95%;
+  top: 55%;
+  animation-delay: 17s;
+}
+
+.anx-about__hero-particle:nth-child(19) {
+  left: 5%;
+  top: 45%;
+  animation-delay: 18s;
+}
+
+.anx-about__hero-particle:nth-child(20) {
+  left: 55%;
+  top: 10%;
+  animation-delay: 19s;
+}
 
 @keyframes anx-about-float {
-  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
-  25% { transform: translateY(-30px) translateX(10px); opacity: 0.6; }
-  50% { transform: translateY(-20px) translateX(-10px); opacity: 0.4; }
-  75% { transform: translateY(-40px) translateX(5px); opacity: 0.5; }
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+
+  25% {
+    transform: translateY(-30px) translateX(10px);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-20px) translateX(-10px);
+    opacity: 0.4;
+  }
+
+  75% {
+    transform: translateY(-40px) translateX(5px);
+    opacity: 0.5;
+  }
 }
 
 .anx-about__hero-content {
@@ -245,8 +368,17 @@
 }
 
 @keyframes anx-about-pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.3); opacity: 0.7; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
 }
 
 .anx-about__hero-scroll {
@@ -270,8 +402,15 @@
 }
 
 @keyframes anx-about-bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(10px); }
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
 }
 
 /* ============================================
@@ -739,8 +878,13 @@
 }
 
 @keyframes anx-about-marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .anx-about__brand-item {
@@ -1029,15 +1173,41 @@
   animation: anx-about-visualizer 1s ease-in-out infinite;
 }
 
-.anx-about__visualizer-bar:nth-child(1) { animation-delay: 0s; height: 10px; }
-.anx-about__visualizer-bar:nth-child(2) { animation-delay: 0.1s; height: 20px; }
-.anx-about__visualizer-bar:nth-child(3) { animation-delay: 0.2s; height: 15px; }
-.anx-about__visualizer-bar:nth-child(4) { animation-delay: 0.3s; height: 25px; }
-.anx-about__visualizer-bar:nth-child(5) { animation-delay: 0.4s; height: 12px; }
+.anx-about__visualizer-bar:nth-child(1) {
+  animation-delay: 0s;
+  height: 10px;
+}
+
+.anx-about__visualizer-bar:nth-child(2) {
+  animation-delay: 0.1s;
+  height: 20px;
+}
+
+.anx-about__visualizer-bar:nth-child(3) {
+  animation-delay: 0.2s;
+  height: 15px;
+}
+
+.anx-about__visualizer-bar:nth-child(4) {
+  animation-delay: 0.3s;
+  height: 25px;
+}
+
+.anx-about__visualizer-bar:nth-child(5) {
+  animation-delay: 0.4s;
+  height: 12px;
+}
 
 @keyframes anx-about-visualizer {
-  0%, 100% { transform: scaleY(1); }
-  50% { transform: scaleY(0.5); }
+
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0.5);
+  }
 }
 
 /* ============================================
@@ -1487,8 +1657,15 @@
    ADDITIONAL ANIMATIONS
    ============================================ */
 @keyframes anx-about-glow {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.5; }
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }
 
 .anx-about__founder-image-glow {
@@ -1497,9 +1674,17 @@
 
 /* Text Gradient Animation */
 @keyframes anx-about-gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .anx-about__hero-title--highlight,
