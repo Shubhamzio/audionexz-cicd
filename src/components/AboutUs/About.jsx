@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./About.css";
 import Footer from "../Footer/Footer.jsx";
+import HotSeat from "/assets/hotseat.jpg";
+import Equi from "/assets/equi.jpg";
+import Equi2 from "/assets/equi_1.jpg";
 
 const About = () => {
   const navigate = useNavigate();
@@ -64,11 +67,11 @@ const About = () => {
     },
   ];
 
-  const storyImages = {
-    studio: getImagePath("assets/about/studio-1.jpg"),
-    equipment: getImagePath("assets/about/equipment.jpg"),
-    installation: getImagePath("assets/about/installation.jpg"),
-  };
+  // const storyImages = {
+  //   studio: getImagePath("assets/about/studio-1.jpg"),
+  //   equipment: getImagePath("assets/about/equipment.jpg"),
+  //   installation: getImagePath("assets/about/installation.jpg"),
+  // };
 
   const services = [
     {
@@ -316,7 +319,7 @@ const About = () => {
               <div className="anx-about__story-image-grid">
                 <div className="anx-about__story-image-item anx-about__story-image-item--1">
                   <img
-                    src={storyImages.studio}
+                    src={HotSeat}
                     alt="Studio"
                     onError={(e) => {
                       e.target.style.display = "none";
@@ -325,7 +328,7 @@ const About = () => {
                 </div>
                 <div className="anx-about__story-image-item anx-about__story-image-item--2">
                   <img
-                    src={storyImages.equipment}
+                    src={Equi}
                     alt="Equipment"
                     onError={(e) => {
                       e.target.style.display = "none";
@@ -334,7 +337,7 @@ const About = () => {
                 </div>
                 <div className="anx-about__story-image-item anx-about__story-image-item--3">
                   <img
-                    src={storyImages.installation}
+                    src={Equi2}
                     alt="Installation"
                     onError={(e) => {
                       e.target.style.display = "none";
