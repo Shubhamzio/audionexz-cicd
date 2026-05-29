@@ -36,20 +36,20 @@ const Contact = () => {
       details: ["+91 89814 09359"],
       whatsappMessage: "Hello, I'm interested in acoustic and project enquiry.",
       animation: "float-down",
-      delay: "0.2s",
+      delay: "2s",
     },
     {
       icon: "📧",
       title: "Email Support",
       details: ["audionexz@gmail.com", "We respond within 24 hours"],
       animation: "float-up",
-      delay: "0.4s",
+      delay: "0.8s",
     },
     {
       icon: "📍",
-      title: "Visit Our Studio",
+      title: "Visit Our Music Store",
       details: [
-        "Das Musicals, Khardah, Rahara",
+        "Das Musical Kolkata, Khardah, Rahara",
         "Kolkata - 700118, West Bengal",
         "Mon-Sat: 9AM - 6PM",
       ],
@@ -244,8 +244,7 @@ const Contact = () => {
             <span className="cnt-section-badge">💬 Chat With Us</span>
             <h2 className="cnt-section-title">How Can We Help You?</h2>
             <p className="cnt-section-subtitle">
-              Click any number to chat instantly on WhatsApp. Our team is ready
-              to assist you.
+              Click any number to chat instantly on WhatsApp.
             </p>
           </div>
 
@@ -334,7 +333,7 @@ const Contact = () => {
           <div className="cnt-direct-contact cnt-animate">
             <div className="cnt-direct-content">
               <h3>Chat Directly on WhatsApp</h3>
-              <p>Instant responses from our team members</p>
+              <p>Instant responses from us.</p>
             </div>
             <div className="cnt-direct-numbers">
               <button
@@ -406,7 +405,7 @@ const Contact = () => {
                 <div className="cnt-map-placeholder">
                   <div className="cnt-map-content">
                     <span className="cnt-map-icon">📍</span>
-                    <h4>Das Musicals, Khardah</h4>
+                    <h4>Das Music Kolkata, Khardah</h4>
                     <p>Rahara, Kolkata - 700118</p>
                     <a
                       href="https://maps.google.com/?q=Das+Musicals+Khardah+Kolkata"
