@@ -50,7 +50,7 @@ const Contact = () => {
       icon: "📍",
       title: "Visit Our Music Store",
       details: [
-        "Das Musical Kolkata, Khardah, Rahara",
+        "Das Music Kolkata, Khardah, Rahara",
         "Kolkata - 700118, West Bengal",
         "Mon-Sat: 9AM - 6PM",
       ],
