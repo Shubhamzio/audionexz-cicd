@@ -27,11 +27,7 @@ const Service = () => {
       tagline: "Precision Sound Architecture",
       description:
         "Custom-engineered acoustic panels, diffusers, and bass traps designed through computational analysis for pristine sound environments.",
-      highlights: [
-        "RT60 Optimization",
-        "Flutter Echo Elimination",
-        "Custom Panel Fabrication",
-      ],
+      highlights: ["Flutter Echo Elimination", "Custom Panel Fabrication"],
       metric: "99.2% Accuracy",
 
       gradient: "linear-gradient(135deg, #1a1a2e, #16213e)",
@@ -43,11 +39,7 @@ const Service = () => {
       tagline: "World-Class Production Rooms",
       description:
         "End-to-end studio architecture — from isolation engineering to control room tuning — meeting international broadcast standards.",
-      highlights: [
-        "Control Room Acoustics",
-        "Floating Floor Systems",
-        "HVAC Noise Isolation",
-      ],
+      highlights: ["Control Room Acoustics", "Floating Floor Systems"],
       metric: "NC-15 Rated",
 
       gradient: "linear-gradient(135deg, #0f0f23, #1a0a2e)",
@@ -202,7 +194,7 @@ const Service = () => {
   const metrics = [
     { value: "100+", label: "Projects Delivered" },
     { value: "7+", label: "Years of Expertise" },
-    { value: "100%", label: "Client Retention" },
+    { value: "100%", label: "Commitment to excellece" },
   ];
 
   // FIXED: Filter logic - ensure we're correctly filtering the services
@@ -423,9 +415,9 @@ const Service = () => {
               Perfect Sound Environment
             </h2>
             <p className="srv-cta-desc">
-              Book a complimentary acoustic consultation with our engineering
-              team. We'll assess your space, define your sonic goals, and map
-              the path to acoustic excellence.
+              Book a complimentary acoustic consultation with us. We'll assess
+              your space, define your sonic goals, and map the path to acoustic
+              excellence.
             </p>
             <div className="srv-cta-actions">
               <a href="/contact" className="srv-cta-primary">
