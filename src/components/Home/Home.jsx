@@ -9,18 +9,15 @@ const Home = () => {
   const [isVisible, setIsVisible] = useState({});
   const sectionRefs = useRef([]);
 
-  // NEW: State for project image modal
   const [selectedProject, setSelectedProject] = useState(null);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
 
-  // Helper function to get correct image path
   const getImagePath = (path) => {
     const base = import.meta.env.BASE_URL || "/";
     const cleanPath = path.startsWith("/") ? path.slice(1) : path;
     return `${base}${cleanPath}`;
   };
 
-  // Hero Carousel Data
   const heroSlides = [
     {
       id: 1,
@@ -72,7 +69,6 @@ const Home = () => {
     },
   ];
 
-  // Partner Logos
   const partnerLogos = [
     { id: 1, name: "Antelope", logo: getImagePath("/assets/antelope.jpg") },
     {
@@ -100,11 +96,7 @@ const Home = () => {
     },
     { id: 9, name: "Drawmer", logo: getImagePath("/assets/Drawmer.png") },
     { id: 10, name: "Eve Audio", logo: getImagePath("/assets/eve-audio.png") },
-    {
-      id: 11,
-      name: "Genelec",
-      logo: getImagePath("/assets/gelelec_logo.jpg"),
-    },
+    { id: 11, name: "Genelec", logo: getImagePath("/assets/gelelec_logo.jpg") },
     { id: 12, name: "Hercules", logo: getImagePath("/assets/hercules.jpg") },
     { id: 13, name: "Heritage", logo: getImagePath("/assets/heritage.png") },
     { id: 14, name: "JBL", logo: getImagePath("/assets/JBL-Logo.svg.png") },
@@ -172,7 +164,6 @@ const Home = () => {
     { id: 32, name: "Yamaha", logo: getImagePath("/assets/yamaha.png") },
   ];
 
-  // Projects Data
   const projects = [
     {
       id: 1,
@@ -218,7 +209,6 @@ const Home = () => {
     },
   ];
 
-  // Testimonials Data
   const testimonials = [
     {
       id: 1,
@@ -313,7 +303,6 @@ const Home = () => {
     },
   ];
 
-  // Auto-slide for hero carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -321,81 +310,71 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [heroSlides.length]);
 
-  // Intersection Observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible((prev) => ({ ...prev, [entry.target.id]: true }));
+            setIsVisible((prev) => ({
+              ...prev,
+              [entry.target.id]: true,
+            }));
           }
         });
       },
       { threshold: 0.1 },
     );
-
     sectionRefs.current.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
-
     return () => observer.disconnect();
   }, []);
 
-  // NEW: Close modal on ESC key press
   useEffect(() => {
     const handleEscKey = (e) => {
       if (e.key === "Escape" && isProjectModalOpen) {
         closeProjectModal();
       }
     };
-
     if (isProjectModalOpen) {
       document.addEventListener("keydown", handleEscKey);
       document.body.style.overflow = "hidden";
     }
-
     return () => {
       document.removeEventListener("keydown", handleEscKey);
       document.body.style.overflow = "unset";
     };
   }, [isProjectModalOpen]);
 
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
+  const goToSlide = (index) => setCurrentSlide(index);
 
-  const nextSlide = () => {
+  const nextSlide = () =>
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  };
 
-  const prevSlide = () => {
+  const prevSlide = () =>
     setCurrentSlide(
       (prev) => (prev - 1 + heroSlides.length) % heroSlides.length,
     );
-  };
 
-  const handleNavigateToAbout = () => {
-    navigate("/about");
-  };
+  const handleNavigateToAbout = () => navigate("/about");
 
-  // Image error handler for testimonials
   const handleTestimonialImageError = (e, name) => {
-    e.target.src = `https://ui-avatars.com/api/?name=${name.replace(" ", "+")}&size=300&background=1e90ff&color=fff&bold=true&font-size=0.4`;
+    e.target.src = `https://ui-avatars.com/api/?name=${name.replace(
+      " ",
+      "+",
+    )}&size=300&background=1e90ff&color=fff&bold=true&font-size=0.4`;
   };
 
-  // NEW: Open project modal
   const openProjectModal = (project) => {
     setSelectedProject(project);
     setIsProjectModalOpen(true);
   };
 
-  // NEW: Close project modal
   const closeProjectModal = () => {
     setIsProjectModalOpen(false);
     setSelectedProject(null);
   };
 
-  // NEW: Handle modal backdrop click
   const handleProjectModalBackdropClick = (e) => {
     if (e.target.classList.contains("audionexz-home__project-modal")) {
       closeProjectModal();
@@ -433,7 +412,6 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Carousel Controls */}
         <button
           className="audionexz-home__hero-arrow audionexz-home__hero-arrow--left"
           onClick={prevSlide}
@@ -461,7 +439,6 @@ const Home = () => {
           </svg>
         </button>
 
-        {/* Carousel Indicators */}
         <div className="audionexz-home__hero-indicators">
           {heroSlides.map((_, index) => (
             <button
@@ -476,7 +453,6 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Scroll Down Indicator */}
         <div className="audionexz-home__hero-scroll">
           <span>Scroll Down</span>
           <div className="audionexz-home__hero-scroll-mouse">
@@ -485,17 +461,238 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ===== NEW SECTION 1.5: SERVICES SHOWCASE ===== */}
+      <section className="audionexz-home__services">
+        <div className="audionexz-home__services-container">
+          <div className="audionexz-home__services-grid">
+            {/* Service 1: Architectural Acoustics */}
+            <div className="audionexz-home__services-card">
+              <div className="audionexz-home__services-icon">
+                <svg
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M32 8L8 20V44L32 56L56 44V20L32 8Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M32 32L8 20M32 32L56 20M32 32V56"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <circle cx="32" cy="32" r="4" fill="currentColor" />
+                  <path
+                    d="M20 26L20 38M44 26L44 38"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 className="audionexz-home__services-title">
+                Architectural Acoustics
+              </h3>
+            </div>
+
+            {/* Service 2: Professional AV Integration */}
+            <div className="audionexz-home__services-card">
+              <div className="audionexz-home__services-icon">
+                <svg
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="8"
+                    y="12"
+                    width="48"
+                    height="32"
+                    rx="2"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path d="M8 36H56" stroke="currentColor" strokeWidth="2" />
+                  <rect
+                    x="26"
+                    y="44"
+                    width="12"
+                    height="8"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M20 52H44"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <circle
+                    cx="32"
+                    cy="24"
+                    r="6"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M38 24H42M22 24H26"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M32 18V16M32 30V32"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 className="audionexz-home__services-title">
+                Professional AV Integration
+              </h3>
+            </div>
+
+            {/* Service 3: Immersive Audio Solutions */}
+            <div className="audionexz-home__services-card">
+              <div className="audionexz-home__services-icon">
+                <svg
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="32"
+                    cy="32"
+                    r="8"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <circle
+                    cx="32"
+                    cy="32"
+                    r="16"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeDasharray="4 4"
+                  />
+                  <circle
+                    cx="32"
+                    cy="32"
+                    r="24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeDasharray="2 6"
+                  />
+                  <path
+                    d="M32 8V16M32 48V56M8 32H16M48 32H56"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M16 16L22 22M42 42L48 48M48 16L42 22M22 42L16 48"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 className="audionexz-home__services-title">
+                Immersive Audio Solutions
+              </h3>
+            </div>
+
+            {/* Service 4: System Calibration */}
+            <div className="audionexz-home__services-card">
+              <div className="audionexz-home__services-icon">
+                <svg
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="32"
+                    cy="32"
+                    r="20"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M32 12V32L44 38"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 32H8M56 32H52M32 12V8M32 56V52"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <rect
+                    x="28"
+                    y="4"
+                    width="8"
+                    height="4"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                  <rect
+                    x="28"
+                    y="56"
+                    width="8"
+                    height="4"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                  <rect
+                    x="4"
+                    y="28"
+                    width="4"
+                    height="8"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                  <rect
+                    x="56"
+                    y="28"
+                    width="4"
+                    height="8"
+                    rx="1"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <h3 className="audionexz-home__services-title">
+                System Calibration
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== SECTION 2: OUR STORY ===== */}
       <section
         id="story-section"
         ref={(el) => (sectionRefs.current[0] = el)}
-        className={`audionexz-home__story ${isVisible["story-section"] ? "audionexz-home__story--visible" : ""}`}
+        className={`audionexz-home__story ${
+          isVisible["story-section"] ? "audionexz-home__story--visible" : ""
+        }`}
       >
         <div className="audionexz-home__story-container">
+          {/* LEFT: Content */}
           <div className="audionexz-home__story-content">
             <div className="audionexz-home__story-badge">
               <span className="audionexz-home__story-badge-icon">🎵</span>
-              <span>Since 2023</span>
+              <span>Since 2020</span>
             </div>
             <h2 className="audionexz-home__story-heading">
               Our{" "}
@@ -516,14 +713,14 @@ const Home = () => {
               intimate recording studios to grand auditoriums, our team of
               expert acousticians and designers collaborate to bring your sonic
               vision to life. We don't just build rooms; we engineer experiences
-              that captivate, inspire, and endure.
+              that captivate, inspire, and endure. Our journey began with a
+              simple belief: everyone deserves access to world-class acoustics.
+              Today, we've partnered with leading global audio brands and
+              completed over 100+ projects across India, each one a testament to
+              our unwavering commitment to sonic excellence.
             </p>
             <p className="audionexz-home__story-text">
-              Our journey began with a simple belief: everyone deserves access
-              to world-class acoustics. Today, we've partnered with leading
-              global audio brands and completed over 88+ projects across India,
-              each one a testament to our unwavering commitment to sonic
-              excellence.
+              Our journey began with a simple belief...
             </p>
             <button
               className="audionexz-home__story-btn"
@@ -540,39 +737,38 @@ const Home = () => {
               </svg>
             </button>
           </div>
+
+          {/* RIGHT: Visual */}
           <div className="audionexz-home__story-visual">
             <div className="audionexz-home__story-quote">
-              <svg
-                className="audionexz-home__story-quote-icon"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              ></svg>
               <p className="audionexz-home__story-quote-text">
                 "Sound is the vocabulary of nature, and we are its eloquent
                 translators."
               </p>
             </div>
             <div className="audionexz-home__story-image-wrapper">
-              <div className="audionexz-home__story-image-glow"></div>
               <img
                 src={getImagePath("/assets/studio_replica.jpg")}
-                alt="Audionexz Team"
+                alt="Audionexz Studio"
                 className="audionexz-home__story-image"
+                onError={(e) => {
+                  e.target.style.background =
+                    "linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%)";
+                  e.target.style.border = "1px solid rgba(0, 212, 255, 0.3)";
+                }}
               />
               <div className="audionexz-home__story-image-frame"></div>
-              <div className="audionexz-home__story-stats">
-                <div className="audionexz-home__story-stat">
-                  <span className="audionexz-home__story-stat-number">88+</span>
-                  <span className="audionexz-home__story-stat-label">
-                    Projects
-                  </span>
-                </div>
-                <div className="audionexz-home__story-stat">
-                  <span className="audionexz-home__story-stat-number">5+</span>
-                  <span className="audionexz-home__story-stat-label">
-                    Years
-                  </span>
-                </div>
+            </div>
+            <div className="audionexz-home__story-stats">
+              <div className="audionexz-home__story-stat">
+                <span className="audionexz-home__story-stat-number">100+</span>
+                <span className="audionexz-home__story-stat-label">
+                  Projects
+                </span>
+              </div>
+              <div className="audionexz-home__story-stat">
+                <span className="audionexz-home__story-stat-number">7+</span>
+                <span className="audionexz-home__story-stat-label">Years</span>
               </div>
             </div>
           </div>
@@ -599,11 +795,99 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== SECTION 3: PARTNERS ===== */}
+      {/* ===== NEW SECTION: OUR VENTURES ===== */}
+      <section className="audionexz-home__ventures">
+        <div className="audionexz-home__ventures-container">
+          <h2 className="audionexz-home__ventures-heading">
+            Our{" "}
+            <span className="audionexz-home__ventures-heading--highlight">
+              Ventures
+            </span>
+          </h2>
+          <div className="audionexz-home__ventures-cards">
+            {/* Card 1 - Perficient Acoustix */}
+            <div className="audionexz-home__ventures-card">
+              <img
+                src={getImagePath("/assets/perficient-logo.png")}
+                alt="Perficient Acoustix"
+                className="audionexz-home__ventures-logo"
+              />
+              <p className="audionexz-home__ventures-description">
+                End to end acoustic engineering &amp; precision audio
+                environment
+                <br />
+                Recording studios &mdash; Auditorium
+              </p>
+              <div className="audionexz-home__ventures-socials">
+                <a
+                  href="https://facebook.com/perficientacoustix"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="audionexz-home__ventures-social-link"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://instagram.com/perficientacoustix"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="audionexz-home__ventures-social-link"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Card 2 - Das Music Kolkata */}
+            <div className="audionexz-home__ventures-card">
+              <img
+                src={getImagePath("/assets/dasmusic-logo.png")}
+                alt="Das Music Kolkata"
+                className="audionexz-home__ventures-logo"
+              />
+              <p className="audionexz-home__ventures-description">
+                One stop solutions for all kinds of Instruments.
+              </p>
+              <div className="audionexz-home__ventures-socials">
+                <a
+                  href="https://facebook.com/dasmusickolkata"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="audionexz-home__ventures-social-link"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://instagram.com/dasmusickolkata"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="audionexz-home__ventures-social-link"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== SECTION 3: PARTNERS (unchanged) ===== */}
       <section
         id="partners-section"
         ref={(el) => (sectionRefs.current[1] = el)}
-        className={`audionexz-home__partners ${isVisible["partners-section"] ? "audionexz-home__partners--visible" : ""}`}
+        className={`audionexz-home__partners ${
+          isVisible["partners-section"]
+            ? "audionexz-home__partners--visible"
+            : ""
+        }`}
       >
         <div className="audionexz-home__partners-container">
           <h4 className="audionexz-home__partners-subtitle">PARTNERS</h4>
@@ -617,7 +901,6 @@ const Home = () => {
             Partnering with world-renowned audio brands to deliver
             uncompromising quality
           </p>
-
           <div className="audionexz-home__partners-marquee">
             <div className="audionexz-home__partners-track">
               {[...partnerLogos, ...partnerLogos].map((partner, index) => (
@@ -634,7 +917,6 @@ const Home = () => {
               ))}
             </div>
           </div>
-
           <div className="audionexz-home__partners-marquee audionexz-home__partners-marquee--reverse">
             <div className="audionexz-home__partners-track audionexz-home__partners-track--reverse">
               {[...partnerLogos, ...partnerLogos].map((partner, index) => (
@@ -654,12 +936,17 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== SECTION 4: RECENT PROJECTS - UPDATED WITH FULL IMAGE VIEW ===== */}
+      {/* ===== SECTION 4: PROJECTS ===== */}
       <section
         id="projects-section"
         ref={(el) => (sectionRefs.current[2] = el)}
-        className={`audionexz-home__projects ${isVisible["projects-section"] ? "audionexz-home__projects--visible" : ""}`}
+        className={`audionexz-home__projects ${
+          isVisible["projects-section"]
+            ? "audionexz-home__projects--visible"
+            : ""
+        }`}
       >
+        {/* ... (projects content unchanged) ... */}
         <div className="audionexz-home__projects-header">
           <div className="audionexz-home__projects-header-content">
             <h4 className="audionexz-home__projects-subtitle">PORTFOLIO</h4>
@@ -680,7 +967,6 @@ const Home = () => {
                 <div
                   className="audionexz-home__projects-card-image-wrapper"
                   onClick={() => openProjectModal(project)}
-                  style={{ cursor: "pointer" }}
                 >
                   <img
                     src={project.image}
@@ -724,14 +1010,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== NEW: PROJECT IMAGE MODAL ===== */}
+      {/* ===== PROJECT MODAL ===== */}
       {isProjectModalOpen && selectedProject && (
         <div
           className="audionexz-home__project-modal"
           onClick={handleProjectModalBackdropClick}
         >
           <div className="audionexz-home__project-modal-content">
-            {/* Close Button */}
             <button
               className="audionexz-home__project-modal-close"
               onClick={closeProjectModal}
@@ -745,8 +1030,6 @@ const Home = () => {
                 <path d="M18 6L6 18M6 6l12 12" />
               </svg>
             </button>
-
-            {/* Image Container */}
             <div className="audionexz-home__project-modal-image-container">
               <img
                 src={selectedProject.image}
@@ -754,8 +1037,6 @@ const Home = () => {
                 className="audionexz-home__project-modal-image"
               />
             </div>
-
-            {/* Info Footer */}
             <div className="audionexz-home__project-modal-info">
               <h3 className="audionexz-home__project-modal-name">
                 {selectedProject.name}
@@ -776,12 +1057,17 @@ const Home = () => {
         </div>
       )}
 
-      {/* ===== SECTION 5: TESTIMONIALS - UPDATED WITH BIGGER IMAGES ===== */}
+      {/* ===== SECTION 5: TESTIMONIALS ===== */}
       <section
         id="testimonials-section"
         ref={(el) => (sectionRefs.current[3] = el)}
-        className={`audionexz-home__testimonials ${isVisible["testimonials-section"] ? "audionexz-home__testimonials--visible" : ""}`}
+        className={`audionexz-home__testimonials ${
+          isVisible["testimonials-section"]
+            ? "audionexz-home__testimonials--visible"
+            : ""
+        }`}
       >
+        {/* ... (testimonials content unchanged) ... */}
         <div className="audionexz-home__testimonials-bg">
           <div className="audionexz-home__testimonials-bg-circle audionexz-home__testimonials-bg-circle--1"></div>
           <div className="audionexz-home__testimonials-bg-circle audionexz-home__testimonials-bg-circle--2"></div>
@@ -803,7 +1089,6 @@ const Home = () => {
             <div className="audionexz-home__testimonials-track">
               {[...testimonials, ...testimonials].map((testimonial, index) => (
                 <div key={index} className="audionexz-home__testimonials-card">
-                  {/* Large Image Section */}
                   <div className="audionexz-home__testimonials-card-image-section">
                     <div className="audionexz-home__testimonials-card-image-wrapper">
                       <img
@@ -818,22 +1103,15 @@ const Home = () => {
                     </div>
                     <div className="audionexz-home__testimonials-card-image-glow"></div>
                   </div>
-
-                  {/* Content Section */}
                   <div className="audionexz-home__testimonials-card-content">
-                    {/* Quote Icon */}
                     <div className="audionexz-home__testimonials-card-quote">
                       <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                       </svg>
                     </div>
-
-                    {/* Testimonial Text */}
                     <p className="audionexz-home__testimonials-card-text">
                       {testimonial.text}
                     </p>
-
-                    {/* Author Info */}
                     <div className="audionexz-home__testimonials-card-author">
                       <div className="audionexz-home__testimonials-card-author-info">
                         <h4 className="audionexz-home__testimonials-card-name">
@@ -844,8 +1122,6 @@ const Home = () => {
                         </p>
                       </div>
                     </div>
-
-                    {/* Rating */}
                     <div className="audionexz-home__testimonials-card-rating">
                       {[...Array(5)].map((_, i) => (
                         <svg key={i} viewBox="0 0 24 24" fill="currentColor">
@@ -854,8 +1130,6 @@ const Home = () => {
                       ))}
                     </div>
                   </div>
-
-                  {/* Decorative Border */}
                   <div className="audionexz-home__testimonials-card-border"></div>
                 </div>
               ))}
