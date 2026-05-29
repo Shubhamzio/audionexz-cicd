@@ -52,7 +52,7 @@ const Contact = () => {
       details: [
         "Das Music Kolkata, Khardah, Rahara",
         "Kolkata - 700118, West Bengal",
-        "Mon-Sat: 9AM - 6PM",
+        "Mon-Sat: 9AM - 8:30PM",
       ],
       animation: "float-down",
       delay: "0.6s",
