@@ -341,9 +341,6 @@ const Consultancy = () => {
               Core{" "}
               <span className="anxConslt__sectionTitleHighlight">Services</span>
             </h2>
-            <p className="anxConslt__sectionDescription">
-              Comprehensive acoustic solutions from concept to completion
-            </p>
           </div>
           <div className="anxConslt__coreGrid">
             {coreServices.map((service, index) => (
