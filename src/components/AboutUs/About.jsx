@@ -491,7 +491,7 @@ const About = () => {
               <div className="anx-about__mission-glow"></div>
               <div className="anx-about__mission-content">
                 <div className="anx-about__mission-icon">✨</div>
-                <h2 className="anx-about__mission-title"></h2>
+                <h2 className="anx-about__mission-title">TRANSFORM</h2>
                 <p className="anx-about__mission-text">
                   AUDIONEXZ — it's an
                   <strong>

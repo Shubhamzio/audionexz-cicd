@@ -30,7 +30,7 @@ const Footer = () => {
     {
       name: "WhatsApp",
       icon: <FaWhatsapp aria-hidden="true" />,
-      href: "https://wa.me/919876543210",
+      href: "https://wa.me/918981409359",
     },
   ];
 
