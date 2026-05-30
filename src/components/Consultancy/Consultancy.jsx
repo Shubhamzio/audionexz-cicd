@@ -327,7 +327,6 @@ const Consultancy = () => {
           </div>
         </div>
         <div className="anxConslt__heroScroll">
-          <span>Scroll to explore</span>
           <div className="anxConslt__heroScrollLine"></div>
         </div>
       </section>
