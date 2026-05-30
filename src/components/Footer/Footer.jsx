@@ -253,3 +253,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// what is changed here
