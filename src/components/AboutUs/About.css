@@ -499,7 +499,7 @@ footer.anxFooterMain * {
   border: 3px solid transparent;
   border-radius: 23px;
   background: linear-gradient(135deg, var(--anx-about-primary), var(--anx-about-secondary)) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: 2;
