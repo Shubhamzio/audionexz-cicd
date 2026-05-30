@@ -1,13 +1,17 @@
 import React, { useEffect } from "react";
 import "./Contact.css";
 import Footer from "../Footer/Footer";
-import Auditorium from "/assets/Auditorium_1.jpg";
-import HomeTheater from "/assets/Home_Theater.jpg";
+
 const Contact = () => {
   // WhatsApp number mapping - phone number to WhatsApp number
   const whatsappNumbers = {
     "+91 79804 53542": "917980453542",
     "+91 89814 09359": "918981409359",
+  };
+  const getImagePath = (path) => {
+    const base = import.meta.env.BASE_URL || "/";
+    const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+    return `${base}${cleanPath}`;
   };
 
   // Helper function to open WhatsApp
@@ -86,12 +90,12 @@ const Contact = () => {
       label: "Recording Studios",
     },
     {
-      src: HomeTheater,
+      src: getImagePath("/assets/Home_Theater.jpg"),
       alt: "Home Theater",
       label: "Home Theaters",
     },
     {
-      src: Auditorium,
+      src: getImagePath("/assets/Auditorium_1.jpg"),
       alt: "Auditorium",
       label: "Auditoriums",
     },
