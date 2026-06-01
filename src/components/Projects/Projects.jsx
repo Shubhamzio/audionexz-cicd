@@ -198,11 +198,7 @@ const Projects = () => {
               designed and built across India.
             </p>
 
-            <div className="anxProjects__heroDivider anxProjects__animate">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+            <div className="anxProjects__heroDivider anxProjects__animate"></div>
 
             {/* Stats in Hero */}
             <div className="anxProjects__heroStats anxProjects__animate">
