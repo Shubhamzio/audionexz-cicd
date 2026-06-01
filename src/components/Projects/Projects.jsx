@@ -153,8 +153,8 @@ const Projects = () => {
   const stats = [
     { number: "100+", label: "Projects Completed" },
     { number: "15+", label: "Cities Covered" },
-    { number: "100%", label: "Client Satisfaction" },
-    { number: "5+", label: "Years Experience" },
+    { number: "100%", label: "Commitment to Excellence" },
+    { number: "7+", label: "Years Experience" },
   ];
 
   const handleContactClick = () => {
