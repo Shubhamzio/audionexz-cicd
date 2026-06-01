@@ -216,10 +216,6 @@ const Projects = () => {
           </div>
 
           {/* Scroll Indicator */}
-          <div className="anxProjects__heroScroll">
-            <span>Explore Projects</span>
-            <div className="anxProjects__heroScrollLine"></div>
-          </div>
         </section>
 
         {/* ===== PROJECTS GRID SECTION ===== */}
