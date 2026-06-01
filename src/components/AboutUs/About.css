@@ -475,7 +475,7 @@ footer.anxFooterMain * {
   height: 100%;
   border-radius: 20px;
   overflow: hidden;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .anx-about__founder-image {
@@ -484,6 +484,7 @@ footer.anxFooterMain * {
   object-fit: cover;
   object-position: top center;
   transition: transform 0.5s ease;
+  z-index: 9999;
 }
 
 .anx-about__founder-card:hover .anx-about__founder-image {
