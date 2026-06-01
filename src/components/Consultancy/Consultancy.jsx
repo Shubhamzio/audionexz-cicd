@@ -370,10 +370,6 @@ const Consultancy = () => {
               Specialty{" "}
               <span className="anxConslt__sectionTitleHighlight">Spaces</span>
             </h2>
-            <p className="anxConslt__sectionDescription">
-              We design and optimize acoustic environments for various
-              professional applications
-            </p>
           </div>
           <div className="anxConslt__specialtyGrid">
             {specialtySpaces.map((space, index) => (
