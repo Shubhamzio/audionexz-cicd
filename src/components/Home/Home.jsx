@@ -117,7 +117,7 @@ const Home = () => {
       name: "Universal Audio",
       logo: getImagePath("/assets/Logo-Universal-Audio-.jpg"),
     },
-    { id: 20, name: "Manley", logo: getImagePath("/assets/manley.jpg") },
+    { id: 20, name: "Manley", logo: getImagePath("/assets/manley.png") },
     {
       id: 21,
       name: "Neumann",
