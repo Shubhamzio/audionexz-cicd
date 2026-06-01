@@ -241,8 +241,8 @@ const About = () => {
                     <div className="anx-about__founder-image-glow"></div>
                     <div className="anx-about__founder-image-frame">
                       <img
-                        src={founder.image}
-                        alt={founder.name}
+                        src={founders.image}
+                        alt={founders.name}
                         className="anx-about__founder-image"
                         onError={(e) => handleImageError(e, founder.name)}
                         loading="lazy"
