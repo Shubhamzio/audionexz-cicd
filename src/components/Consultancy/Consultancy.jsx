@@ -402,9 +402,6 @@ const Consultancy = () => {
               How We{" "}
               <span className="anxConslt__sectionTitleHighlight">Work</span>
             </h2>
-            <p className="anxConslt__sectionDescription">
-              A systematic approach ensuring perfect results every time
-            </p>
           </div>
           <div className="anxConslt__processTimeline">
             {processSteps.map((step, index) => (
