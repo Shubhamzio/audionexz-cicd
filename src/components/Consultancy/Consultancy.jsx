@@ -7,6 +7,12 @@ const Consultancy = () => {
   const sectionRefs = useRef([]);
   const navigate = useNavigate();
 
+  const getImagePath = (path) => {
+    const base = import.meta.env.BASE_URL || "/";
+    const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+    return `${base}${cleanPath}`;
+  };
+
   // Core services data
   const coreServices = [
     {
@@ -179,8 +185,7 @@ const Consultancy = () => {
     {
       id: 2,
       title: "Equipment Selection & Supply",
-      image:
-        "https://images.unsplash.com/photo-1519508234439-4f23643125c1?w=800&h=600&fit=crop",
+      image: getImagePath("/assets/Equipment_selection.png"),
       description:
         "Navigate the complex world of professional audio equipment with confidence. Our expert consultants help you select the perfect gear for your specific needs and budget. From microphones and preamps to monitors and interfaces, we provide access to premium equipment from industry-leading brands.",
       features: [
@@ -193,8 +198,7 @@ const Consultancy = () => {
     {
       id: 3,
       title: "Installation Services",
-      image:
-        "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&h=600&fit=crop",
+      image: getImagePath("/assets/Installation_services.jpg"),
       description:
         "Professional installation is crucial for optimal performance. Our certified technicians handle every aspect of your studio setup, from acoustic panel mounting to complex wiring systems. We ensure proper equipment placement, cable management, and system integration for a clean, professional result.",
       features: [
@@ -207,8 +211,7 @@ const Consultancy = () => {
     {
       id: 4,
       title: "Acoustic Treatment Solutions",
-      image:
-        "https://images.unsplash.com/photo-1544216717-3bbf52512659?w=800&h=600&fit=crop",
+      image: getImagePath("/assets/Acoustic_treatment_solutions.jpg"),
       description:
         "Control your room's acoustics with precision-engineered treatment products. We supply and install a complete range of acoustic solutions including absorption panels, bass traps, diffusers, and ceiling clouds. All treatments are customized to address your specific acoustic challenges.",
       features: [
@@ -221,8 +224,7 @@ const Consultancy = () => {
     {
       id: 5,
       title: "Room Calibration & Tuning",
-      image:
-        "https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=800&h=600&fit=crop",
+      image: getImagePath("/assets/Room_calibration.jpg"),
       description:
         "Achieve reference-quality monitoring through precise acoustic calibration. Using advanced measurement tools and techniques, we tune your room and monitoring system to deliver accurate, uncolored sound reproduction. This critical step ensures you can trust what you hear.",
       features: [
