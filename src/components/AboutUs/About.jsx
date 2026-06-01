@@ -46,7 +46,7 @@ const About = () => {
     {
       name: "Tanmoy Das",
       role: "Founder & CEO",
-      image: getImagePath("assets/Tanmoy_Das.jpeg"),
+      image: getImagePath("/assets/Tanmoy_Das.jpeg"),
       description:
         "Visionary leader with expertise in acoustic engineering and audio system design.",
       social: {
@@ -57,7 +57,7 @@ const About = () => {
     {
       name: "Megha Mukherjee",
       role: " Co-Founder",
-      image: getImagePath("assets/Megha_das.jpeg"),
+      image: getImagePath("/assets/Megha_das.jpeg"),
       description:
         "Strategic operations expert driving excellence in client solutions and partnerships.",
       social: {
@@ -321,24 +321,6 @@ const About = () => {
                   <img
                     src={HotSeat}
                     alt="Studio"
-                    onError={(e) => {
-                      e.target.style.display = "none";
-                    }}
-                  />
-                </div>
-                <div className="anx-about__story-image-item anx-about__story-image-item--2">
-                  <img
-                    src={Equi}
-                    alt="Equipment"
-                    onError={(e) => {
-                      e.target.style.display = "none";
-                    }}
-                  />
-                </div>
-                <div className="anx-about__story-image-item anx-about__story-image-item--3">
-                  <img
-                    src={Equi2}
-                    alt="Installation"
                     onError={(e) => {
                       e.target.style.display = "none";
                     }}
