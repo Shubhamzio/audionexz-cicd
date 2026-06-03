@@ -94,7 +94,7 @@ const Home = () => {
       name: "DB Technologies",
       logo: getImagePath("/assets/db_technologies.png"),
     },
-    { id: 9, name: "Drawmer", logo: getImagePath("/assets/drawmer.png") },
+    { id: 9, name: "Drawmer", logo: getImagePath("/assets/Drawmer.png") },
     { id: 10, name: "Eve Audio", logo: getImagePath("/assets/eve-audio.png") },
     { id: 11, name: "Genelec", logo: getImagePath("/assets/genelec.png") },
     { id: 12, name: "Hercules", logo: getImagePath("/assets/hercules.jpg") },
