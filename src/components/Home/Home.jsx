@@ -134,7 +134,7 @@ const Home = () => {
       name: "Rupert Neve",
       logo: getImagePath("/assets/rupert_neve.png"),
     },
-    { id: 25, name: "Sennheiser", logo: getImagePath("/assets/Senn.png") },
+    { id: 25, name: "Sennheiser", logo: getImagePath("/assets/senn.png") },
     {
       id: 26,
       name: "Slate Digital",
