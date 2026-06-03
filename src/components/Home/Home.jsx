@@ -128,7 +128,7 @@ const Home = () => {
       name: "Prism Sound",
       logo: getImagePath("/assets/prism_sound.png"),
     },
-    { id: 23, name: "RME", logo: getImagePath("/assets/rme.png") },
+    { id: 23, name: "RME", logo: getImagePath("/assets/RME.png") },
     {
       id: 24,
       name: "Rupert Neve",
