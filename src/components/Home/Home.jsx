@@ -740,8 +740,8 @@ const Home = () => {
                 className="audionexz-home__ventures-logo"
               />
               <p className="audionexz-home__ventures-description">
-                One stop solutions for all kinds of Instruments. Contact : +91
-                98765 43210
+                One stop solutions for all kinds of Instruments.
+                <p style={{ fontWeight: "700" }}>Contact : +9198765 43210</p>
               </p>
               <div className="audionexz-home__ventures-socials">
                 <a
