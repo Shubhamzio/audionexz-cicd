@@ -2604,6 +2604,7 @@
   box-shadow:
     0 4px 15px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  margin-top: 1.9rem;
 }
 
 /* Animated gradient background */
@@ -2672,6 +2673,7 @@
   position: relative;
   z-index: 1;
   filter: drop-shadow(0 2px 8px rgba(0, 212, 255, 0.4));
+
 }
 
 .audionexz-home__ventures-social-link:hover {
