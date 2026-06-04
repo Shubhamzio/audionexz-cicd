@@ -51,7 +51,7 @@ const Projects = () => {
     {
       id: 2,
       name: "KRG Kreative Studio",
-      location: "Rashni Raj Gupta",
+      location: "Karshni Raj Gupta",
       category: "Recording Studio",
       year: "2025",
       description:
