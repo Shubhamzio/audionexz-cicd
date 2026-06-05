@@ -80,10 +80,10 @@ const Footer = () => {
                   📞
                 </span>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+918981409359"
                   className="anxFooterMain__contactLink"
                 >
-                  +91 98765 43210
+                  +91 89814 09359
                 </a>
               </div>
               <div className="anxFooterMain__contactItem">
@@ -94,7 +94,7 @@ const Footer = () => {
                   href="mailto:audionexzindia@gmail.com"
                   className="anxFooterMain__contactLink"
                 >
-                  info@audionexz.com
+                  audionexzindia@gmail.com
                 </a>
               </div>
             </div>
