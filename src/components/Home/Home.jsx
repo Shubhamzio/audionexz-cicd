@@ -192,7 +192,7 @@ const Home = () => {
     {
       id: 5,
       name: "KRG Kreative Studio",
-      place: "Kashni Raj",
+      place: "Karshni Raj",
       image: getImagePath("/assets/KRG_Kreative_studio_Kashni_raj_gupta.jpeg"),
     },
     {

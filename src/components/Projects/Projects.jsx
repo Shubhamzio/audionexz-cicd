@@ -44,7 +44,7 @@ const Projects = () => {
       category: "Recording Studio",
       year: "2025",
       description:
-        "A state-of-the-art recording studio featuring Yamaha monitors, custom acoustic panels, and an SSL console. This project showcases our expertise in creating professional-grade recording environments that inspire creativity while delivering pristine audio quality.",
+        "A state-of-the-artmusic Jampad featuring Yamaha monitors, custom acoustic panels, and an SSL console. This project showcases our expertise in creating professional-grade recording environments that inspire creativity while delivering pristine audio quality.",
       features: ["Yamaha Monitors", "Custom Acoustics", "SSL Console"],
       image: getImagePath("assets/Room_for_squares.png"),
     },
