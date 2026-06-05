@@ -46,7 +46,7 @@ const Contact = () => {
     {
       icon: "📧",
       title: "Email Support",
-      details: ["audionexz@gmail.com", "We respond within 24 hours"],
+      details: [" audionexzindia@gmail.com", "We respond within 24 hours"],
       animation: "float-up",
       delay: "0.8s",
     },

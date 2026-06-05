@@ -91,7 +91,7 @@ const Footer = () => {
                   ✉️
                 </span>
                 <a
-                  href="mailto:info@audionexz.com"
+                  href="mailto: audionexzindia@gmail.com"
                   className="anxFooterMain__contactLink"
                 >
                   info@audionexz.com
