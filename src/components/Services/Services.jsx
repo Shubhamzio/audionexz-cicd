@@ -420,12 +420,20 @@ const Service = () => {
               excellence.
             </p>
             <div className="srv-cta-actions">
-              <a href="/contact" className="srv-cta-primary">
+              <a
+                href="/contact"
+                className="srv-cta-primary"
+                style={{ marginTop: "1.2rem" }}
+              >
                 Book Consultation
                 <span className="srv-cta-arrow">↗</span>
               </a>
-              <a href="tel:+919876543210" className="srv-cta-secondary">
-                +91 98765 43210
+              <a
+                href="tel:+918981409359"
+                className="srv-cta-secondary"
+                style={{ marginTop: "1.2rem" }}
+              >
+                +91 89814 09359
               </a>
             </div>
           </div>
