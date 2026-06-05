@@ -765,6 +765,15 @@ const Home = () => {
                   </svg>
                 </a>
               </div>
+              <a
+                href="https://maps.google.com/?q=Das+Musicals+Khardah+Kolkata"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cnt-map-direction-btn"
+                style={{ marginTop: "1.5rem", border: "none", outline: "none" }}
+              >
+                Get Directions →
+              </a>
             </div>
           </div>
         </div>
