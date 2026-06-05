@@ -698,7 +698,7 @@ const Home = () => {
             {/* Card 1 - Perficient Acoustix */}
             <div className="audionexz-home__ventures-card">
               <img
-                src={getImagePath("/assets/Per.png")}
+                src={getImagePath("/assets/Acoustix.png")}
                 alt="Perficient Acoustix"
                 className="audionexz-home__ventures-logo"
               />
