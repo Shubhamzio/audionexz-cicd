@@ -50,7 +50,6 @@ const Footer = () => {
             {/* Brand */}
             <div className="anxFooterMain__brand">
               <h2 className="anxFooterMain__logo">AUDIONEXZ</h2>
-              <p className="anxFooterMain__tagline">Sound Speaks Quality</p>
             </div>
 
             {/* Address */}
