@@ -153,7 +153,8 @@ const Projects = () => {
       location: "GOA",
       category: "Commercial",
       year: "2026",
-      description: "yet to reval soon",
+      description:
+        "TO be revealed soon. Stay tuned for an exciting project that will redefine the nightlife experience in Goa.",
       features: ["reveal soon"],
       image: getImagePath("assets/Vinayaka_Bar_&_Pub.jpeg"),
     },
