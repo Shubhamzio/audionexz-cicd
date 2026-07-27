@@ -156,7 +156,7 @@ const Projects = () => {
       description:
         "TO be revealed soon. Stay tuned for an exciting project that will redefine the nightlife experience in Goa.",
       features: ["reveal soon"],
-      image: getImagePath("assets/Vinayaka_Bar_&_Pub.jpeg"),
+      image: getImagePath("assets/goa.jpeg"),
     },
   ];
 
