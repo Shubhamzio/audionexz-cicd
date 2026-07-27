@@ -157,6 +157,7 @@ const Projects = () => {
   ];
   // data is added
   // Stats Data
+  // data is added
   const stats = [
     { number: "100+", label: "Projects Completed" },
     { number: "15+", label: "Cities Covered" },
