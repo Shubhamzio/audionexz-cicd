@@ -155,7 +155,7 @@ const Projects = () => {
       year: "2026",
     },
   ];
-
+  // data is added
   // Stats Data
   const stats = [
     { number: "100+", label: "Projects Completed" },
