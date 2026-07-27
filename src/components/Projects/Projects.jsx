@@ -35,7 +35,7 @@ const Projects = () => {
     return `${base}${cleanPath}`;
   };
 
-  // Projects Data - UPDATED with new features and projects
+  // Projects Data
   const projects = [
     {
       id: 1,
@@ -44,7 +44,7 @@ const Projects = () => {
       category: "Recording Studio",
       year: "2025",
       description:
-        "A state-of-the-artmusic Jampad featuring Yamaha monitors, custom acoustic panels, and an SSL console. This project showcases our expertise in creating professional-grade recording environments that inspire creativity while delivering pristine audio quality.",
+        "A state-of-the-art music Jampad featuring Yamaha monitors, custom acoustic panels, and an SSL console. This project showcases our expertise in creating professional-grade recording environments that inspire creativity while delivering pristine audio quality.",
       features: ["Yamaha Monitors", "Custom Acoustics", "SSL Console"],
       image: getImagePath("assets/Room_for_squares.png"),
     },
@@ -147,10 +147,19 @@ const Projects = () => {
       features: ["Sound Proofing", "Sound Installation", "Acoustic Treatment"],
       image: getImagePath("assets/Vinayaka_Bar_&_Pub.jpeg"),
     },
+    {
+      id: 9,
+      name: "Karma House Goa Club ( Coming Soon )",
+      location: "GOA",
+      category: "Commercial",
+      year: "2026",
+      description: "yet to reval soon",
+      features: ["reveal soon"],
+      image: getImagePath("assets/Vinayaka_Bar_&_Pub.jpeg"),
+    },
   ];
-  // data is added
+
   // Stats Data
-  // data is added
   const stats = [
     { number: "100+", label: "Projects Completed" },
     { number: "15+", label: "Cities Covered" },
@@ -215,8 +224,6 @@ const Projects = () => {
               ))}
             </div>
           </div>
-
-          {/* Scroll Indicator */}
         </section>
 
         {/* ===== PROJECTS GRID SECTION ===== */}
@@ -242,10 +249,11 @@ const Projects = () => {
               {projects.map((project, index) => (
                 <article
                   key={project.id}
-                  className={`anxProjects__card anxProjects__animate anxProjects__card--${index % 2 === 0 ? "left" : "right"}`}
+                  className={`anxProjects__card anxProjects__animate anxProjects__card--${
+                    index % 2 === 0 ? "left" : "right"
+                  }`}
                   style={{
                     "--delay": `${index * 0.15}s`,
-                    "--accent": project.gradient,
                   }}
                   ref={(el) => (projectRefs.current[index] = el)}
                 >
@@ -259,10 +267,7 @@ const Projects = () => {
                       onError={handleImageError}
                       loading="lazy"
                     />
-                    <div
-                      className="anxProjects__cardImageGradient"
-                      style={{ background: project.gradient }}
-                    ></div>
+                    <div className="anxProjects__cardImageGradient"></div>
 
                     {/* Category Badge */}
                     <div className="anxProjects__cardCategory">
@@ -297,7 +302,7 @@ const Projects = () => {
 
                     {/* Features */}
                     <div className="anxProjects__cardFeatures">
-                      {project.features.map((feature, idx) => (
+                      {(project.features || []).map((feature, idx) => (
                         <span key={idx} className="anxProjects__cardFeatureTag">
                           {feature}
                         </span>
@@ -313,10 +318,7 @@ const Projects = () => {
                   </div>
 
                   {/* Decorative Line */}
-                  <div
-                    className="anxProjects__cardAccent"
-                    style={{ background: project.gradient }}
-                  ></div>
+                  <div className="anxProjects__cardAccent"></div>
                 </article>
               ))}
             </div>
