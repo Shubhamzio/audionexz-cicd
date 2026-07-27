@@ -147,13 +147,6 @@ const Projects = () => {
       features: ["Sound Proofing", "Sound Installation", "Acoustic Treatment"],
       image: getImagePath("assets/Vinayaka_Bar_&_Pub.jpeg"),
     },
-    {
-      id: 9,
-      name: "Karma House Goa Club",
-      location: "GOA",
-      category: "Coming Soon",
-      year: "2026",
-    },
   ];
   // data is added
   // Stats Data
