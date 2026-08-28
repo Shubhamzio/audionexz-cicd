@@ -158,6 +158,17 @@ const Projects = () => {
       features: ["reveal soon"],
       image: getImagePath("assets/goa.jpeg"),
     },
+    {
+      id: 10,
+      name: " Announced Soon",
+      location: "Siliguri",
+      category: "Recording Studio",
+      year: "2026",
+      description:
+        "From an empty space to a place where ideas become sound. A brand-new 750 sq. ft. studio in Siliguri — now completed and ready for its next chapter.Every detail designed around sound.Every corner built for creativity.Every session waiting to become a story.Go in. Turn it up. Create something unforgettable. And enjoy the vibe.",
+      features: ["More than 20-25 people can record at a time"],
+      image: getImagePath("assets/siliguri1.jpeg"),
+    },
   ];
 
   // Stats Data
